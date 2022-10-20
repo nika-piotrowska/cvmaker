@@ -12,18 +12,12 @@ Rails.application.routes.draw do
     end
     resources :cvs do
       resources :sections do
-        resources :certificates do
-        end
-        resources :courses do
-        end
-        resources :educations do
-        end
-        resources :employments do
-        end
-        resources :languages do
-        end
-        resources :references do
-        end
+        resources :certificates
+        resources :courses
+        resources :educations
+        resources :employments
+        resources :languages
+        resources :references
       end
     end
   end
