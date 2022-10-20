@@ -41,6 +41,9 @@ gem 'devise-i18n'
 # Use i18n_generators to generate translations
 gem 'i18n_generators'
 
+# Use CanCanCan for authorization
+gem 'cancancan'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
