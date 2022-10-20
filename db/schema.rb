@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2022_10_20_182451) do
     t.index ["user_id"], name: "index_cvs_on_user_id"
   end
 
-  create_table "education", force: :cascade do |t|
+  create_table "educations", force: :cascade do |t|
     t.bigint "section_id"
     t.string "level", null: false
     t.string "city"
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 2022_10_20_182451) do
     t.integer "position", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["section_id"], name: "index_education_on_section_id"
+    t.index ["section_id"], name: "index_educations_on_section_id"
   end
 
-  create_table "employment", force: :cascade do |t|
+  create_table "employments", force: :cascade do |t|
     t.bigint "section_id"
     t.string "name", null: false
     t.string "city"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2022_10_20_182451) do
     t.integer "position", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["section_id"], name: "index_employment_on_section_id"
+    t.index ["section_id"], name: "index_employments_on_section_id"
   end
 
   create_table "languages", force: :cascade do |t|

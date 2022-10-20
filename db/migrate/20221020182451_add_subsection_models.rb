@@ -1,6 +1,6 @@
 class AddSubsectionModels < ActiveRecord::Migration[6.0]
   def change
-    create_table :employment do |t|
+    create_table :employments do |t|
       t.belongs_to :section
       t.string :name, null: false
       t.string :city
@@ -12,7 +12,7 @@ class AddSubsectionModels < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    create_table :education do |t|
+    create_table :educations do |t|
       t.belongs_to :section
       t.string :level, null: false
       t.string :city
