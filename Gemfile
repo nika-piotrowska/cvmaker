@@ -65,6 +65,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Linters & code smell detectors
   gem 'rubocop'
+  gem 'rubocop-rspec'
+  gem 'rubocop-thread_safety'
 end
 
 group :test do
