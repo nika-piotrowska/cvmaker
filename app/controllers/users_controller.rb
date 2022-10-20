@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   load_and_authorize_resource
 
-  def show
-  end
+  def show; end
 
-  def index
-  end
+  def index; end
 
-  def dashboard
-  end
+  def dashboard; end
 
 end

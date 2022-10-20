@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     confirmations: 'users/confirmations'
   }
-  
+
   resources :users do
     collection do
-      get 'dashboard' 
+      get 'dashboard'
     end
     resources :cvs do
       resources :sections do
@@ -28,7 +28,6 @@ Rails.application.routes.draw do
     end
   end
 
-  
   authenticated :user do
     root to: redirect('/users/dashboard'), as: :authenticated_user_root
   end
