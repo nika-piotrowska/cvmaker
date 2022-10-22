@@ -1,0 +1,45 @@
+div.page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .cv-container {
+    width: 80%;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    .cv-row {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+      height: fit-content;
+
+      .cv {
+        width: 32%;
+        padding: 0.6%;
+        text-align: center;
+
+        &.center {
+          background-color: #9b5e93;
+        }
+
+        &.left {
+          background-color: #f5dcf3;
+        }
+
+        &.right {
+          background-color: #f5dcf3;
+        }
+      }
+    }
+  }
+
+  .button {
+    background-color: aquamarine;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    margin-top: 15px;
+  }
+}
