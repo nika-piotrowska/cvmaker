@@ -4,8 +4,9 @@ class Cv < ApplicationRecord
   has_one_attached :main_photo
 
   enum sex: {
-    male: 0,
-    female: 1
+    unspecified: 0,
+    male: 1,
+    female: 2
   }
   SEXES = sexes.to_h { |k, _v| [k.to_sym, k] }.freeze
 

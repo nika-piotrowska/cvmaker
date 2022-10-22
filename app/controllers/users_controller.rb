@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def index; end
 
-  def dashboard; end
+  def dashboard
+    @cvs = current_user.cvs
+  end
 
 end

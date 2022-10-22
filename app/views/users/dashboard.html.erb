@@ -1,1 +1,20 @@
-dupadupa
+<div class="page-container">
+  <% if @cvs.any? %>
+    <div class="cv-container">
+      <% @cvs.each_slice(3) do |left_cv, center_cv, right_cv | %>
+        <div class="cv-row">
+          <%= render partial: 'users/cv_tile', locals: { cv: left_cv, position: 'left' } %>
+          <% if center_cv.present? %>
+            <%= render partial: 'users/cv_tile', locals: { cv: center_cv, position: 'center' } %>
+          <% end %>
+          <% if right_cv.present? %>
+            <%= render partial: 'users/cv_tile', locals: { cv: right_cv, position: 'right' } %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to user_cvs_path(user_id: current_user.id), method: :post, class: "button", remote: true do %>
+    +
+  <% end %>
+</div>

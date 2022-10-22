@@ -1,0 +1,21 @@
+<%= simple_form_for [current_user, @cv], remote: true, html: { class: 'customized record-form' } do |f| %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <%= f.input :name, class: 'form-control' %>
+  <%= f.input :first_name, class: 'form-control' %>
+  <%= f.input :last_name, class: 'form-control' %>
+  <%= f.input :email, class: 'form-control', disabled: true %>
+  <%= f.input :phone_number, class: 'form-control' %>
+  <%= f.input :address, class: 'form-control' %>
+  <%= f.input :drivers_licence, class: 'form-control' %>
+  <%= f.input :linkedin, class: 'form-control' %>
+  <%= f.input :facebook, class: 'form-control' %>
+  <%= f.input :twitter, class: 'form-control' %>
+  <%= f.input :github, class: 'form-control' %>
+  <%= f.input :website, class: 'form-control'%>
+  <%= f.input :birth_date, as: :date, start_year: Date.today.year - 150, end_year: Date.today.year - 12, order: [:day, :month, :year], class: 'form-control' %>
+  <%= f.input :sex, as: :select, collection: Cv.get_human_sexes, class: 'form-control', required: false, include_blank: false %>
+
+  <div class="form-group submit">
+    <%= f.submit t('.done'), class: 'basic-button' %>
+  </div>
+<% end %>
