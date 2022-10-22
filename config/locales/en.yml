@@ -31,3 +31,16 @@
 
 en:
   hello: "Hello world"
+  cvs:
+    create:
+      notice: "Could not create CV. Something went wrong."
+    personal_information:
+      done: Next step
+  
+  activerecord:
+    attributes:
+      cv:
+        sexes:
+          unspecified: Unspecified
+          male: Male
+          female: Female
