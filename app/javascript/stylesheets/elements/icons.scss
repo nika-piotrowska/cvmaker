@@ -1,0 +1,29 @@
+.icon {
+  &.white {
+    fill: white;
+
+    &.tile {
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    &.round {
+      height: 100px;
+      margin-bottom: 15px;
+    }
+
+    &.photo {
+      height: 275px;
+      margin: 10px;
+    }
+  }
+
+  &.green {
+    fill: #003333;
+
+    &.header {
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+}

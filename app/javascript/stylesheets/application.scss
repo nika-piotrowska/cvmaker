@@ -1,3 +1,6 @@
+@import 'layout/navbar.scss';
+@import 'layout/login.scss';
+@import 'layout/main.scss';
 @import 'elements/users.scss';
 @import 'elements/certificates.scss';
 @import 'elements/courses.scss';
@@ -8,6 +11,10 @@
 @import 'elements/references.scss';
 @import 'elements/sections.scss';
 @import 'elements/dashboard.scss';
+@import 'elements/icons.scss';
+@import 'elements/personal_information.scss';
+@import "trix/dist/trix";
+@import 'elements/actiontext.scss';
 
 body {
   background-color: #FAFAFA;

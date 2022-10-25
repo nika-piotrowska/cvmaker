@@ -1,3 +1,52 @@
-// Place all the styles related to the Sections controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#partial-container {
+  height: fit-content;
+  
+  .title {
+    font-size: 20px;
+    display: flex;
+    padding: 10px;
+    border-bottom: 2px solid;
+    border-color: #d4e8eb;
+    align-items: center;
+    margin: 5px;
+  }
+
+  .sections-container {
+    margin: 10px;
+    
+    .sections-dropdown {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+  
+      #cv_name {
+        width: 50rem;
+        height: 45px;
+        border: none;
+        padding: 15px;
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  
+  .submit {
+    display: flex;
+    justify-content: center;
+
+    .add-section-button {
+      background-color: #007777;
+      margin-bottom: 15px;
+      border-radius: 50px;
+      padding: 15px;
+      text-decoration: none;
+      color: white;
+      border: none;
+    }
+  }
+
+  .default-section-container {
+    height: 200px;
+  }
+}
+

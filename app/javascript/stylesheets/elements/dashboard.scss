@@ -4,7 +4,7 @@ div.page-container {
   flex-direction: column;
 
   .cv-container {
-    width: 80%;
+    width: 50%;
     min-height: fit-content;
     display: flex;
     flex-direction: column;
@@ -19,27 +19,39 @@ div.page-container {
         width: 32%;
         padding: 0.6%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        box-shadow: 0 3px 8px lightgrey;
+        margin: 10px;
+        text-decoration: none;
+        color: #4e4e4e;
+        border-radius: 10px;
 
         &.center {
-          background-color: #9b5e93;
+          background-color: #c0d3d7;
         }
 
         &.left {
-          background-color: #f5dcf3;
+          background-color: #d4e8eb;
         }
 
         &.right {
-          background-color: #f5dcf3;
+          background-color: #d4e8eb;
         }
       }
     }
   }
 
   .button {
-    background-color: aquamarine;
-    width: 150px;
-    height: 150px;
+    background-color: #007777;
     display: flex;
     margin-top: 15px;
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
   }
 }
