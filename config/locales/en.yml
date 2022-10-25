@@ -36,6 +36,29 @@ en:
       notice: "Could not create CV. Something went wrong."
     personal_information:
       done: Next step
+    personal_information:
+      personal_information: Personal information
+      name: Name
+      first_name: First name
+      last_name: Last name
+      email: Email
+      phone_number: Phone number
+      address: Address
+      birth_date: Birth date
+      sex: Sex
+      drivers_licence: Drivers licence
+      linkedin: LinkedIn
+      facebook: Facebook
+      github: GitHub
+      twitter: Twitter
+      website: Website
+      next_step: Next step
+    sections:
+      add_section: Add new section
+
+  users:
+    dashboard:
+      new_cv: Add new CV
   
   activerecord:
     attributes:
@@ -44,3 +67,17 @@ en:
           unspecified: Unspecified
           male: Male
           female: Female
+      section:
+        names:
+          certificates_section: Certificates
+          courses_section: Courses
+          educations_section: Education
+          employments_section: Employments
+          languages_section: Languages
+          references_section: References
+          skills_section: Skills
+          interest_section: Interests
+          privacy_policy_sections: Privacy policy
+          description_section: Description
+          custom_section: Custom section
+
