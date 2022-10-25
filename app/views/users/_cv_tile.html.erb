@@ -1,3 +1,4 @@
 <%= link_to edit_user_cv_path(user_id: cv.user.id, id: cv.id), class: "cv #{position}" do %>
+  <%= inline_svg_tag "cv-icon.svg", class:"icon white tile" %>
   <%= cv.name %>
 <% end %>

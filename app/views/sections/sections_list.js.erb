@@ -1,0 +1,6 @@
+if (document.querySelector('#sections-list')) {
+  document.querySelector('#sections-list').innerHTML = "<%= j render(partial: 'sections_list'); %>"
+}
+if (document.querySelector('#sections-form')) {
+  document.querySelector('#sections-form').innerHTML = "<%= j render(partial: 'new_section_form'); %>"
+}

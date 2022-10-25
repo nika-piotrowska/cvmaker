@@ -13,11 +13,11 @@ class CvsController < ApplicationController
   end
 
   def edit
-    
   end
-
+  
   def update
     if @cv.update(cv_params)
+      @section = Section.new
       respond_to do |format|
         format.js { render 'cvs/sections.js.erb', layout: false }
       end
@@ -45,7 +45,26 @@ class CvsController < ApplicationController
       :github,
       :website,
       :birth_date,
-      :sex
+      :sex,
+      :main_photo
+    )
+  end
+
+  def sections_params
+    params.require(:section).permit(
+      :name,
+      :certificates_section,
+      :courses_section,
+      :educations_section,
+      :employments_section,
+      :languages_section,
+      :references_section,
+      :skills_section,
+      :interest_section,
+      :privacy_policy_sections,
+      :description_section,
+      :custom_section,
+      :vertical_position
     )
   end
 

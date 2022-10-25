@@ -7,6 +7,8 @@ class Section < ApplicationRecord
   has_many :languages, dependent: :destroy
   has_many :references, dependent: :destroy
 
+  has_rich_text :content
+
   enum name: {
     certificates_section: 0,
     courses_section: 1,

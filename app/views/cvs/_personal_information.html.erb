@@ -1,21 +1,68 @@
-<%= simple_form_for [current_user, @cv], remote: true, html: { class: 'customized record-form' } do |f| %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-  <%= f.input :name, class: 'form-control' %>
-  <%= f.input :first_name, class: 'form-control' %>
-  <%= f.input :last_name, class: 'form-control' %>
-  <%= f.input :email, class: 'form-control', disabled: true %>
-  <%= f.input :phone_number, class: 'form-control' %>
-  <%= f.input :address, class: 'form-control' %>
-  <%= f.input :drivers_licence, class: 'form-control' %>
-  <%= f.input :linkedin, class: 'form-control' %>
-  <%= f.input :facebook, class: 'form-control' %>
-  <%= f.input :twitter, class: 'form-control' %>
-  <%= f.input :github, class: 'form-control' %>
-  <%= f.input :website, class: 'form-control'%>
-  <%= f.input :birth_date, as: :date, start_year: Date.today.year - 150, end_year: Date.today.year - 12, order: [:day, :month, :year], class: 'form-control' %>
-  <%= f.input :sex, as: :select, collection: Cv.get_human_sexes, class: 'form-control', required: false, include_blank: false %>
-
-  <div class="form-group submit">
-    <%= f.submit t('.done'), class: 'basic-button' %>
-  </div>
-<% end %>
+<div class="personal-information-container">
+  <%= simple_form_for [current_user, @cv], remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <label class="title">
+      <%= inline_svg_tag "personal-information.svg", class:"icon green header" %>
+      <%= t('.personal_information') %>
+      </label>
+    <div class="filename-container">
+      <label class="filename"><%= t('.name') %></label>
+      <%= f.input :name, class: 'form-control', label: false %>
+    </div>
+    <div class="basic-data-container">
+      <div class="image-box">
+        <div class="image-container">
+          <% if @cv.main_photo.attached? %>
+            <%= image_tag @cv.main_photo, class: 'photo' %>
+          <% else %>
+            <%= inline_svg_tag "photo-avatar.svg", class:"icon white photo" %>
+          <% end %>
+          <%= f.input :main_photo, as: :file, class: 'form-control', label: false, required: true, input_html: { class: "upload-field",  accept: IMAGE_ACCEPT_FORMATS, data: { direct_upload_url: '/rails/active_storage/direct_uploads' } } %>
+        </div>
+      </div>
+      <div class="data-rows">
+        <div class="name-container">
+          <label><%= t('.first_name') %></label>
+          <%= f.input :first_name, class: 'form-control', label: false %>
+          <label><%= t('.last_name') %></label>
+          <%= f.input :last_name, class: 'form-control', label: false %>
+        </div>
+        <div class="contact-container">
+          <label><%= t('.email') %></label>
+          <%= f.input :email, class: 'form-control', disabled: true, label: false %>
+          <label><%= t('.phone_number') %></label>
+          <%= f.input :phone_number, class: 'form-control', label: false %>
+        </div>
+        <div class="address-container">
+          <label><%= t('.address') %></label>
+          <%= f.input :address, class: 'form-control', label: false %>
+        </div>
+        <div class="personal-data-container">
+          <label><%= t('.birth_date') %></label>
+          <%= f.input :birth_date, as: :date, start_year: Date.today.year - 150, end_year: Date.today.year - 12, order: [:day, :month, :year], class: 'form-control', label: false %>
+          <label><%= t('.sex') %></label>
+          <%= f.input :sex, as: :select, collection: Cv.get_human_sexes, class: 'form-control', required: false, include_blank: false, label: false %>
+          <label><%= t('.drivers_licence') %></label>
+          <%= f.input :drivers_licence, class: 'form-control', label: false %>
+        </div>
+        <div class="website-container">
+          <label><%= t('.linkedin') %></label>
+          <%= f.input :linkedin, class: 'form-control', label: false %>
+          <label><%= t('.facebook') %></label>
+          <%= f.input :facebook, class: 'form-control', label: false %>
+        </div>
+      </div>
+    </div>
+    <div class="websites-container">
+      <label><%= t('.twitter') %></label>
+      <%= f.input :twitter, class: 'form-control', label: false %>
+      <label><%= t('.github') %></label>
+      <%= f.input :github, class: 'form-control', label: false %>
+      <label><%= t('.website') %></label>
+      <%= f.input :website, class: 'form-control', label: false %>
+    </div>
+    <div class="form-group submit">
+      <%= f.submit t('.next_step'), class: 'next-button' %>
+    </div>
+  <% end %>
+</div>

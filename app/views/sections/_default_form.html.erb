@@ -1,0 +1,13 @@
+<div class="default-section-container <%=section.name%>">
+  <%= simple_form_for section, url: user_cv_section_path(user_id: current_user.id, cv_id: @cv.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <label class="title"><%= t(".#{section.name}_name") %></label>
+    <div class="section-name-container">
+      <%= f.input :custom_name, class: 'form-control', label: false, placeholder: t(".#{section.name}_name") %>
+    </div>
+    <%= f.input :content, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".#{section.name}_description") %>
+    <div class="form-group submit">
+      <%= f.submit t('.add_section'), class: 'add-section-button' %>
+    </div>
+  <% end %>
+</div>
