@@ -53,6 +53,9 @@ gem 'simple_form'
 # Use inline_svg for easy inline SVG image display
 gem 'inline_svg'
 
+# Use wicked_pdf to generate PDF from HTML
+gem 'wicked_pdf'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -60,6 +63,8 @@ group :development, :test do
   # Use faker to generate fake data
   gem 'faker'
   gem 'factory_bot_rails'
+  # Use wkhtmltopdf-binary-edge to generate PDF from HTML
+  gem 'wkhtmltopdf-binary-edge'
 end
 
 group :development do
