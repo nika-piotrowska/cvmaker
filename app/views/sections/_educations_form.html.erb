@@ -1,9 +1,9 @@
-<div class="section-container <%=section.name%>">
+<div class="section-container <%= section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side #{section.name}" : section.name%>">
   <%= simple_form_for section, url: user_cv_section_path(user_id: current_user.id, cv_id: @cv.id, id: section.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <label class="title"><%= t(".#{section.name}_name") %></label>
     <div class="header">
-      <div class="-custom-name-container">
+      <div class="custom-name-container">
         <%= f.input :custom_name, class: 'form-control', label: false, placeholder: t(".#{section.name}_name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
       </div>
       <div class="position-dropdown">

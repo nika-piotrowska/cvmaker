@@ -1,5 +1,7 @@
 #partial-container {
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
   .title {
     font-size: 20px;
@@ -11,21 +13,28 @@
     margin: 5px;
   }
 
-  .sections-container {
+  #sections-form {
     margin: 10px;
+
+    .sections-container {
+      margin: 10px;
+      background-color: #b7d3d8;
+      border-radius: 10px;
+      padding: 10px;
+      
+      .sections-dropdown {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
     
-    .sections-dropdown {
-      display: flex;
-      justify-content: center;
-      margin: 20px;
-  
-      #cv_name {
-        width: 50rem;
-        height: 50px;
-        border: none;
-        padding: 15px;
-        outline: none;
-        border-radius: 5px;
+        #cv_name {
+          width: 50rem;
+          height: 50px;
+          border: none;
+          padding: 15px;
+          outline: none;
+          border-radius: 5px;
+        }
       }
     }
   }
@@ -45,22 +54,112 @@
     }
   }
 
-  .default-section-container {
-    height: 200px;
-  }
-
-  .header {
+  #sections-list {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 840px;
+    
+    .section-container {
+      background-color: #d4e8eb;
+      margin: 10px;
+      border-radius: 10px;
+      padding: 10px;
+      width: 100%;
 
-    .buttons-container {
-      display: flex;
+      &.side {
+        background-color: #007777;
+      }
+
+      .title {
+        font-size: 20px;
+        display: flex;
+        padding: 10px;
+        border-bottom: 2px solid;
+        border-color: #b7d3d8;
+        align-items: center;
+        margin: 5px;
+      }
+      
+      .header {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        align-items: center;
+        justify-content: space-between;
+
+        .custom-name-container {
+          width: 70%;
+
+          #section_custom_name {
+            height: 30px;
+            width: 100%;
+            border: none;
+            padding: 5px;
+            outline: none;
+            border-radius: 5px;
+          }
+        }
+
+        .position-dropdown {
+          margin-left: 20px;
+
+          #section_horizontal_position {
+            width: 100px;
+            height: 40px;
+            border: none;
+            padding: 5px;
+            outline: none;
+            border-radius: 5px;
+            background-color: white;
+          }
+        }
+    
+        .buttons-container {
+          display: flex;
+          flex-direction: row;
+          align-self: center;
+          padding: 10px;
+        }
+      }
+
+      .input {
+        
+        &.rich_text_area {
+          background-color: aliceblue;
+          padding: 10px;
+          border-radius: 10px;
+          box-shadow: 0 3px 8px lightgrey;
+          margin: 10px;
+        }
+      }
     }
   }
+
 
   .form-group {
     .submit {
       &.hidden {
         
+      }
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+
+    .edit-personal-information {
+      background-color: #007777;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      
+      &:hover {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       }
     }
   }

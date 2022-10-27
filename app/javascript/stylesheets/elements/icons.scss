@@ -19,6 +19,11 @@
 
     &.round-button {
       width: 20px;
+
+      &.large {
+        width: 30px;
+        margin: 10px;
+      }
     }
   }
 
