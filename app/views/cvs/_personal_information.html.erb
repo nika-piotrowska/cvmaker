@@ -15,7 +15,7 @@
           <% if @cv.main_photo.attached? %>
             <%= image_tag @cv.main_photo, class: 'photo' %>
           <% else %>
-            <%= inline_svg_tag "photo-avatar.svg", class:"icon white photo" %>
+            <%= inline_svg_tag "photo-avatar.svg", class:"icon white image" %>
           <% end %>
           <%= f.input :main_photo, as: :file, class: 'form-control', label: false, required: true, input_html: { class: "upload-field",  accept: IMAGE_ACCEPT_FORMATS, data: { direct_upload_url: '/rails/active_storage/direct_uploads' } } %>
         </div>

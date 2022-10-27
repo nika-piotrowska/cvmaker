@@ -4,7 +4,7 @@ class SectionsController < ApplicationController
   def create
     @cv = Cv.find(params[:cv_id])
     vertical_position = @cv.sections.where(horizontal_position: Section.horizontal_positions[:main_body]).size + 1
-    section = Section.new(sections_params)
+    section = Section.new(sections_params(:cv))
     section.vertical_position = vertical_position
     section.cv_id = params[:cv_id]
     if section.save
@@ -18,23 +18,25 @@ class SectionsController < ApplicationController
     end
   end
 
+  def update
+    @section = Section.find(params[:id])
+    @cv = Cv.find(params[:cv_id])
+    if @section.update(sections_params(:section))
+      respond_to do |format|
+        format.js { render 'sections/sections_list.js.erb', layout: false }
+      end
+    end
+  end
+
   private
 
-  def sections_params
-    params.require(:cv).permit(
+  def sections_params(required_symbol)
+    params.require(required_symbol).permit(
       :name,
-      :certificates_section,
-      :courses_section,
-      :educations_section,
-      :employments_section,
-      :languages_section,
-      :references_section,
-      :skills_section,
-      :interest_section,
-      :privacy_policy_sections,
-      :description_section,
-      :custom_section,
-      :vertical_position
+      :vertical_position,
+      :custom_name,
+      :content,
+      :horizontal_position
     )
   end
 end

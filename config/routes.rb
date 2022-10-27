@@ -11,6 +11,12 @@ Rails.application.routes.draw do
       get 'dashboard'
     end
     resources :cvs do
+      member do
+        patch 'display_personal_information'
+        patch 'display_styles'
+        patch 'display_sections'
+        post 'download_pdf'
+      end
       resources :sections do
         resources :certificates
         resources :courses

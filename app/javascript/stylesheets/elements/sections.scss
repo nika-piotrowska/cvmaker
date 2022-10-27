@@ -21,7 +21,7 @@
   
       #cv_name {
         width: 50rem;
-        height: 45px;
+        height: 50px;
         border: none;
         padding: 15px;
         outline: none;
@@ -47,6 +47,22 @@
 
   .default-section-container {
     height: 200px;
+  }
+
+  .header {
+    display: flex;
+
+    .buttons-container {
+      display: flex;
+    }
+  }
+
+  .form-group {
+    .submit {
+      &.hidden {
+        
+      }
+    }
   }
 }
 

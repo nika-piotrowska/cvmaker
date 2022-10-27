@@ -15,8 +15,7 @@
         <%= inline_svg_tag "close-icon.svg", class:"icon white round-button" %>
       </div>
     </div>
-    <%= f.input :content, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".#{section.name}_description"), input_html: { onchange: "submitSectionOnChange(this)" } %>
-    <div class="form-group submit">
+    <div class="form-group submit hidden">
       <%= f.submit t('.add_section'), class: 'add-section-button' %>
     </div>
   <% end %>

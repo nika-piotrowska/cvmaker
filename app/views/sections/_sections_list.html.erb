@@ -1,11 +1,17 @@
 czy masz jakąś pozytywną propozycję dla narodu?
 <% @cv.sections.order(:vertical_position).each do |section|%>
   <% if section.name == Section.get_names[:certificates_section] %>
+    <%= render partial: 'sections/languages_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:courses_section] %>
+    <%= render partial: 'sections/courses_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:educations_section] %>
+    <%= render partial: 'sections/educations_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:employments_section] %>
+    <%= render partial: 'sections/employments_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:languages_section] %>
+    <%= render partial: 'sections/languages_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:references_section] %>
+    <%= render partial: 'sections/references_form', locals: { section: section } %>
   <% else %>
     <%= render partial: 'sections/default_form', locals: { section: section } %>
   <% end %>

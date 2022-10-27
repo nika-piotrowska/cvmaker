@@ -18,12 +18,38 @@ class CvsController < ApplicationController
   def update
     if @cv.update(cv_params)
       @section = Section.new
-      respond_to do |format|
-        format.js { render 'cvs/sections.js.erb', layout: false }
-      end
+      display_sections
     else
-      respond_to do |format|
-        format.js { render 'cvs/personal_information.js.erb', layout: false }
+      display_personal_information
+    end
+  end
+
+  def display_personal_information
+    respond_to do |format|
+      format.js { render 'cvs/personal_information.js.erb', layout: false }
+    end
+  end
+
+  def display_sections
+    respond_to do |format|
+      format.js { render 'cvs/sections.js.erb', layout: false }
+    end
+  end
+
+  def display_styles
+    respond_to do |format|
+      format.js { render 'cvs/styles.js.erb', layout: false }
+    end
+  end
+
+  def download_pdf
+    @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: "cvs/style1.html.erb", encoding: 'UTF-8'
+    @static_pdf = @static_pdf.html_safe.gsub("\n", ' ')
+    @static_pdf = render_to_string pdf: 'pdf', inline: @static_pdf, encoding: 'UTF-8'
+    respond_to do |format|
+      format.html
+      format.pdf do
+        send_data(@static_pdf, filename: "carbon-footprint-#{Time.current.strftime('%d%m%Y%H%M')}.pdf", type: 'application/pdf')
       end
     end
   end
