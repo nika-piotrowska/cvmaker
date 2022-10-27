@@ -1,5 +1,4 @@
-czy masz jakąś pozytywną propozycję dla narodu?
-<% @cv.sections.order(:vertical_position).each do |section|%>
+<% @cv.sections.order(:horizontal_position, :vertical_position).each do |section|%>
   <% if section.name == Section.get_names[:certificates_section] %>
     <%= render partial: 'sections/languages_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:courses_section] %>
