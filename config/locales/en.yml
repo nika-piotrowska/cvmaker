@@ -55,6 +55,24 @@ en:
       next_step: Next step
     sections:
       add_section: Add new section
+  sections:
+    new_section_form:
+      sections: Sections
+    default_form:
+      privacy_policy_sections_name: Privacy policy
+      custom_section_name: Custom section
+      description_section_name: Description
+      privacy_policy_sections_description: Privacy policy
+      custom_section_description: Description
+      description_section_description: Description
+    languages_form:
+      certificates_section_name: Certificates
+    courses_form:
+      courses_section_name: Courses
+    educations_form:
+      educations_section_name: Education
+    employments_form:
+      employments_section_name: Employments
 
   users:
     dashboard:
@@ -80,4 +98,7 @@ en:
           privacy_policy_sections: Privacy policy
           description_section: Description
           custom_section: Custom section
+        horizontal_positions:
+          main_body: Main body
+          side_body: Side body
 
