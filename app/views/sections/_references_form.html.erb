@@ -1,4 +1,4 @@
-<div class="section-container <%= section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side #{section.name}" : section.name%>">
+<div class="section-container <%= section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side #{section.name}" : section.name%>" id="form-container">
   <%= simple_form_for section, url: user_cv_section_path(user_id: current_user.id, cv_id: @cv.id, id: section.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <label class="title"><%= t(".#{section.name}_name") %></label>
@@ -15,7 +15,7 @@
       <%= render partial: 'references/edit', locals: { section: section } %>
     </div>
     <div class="form-group submit hidden">
-      <%= f.submit t('.add_section'), class: 'add-section-button' %>
+      <%= f.submit t('.add_section'), id: "submit-button", class: 'add-section-button' %>
     </div>
   <% end %>
 </div>

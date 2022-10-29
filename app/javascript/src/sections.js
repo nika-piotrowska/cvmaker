@@ -1,8 +1,8 @@
 /* eslint-disable no-promise-executor-return */
 const submitSectionOnChange = (element) => {
   console.log('Mikotka to kawał kotka');
-  const section = element.closest('.section-container');
-  const submitButton = section.querySelector('.add-section-button');
+  const section = element.closest('#form-container');
+  const submitButton = section.querySelector('#submit-button');
   submitButton.click();
 };
 
@@ -15,9 +15,7 @@ const assignOnChangeToTrix = () => {
     jqinput.on('trix-blur', async function () {
       await new Promise((resolve) => setTimeout(resolve, 50));
       submitSectionOnChange(this);
-      console.log('dupadupa');
       await new Promise((resolve) => setTimeout(resolve, 500));
-      assignOnChangeToTrix();
     });
   });
 };

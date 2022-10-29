@@ -11,7 +11,6 @@ class CoursesController < ApplicationController
   end
 
   def update
-    byebug
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:section_id])
     if @course.update(courses_params)

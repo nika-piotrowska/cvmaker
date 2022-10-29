@@ -1,0 +1,15 @@
+<div class="course-form" id="form-container">
+  <%= simple_form_for course, url: user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= f.input :name, class: 'form-control', label: false %>
+    <%= f.input :institution, class: 'form-control', label: false %>
+    <div class="dates-row">
+      <%= f.input :start_date, class: 'form-control', label: false %>
+      <%= f.input :end_date, class: 'form-control', label: false %>
+    </div>
+    <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" }%>
+    <div class="form-group submit">
+      <%= f.submit t('.update'), id: "submit-button", class: 'add-section-button' %>
+    </div>
+  <% end %>
+</div>
