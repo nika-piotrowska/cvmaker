@@ -1,0 +1,15 @@
+<div class="buttons-container">
+  <% if section.vertical_position > 1 %>
+    <%= link_to move_section_up_user_cv_section_path(user_id: current_user.id, cv_id: @cv.id, id: section.id), method: :patch, class: 'section-up', remote: true do %>
+      <%= inline_svg_tag "up-arrow.svg", class:"icon white round-button" %>
+    <% end %>
+  <% end %>
+  <% if section.vertical_position < @cv.sections.where(horizontal_position: section.horizontal_position).size %>
+    <%= link_to move_section_down_user_cv_section_path(user_id: current_user.id, cv_id: @cv.id, id: section.id), method: :patch, class: 'section-down', remote: true do %>
+      <%= inline_svg_tag "down-arrow.svg", class:"icon white round-button" %>
+    <% end %>
+  <% end %>
+  <%= link_to user_cv_section_path(user_id: current_user.id, cv_id: @cv.id, id: section.id), method: :delete, class: 'delete-section', remote: true do %>
+    <%= inline_svg_tag "close-icon.svg", class:"icon white round-button" %>
+  <% end %>
+</div>
