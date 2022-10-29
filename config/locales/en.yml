@@ -58,21 +58,37 @@ en:
   sections:
     new_section_form:
       sections: Sections
+      add_section: Add section
     default_form:
       privacy_policy_sections_name: Privacy policy
       custom_section_name: Custom section
       description_section_name: Description
+      skills_section_name: Skills
+      interest_section_name: Intrests
       privacy_policy_sections_description: Privacy policy
       custom_section_description: Description
-      description_section_description: Description
+      description_section_description: Your escription
+      skills_section_description: Describe your skills
+      interest_section_description: Describe your intrests
+      add_section: Update
     languages_form:
+      languages_section_name: Languages
+      add_section: Update
+    certificates_form:
       certificates_section_name: Certificates
+      add_section: Update
     courses_form:
       courses_section_name: Courses
+      add_section: Update
     educations_form:
       educations_section_name: Education
+      add_section: Update
+    references_form:
+      references_section_name: References
+      add_section: Update
     employments_form:
       employments_section_name: Employments
+      add_section: Update
 
   users:
     dashboard:
