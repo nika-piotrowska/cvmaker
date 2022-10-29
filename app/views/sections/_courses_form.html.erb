@@ -14,7 +14,7 @@
     <div class="courses-container">
       <%= render partial: 'courses/courses_list', locals: { section: section } %>
     </div>
-    <div class="form-group submit">
+    <div class="form-group submit hidden">
       <%= f.submit t('.add_section'), class: 'add-section-button' %>
     </div>
   <% end %>

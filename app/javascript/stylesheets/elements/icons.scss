@@ -1,6 +1,6 @@
 .icon {
   &.white {
-    fill: white;
+    fill: var(--fill-color);
 
     &.tile {
       height: 150px;
@@ -28,7 +28,7 @@
   }
 
   &.green {
-    fill: #003333;
+    fill: var(--navbar-color);
 
     &.header {
       height: 30px;

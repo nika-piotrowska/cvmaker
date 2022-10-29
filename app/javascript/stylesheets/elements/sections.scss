@@ -8,13 +8,13 @@
     display: flex;
     padding: 10px;
     border-bottom: 2px solid;
-    border-color: #b6d3d8;
+    border-color: var(--light-color);
     align-items: center;
     margin: 5px;
-    color: #4e4e4e;
+    color: var(--font-color);
 
     &.section {
-      border-color: #e8f6f9;
+      border-color: var(--lightest-color);
     }
   }
 
@@ -23,7 +23,7 @@
 
     .sections-container {
       margin: 10px;
-      background-color: #b7d3d8;
+      background-color: var(--light-color);
       border-radius: 10px;
       padding: 10px;
       
@@ -49,12 +49,12 @@
     justify-content: center;
 
     .add-section-button {
-      background-color: #007777;
+      background-color: var(--dark-green-color);
       margin-bottom: 15px;
       border-radius: 50px;
       padding: 15px;
       text-decoration: none;
-      color: white;
+      color: var(--fill-color);
       border: none;
     }
   }
@@ -66,24 +66,24 @@
     width: 840px;
     
     .section-container {
-      background-color: #d4e8eb;
+      background-color: var(--lighter-color);
       margin: 10px;
       border-radius: 10px;
       padding: 10px;
       width: 100%;
 
       &.side {
-        background-color: #007777;
+        background-color: var(--dark-green-color);
         
         .title {
           font-size: 20px;
           display: flex;
           padding: 10px;
           border-bottom: 2px solid;
-          border-color: #b7d3d8;
+          border-color: var(--light-color);
           align-items: center;
           margin: 5px;
-          color: #e8f6f9;
+          color: var(--lightest-color);
         }
       }
 
@@ -118,7 +118,7 @@
             padding: 5px;
             outline: none;
             border-radius: 5px;
-            background-color: white;
+            background-color: var(--fill-color);
           }
         }
     
@@ -133,20 +133,18 @@
       .input {
         
         &.rich_text_area {
-          background-color: aliceblue;
+          background-color: var(--lightest-color);
           padding: 10px;
           border-radius: 10px;
           margin: 10px;
         }
       }
-    }
-  }
-
-
-  .form-group {
-    .submit {
-      &.hidden {
-        
+      .form-group {
+        &.submit {
+          &.hidden {
+            display: none; 
+          }
+        }
       }
     }
   }
@@ -158,7 +156,7 @@
     padding: 5px;
 
     .edit-personal-information {
-      background-color: #007777;
+      background-color: var(--dark-green-color);
       border-radius: 50%;
       display: flex;
       align-items: center;

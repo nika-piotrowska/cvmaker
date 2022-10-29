@@ -25,26 +25,26 @@ div.page-container {
         box-shadow: 0 3px 8px lightgrey;
         margin: 10px;
         text-decoration: none;
-        color: #4e4e4e;
+        color: var(--font-color);
         border-radius: 10px;
 
         &.center {
-          background-color: #c0d3d7;
+          background-color: var(--medium-color);
         }
 
         &.left {
-          background-color: #d4e8eb;
+          background-color: var(--lighter-color);
         }
 
         &.right {
-          background-color: #d4e8eb;
+          background-color: var(--lighter-color);
         }
       }
     }
   }
 
   .button {
-    background-color: #007777;
+    background-color: var(--dark-green-color);
     display: flex;
     margin-top: 15px;
     border-radius: 10px;

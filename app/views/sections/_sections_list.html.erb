@@ -1,6 +1,6 @@
 <% @cv.sections.order(:horizontal_position, :vertical_position).each do |section|%>
   <% if section.name == Section.get_names[:certificates_section] %>
-    <%= render partial: 'sections/languages_form', locals: { section: section } %>
+    <%= render partial: 'sections/certificates_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:courses_section] %>
     <%= render partial: 'sections/courses_form', locals: { section: section } %>
   <% elsif section.name == Section.get_names[:educations_section] %>
