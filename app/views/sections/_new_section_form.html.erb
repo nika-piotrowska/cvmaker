@@ -1,7 +1,7 @@
 <div class="sections-container">
   <%= simple_form_for @cv, url: user_cv_sections_path(user_id: current_user.id, cv_id: @cv.id), method: :post, remote: true, html: { class: 'customized record-form' } do |f| %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <label class="title"><%= t('.sections') %></label>
+    <label class="title section"><%= t('.sections') %></label>
     <div class="sections-dropdown">
       <%= f.input :name, as: :select, collection: @cv.get_available_human_names, class: 'form-control', required: false, include_blank: false, label: false %>
     </div>

@@ -8,9 +8,14 @@
     display: flex;
     padding: 10px;
     border-bottom: 2px solid;
-    border-color: #d4e8eb;
+    border-color: #b6d3d8;
     align-items: center;
     margin: 5px;
+    color: #4e4e4e;
+
+    &.section {
+      border-color: #e8f6f9;
+    }
   }
 
   #sections-form {
@@ -69,17 +74,19 @@
 
       &.side {
         background-color: #007777;
+        
+        .title {
+          font-size: 20px;
+          display: flex;
+          padding: 10px;
+          border-bottom: 2px solid;
+          border-color: #b7d3d8;
+          align-items: center;
+          margin: 5px;
+          color: #e8f6f9;
+        }
       }
 
-      .title {
-        font-size: 20px;
-        display: flex;
-        padding: 10px;
-        border-bottom: 2px solid;
-        border-color: #b7d3d8;
-        align-items: center;
-        margin: 5px;
-      }
       
       .header {
         display: flex;
@@ -129,7 +136,6 @@
           background-color: aliceblue;
           padding: 10px;
           border-radius: 10px;
-          box-shadow: 0 3px 8px lightgrey;
           margin: 10px;
         }
       }
