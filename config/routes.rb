@@ -18,6 +18,10 @@ Rails.application.routes.draw do
         post 'download_pdf'
       end
       resources :sections do
+        member do
+          patch 'move_section_up'
+          patch 'move_section_down'
+        end
         resources :certificates
         resources :courses
         resources :educations
