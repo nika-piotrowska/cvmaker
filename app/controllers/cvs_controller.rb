@@ -14,7 +14,7 @@ class CvsController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if @cv.update(cv_params)
       @section = Section.new
@@ -43,7 +43,7 @@ class CvsController < ApplicationController
   end
 
   def download_pdf
-    @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: "cvs/style1.html.erb", encoding: 'UTF-8'
+    @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: 'cvs/style1.html.erb', encoding: 'UTF-8'
     @static_pdf = @static_pdf.html_safe.gsub("\n", ' ')
     @static_pdf = render_to_string pdf: 'pdf', inline: @static_pdf, encoding: 'UTF-8'
     respond_to do |format|
@@ -57,23 +57,25 @@ class CvsController < ApplicationController
   private
 
   def cv_params
-    params.require(:cv).permit(
-      :name,
-      :first_name,
-      :last_name,
-      :email,
-      :phone_number,
-      :address,
-      :drivers_licence,
-      :linkedin,
-      :facebook,
-      :twitter,
-      :github,
-      :website,
-      :birth_date,
-      :sex,
-      :main_photo
-    )
+    if params.key?(:cv)
+      params.require(:cv).permit(
+        :name,
+        :first_name,
+        :last_name,
+        :email,
+        :phone_number,
+        :address,
+        :drivers_licence,
+        :linkedin,
+        :facebook,
+        :twitter,
+        :github,
+        :website,
+        :birth_date,
+        :sex,
+        :main_photo
+      )
+    end
   end
 
   def sections_params

@@ -4,7 +4,7 @@ class ReferencesController < ApplicationController
   def create
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:section_id])
-    Reference.create(section_id: @section.id, position: @section.references.size+1)
+    Reference.create(section_id: @section.id, position: @section.references.size + 1)
     respond_to do |format|
       format.js { render 'sections/sections_list.js.erb', layout: false }
     end
@@ -31,23 +31,23 @@ class ReferencesController < ApplicationController
   def move_reference_up
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:section_id])
-    up_reference = @section.references.find_by(position: @reference.position-1)
+    up_reference = @section.references.find_by(position: @reference.position - 1)
     if up_reference.present?
-      @reference.update(position: @reference.position-1)
-      up_reference.update(position: up_reference.position+1)
+      @reference.update(position: @reference.position - 1)
+      up_reference.update(position: up_reference.position + 1)
       respond_to do |format|
         format.js { render 'sections/sections_list.js.erb', layout: false }
       end
     end
   end
 
-  def move_reference_down 
+  def move_reference_down
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:section_id])
-    down_reference = @section.references.find_by(position: @reference.position+1)
+    down_reference = @section.references.find_by(position: @reference.position + 1)
     if down_reference.present?
-      @reference.update(position: @reference.position+1)
-      down_reference.update(position: down_reference.position-1)
+      @reference.update(position: @reference.position + 1)
+      down_reference.update(position: down_reference.position - 1)
       respond_to do |format|
         format.js { render 'sections/sections_list.js.erb', layout: false }
       end

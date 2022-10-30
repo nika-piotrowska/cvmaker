@@ -41,27 +41,27 @@ class SectionsController < ApplicationController
       format.js { render 'sections/sections_list.js.erb', layout: false }
     end
   end
-  
-  def move_section_up 
+
+  def move_section_up
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:id])
-    up_section = @cv.sections.find_by(horizontal_position: @section.horizontal_position, vertical_position: @section.vertical_position-1)
+    up_section = @cv.sections.find_by(horizontal_position: @section.horizontal_position, vertical_position: @section.vertical_position - 1)
     if up_section.present?
-      @section.update(vertical_position: @section.vertical_position-1)
-      up_section.update(vertical_position: up_section.vertical_position+1)
+      @section.update(vertical_position: @section.vertical_position - 1)
+      up_section.update(vertical_position: up_section.vertical_position + 1)
       respond_to do |format|
         format.js { render 'sections/sections_list.js.erb', layout: false }
       end
     end
   end
 
-  def move_section_down 
+  def move_section_down
     @cv = Cv.find(params[:cv_id])
     @section = Section.find(params[:id])
-    down_section = @cv.sections.find_by(horizontal_position: @section.horizontal_position, vertical_position: @section.vertical_position+1)
+    down_section = @cv.sections.find_by(horizontal_position: @section.horizontal_position, vertical_position: @section.vertical_position + 1)
     if down_section.present?
-      @section.update(vertical_position: @section.vertical_position+1)
-      down_section.update(vertical_position: down_section.vertical_position-1)
+      @section.update(vertical_position: @section.vertical_position + 1)
+      down_section.update(vertical_position: down_section.vertical_position - 1)
       respond_to do |format|
         format.js { render 'sections/sections_list.js.erb', layout: false }
       end
@@ -73,11 +73,11 @@ class SectionsController < ApplicationController
   def assure_position_consistancy
     main_body_sections = @cv&.sections.where(horizontal_position: Section.horizontal_positions[:main_body])
     side_body_sections = @cv&.sections.where(horizontal_position: Section.horizontal_positions[:side_body])
-    main_body_sections.order(:vertical_position).each.with_index(1) do | section, index |
+    main_body_sections.order(:vertical_position).each.with_index(1) do |section, index|
       section.vertical_position = index
       section.save
     end
-    side_body_sections.order(:vertical_position).each.with_index(1) do | section, index |
+    side_body_sections.order(:vertical_position).each.with_index(1) do |section, index|
       section.vertical_position = index
       section.save
     end
