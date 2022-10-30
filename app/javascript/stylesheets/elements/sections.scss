@@ -122,11 +122,24 @@
           }
         }
     
-        .buttons-container {
-          display: flex;
+        .section-buttons-container {
           flex-direction: row;
-          align-self: center;
-          padding: 10px;
+          display: flex;
+          align-items: center;
+
+          .section-up {
+            margin: 5px;
+            padding-left: 5px;
+          }
+
+          .section-down {
+            margin: 5px;
+          }
+
+          .delete-section {
+            margin: 5px;
+            padding-right: 5px;
+          }
         }
       }
 
@@ -146,6 +159,774 @@
           &.hidden {
             display: none; 
           }
+        }
+      }
+
+      .courses-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .course-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+
+          .course-box {
+            display: flex;
+
+            .course-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+    
+                #course_name {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 10px;
+                }
+    
+                #course_institution {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 10px;
+                }
+              }
+    
+              .dates-row {
+                display: flex;
+                justify-content: space-around;
+                color: var(--font-color);
+                font-size: 12px;
+    
+                .date-container {
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                }
+    
+                select {
+                  width: 100px;
+                  height: 35px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  background-color: var(--fill-color);
+                  margin: 10px;
+                }
+              }
+    
+              .input {
+            
+                &.rich_text_area {
+                  background-color: transparent;
+                  padding: 10px;
+                  border-radius: 10px;
+                  margin: 10px;
+                  border: solid var(--fill-color);
+                }
+              }
+            }
+
+            .course-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+
+      .certificates-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .certificate-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+          width: 100%;
+
+          .certificate-box {
+            display: flex;
+            width: 100%;
+
+            .certificate-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              width: 100%;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                
+                #certificate_name {
+                  width: 30.4rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 10px;
+                }
+                
+                .date-container {
+                  display: flex;
+                  justify-content: space-around;
+                  color: var(--font-color);
+                  font-size: 12px;
+                  align-items: center;
+                }
+
+                select {
+                  width: 100px;
+                  height: 35px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  background-color: var(--fill-color);
+                  margin: 10px;
+                }
+              }
+    
+              .input {
+            
+                &.rich_text_area {
+                  background-color: transparent;
+                  padding: 10px;
+                  border-radius: 10px;
+                  margin: 10px;
+                  border: solid var(--fill-color);
+                  display: block;
+                }
+              }
+            }
+
+            .certificate-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+
+      .educations-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .education-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+          width: 100%;
+
+          .education-box {
+            display: flex;
+            width: 100%;
+
+            .education-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              width: 100%;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                #education_level {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #education_city {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #education_university {
+                  width: 47.2rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #education_faculty {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #education_specialisation {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                select {
+                  width: 100px;
+                  height: 35px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  background-color: var(--fill-color);
+                  margin: 10px;
+                }
+
+                &.dates {
+                  display: flex;
+                  justify-content: space-around;
+                  color: var(--font-color);
+                  font-size: 12px;
+
+                  .date-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                  }
+                }
+              }
+            }
+
+            .education-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+
+      .employments-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .employment-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+          width: 100%;
+
+          .employment-box {
+            display: flex;
+            width: 100%;
+
+            .employment-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              width: 100%;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                #employment_name {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #employment_city {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #employment_employer {
+                  width: 47.2rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                select {
+                  width: 100px;
+                  height: 35px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  background-color: var(--fill-color);
+                  margin: 10px;
+                }
+
+                &.dates {
+                  display: flex;
+                  justify-content: space-around;
+                  color: var(--font-color);
+                  font-size: 12px;
+
+                  .date-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                  }
+                }
+              }
+    
+              .input {
+            
+                &.rich_text_area {
+                  background-color: transparent;
+                  padding: 10px;
+                  border-radius: 10px;
+                  margin: 10px;
+                  border: solid var(--fill-color);
+                  display: block;
+                  width: 100%;
+                }
+              }
+            }
+
+            .employment-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+
+      .languages-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .language-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+          width: 100%;
+
+          .language-box {
+            display: flex;
+            width: 100%;
+
+            .language-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              width: 100%;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                #language_language {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #language_language_level {
+                  width: 23rem;
+                  height: 40px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                  background-color: white;
+                }
+              }
+            }
+
+            .employment-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+
+      .language-buttons {
+        display: flex;
+        margin: 5px;
+        flex-direction: column;
+      }
+
+      .references-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+
+        .reference-form {
+          display: flex;
+          justify-content: center;
+          background-color: var(--lightest-color);
+          border-radius: 10px;
+          margin: 10px;
+          align-self: center;
+          width: 100%;
+
+          .reference-box {
+            display: flex;
+            width: 100%;
+
+            .reference-container {
+              display: flex;
+              justify-content: center;
+              flex-direction: column;
+              width: 100%;
+
+              .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+
+                #reference_company {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #reference_contact_person {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #reference_phone_number {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                #reference_email {
+                  width: 23rem;
+                  height: 30px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  margin: 5px;
+                }
+
+                select {
+                  width: 100px;
+                  height: 35px;
+                  border: none;
+                  padding: 5px;
+                  outline: none;
+                  border-radius: 5px;
+                  background-color: var(--fill-color);
+                  margin: 10px;
+                }
+
+                &.dates {
+                  display: flex;
+                  justify-content: space-around;
+                  color: var(--font-color);
+                  font-size: 12px;
+
+                  .date-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                  }
+                }
+              }
+    
+              .input {
+            
+                &.rich_text_area {
+                  background-color: transparent;
+                  padding: 10px;
+                  border-radius: 10px;
+                  margin: 10px;
+                  border: solid var(--fill-color);
+                  display: block;
+                  width: 100%;
+                }
+              }
+            }
+
+            .reference-buttons {
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              flex-direction: column;
+              align-self: flex-start;
+            }
+          }
+
+          
+          .form-group {
+            &.submit {
+              &.hidden {
+                display: none; 
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      padding: 10px;
+
+      .add-course {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .add-certificate {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .add-education {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .add-employment {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .add-language {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .add-reference {
+        background-color: var(--dark-green-color);
+        border-radius: 50%;
+        display: flex;
+
+        &.side {
+          background-color: var(--lightest-color);
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        &:hover {
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         }
       }
     }
