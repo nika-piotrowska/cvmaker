@@ -1,0 +1,35 @@
+<div class="certificate-form" id="form-container">
+  <%= simple_form_for certificate, url: user_cv_section_certificate_path(user_id: current_user.id, cv_id: @cv.id, section_id: certificate.section_id, id: certificate.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="certificate-box">
+      <div class="certificate-container">
+        <div class="row">
+          <%= f.input :name, class: 'form-control', label: false, placeholder: t(".name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+          <div class="date-container">
+            <label><%= t('.date') %></label>
+            <%= f.input :date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" }   %>
+          </div>
+        </div>
+        <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+      </div>
+      <div class="certificate-buttons">
+        <%= link_to user_cv_section_certificate_path(user_id: current_user.id, cv_id: @cv.id, section_id: certificate.section_id, id: certificate.id), method: :delete, class: 'delete-certificate', remote: true do %>
+          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
+        <% end %>
+        <% if certificate.position > 1 %>
+          <%= link_to move_certificate_up_user_cv_section_certificate_path(user_id: current_user.id, cv_id: @cv.id, section_id: certificate.section_id, id: certificate.id), method: :patch, class: 'move-up-certificate', remote: true do %>
+            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+        <% if certificate.position < section.certificates.size %>
+          <%= link_to move_certificate_down_user_cv_section_certificate_path(user_id: current_user.id, cv_id: @cv.id, section_id: certificate.section_id, id: certificate.id), method: :patch, class: 'move-down-certificate', remote: true do %>
+            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group submit hidden">
+      <%= f.submit t('.update'), id: "submit-button", class: 'add-section-button' %>
+    </div>
+  <% end %>
+</div>

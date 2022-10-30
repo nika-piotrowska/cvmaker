@@ -11,11 +11,11 @@
       </div>
       <%= render partial: 'sections/section_buttons', locals: { section: section } %>
     </div>
-    <div class="references-container">
-      <%= render partial: 'references/edit', locals: { section: section } %>
-    </div>
     <div class="form-group submit hidden">
       <%= f.submit t('.add_section'), id: "submit-button", class: 'add-section-button' %>
     </div>
   <% end %>
+  <div class="references-container">
+    <%= render partial: 'references/references_list', locals: { section: section } %>
+  </div>
 </div>

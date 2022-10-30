@@ -1,0 +1,8 @@
+<% section.references.order(:position).each do |reference|%>
+  <%= render partial: 'references/form', locals: { section: section, reference: reference } %>
+<% end %>
+<div class="button-container">
+  <%= link_to user_cv_section_references_path(user_id: current_user.id, cv_id: @cv.id, section_id: section.id), method: :post, class: "add-reference #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}", remote: true do %>
+    <%= inline_svg_tag 'plus-icon.svg', class:"icon white round-button section #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}" %>
+  <% end %>
+</div>

@@ -1,14 +1,41 @@
 <div class="course-form" id="form-container">
   <%= simple_form_for course, url: user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <%= f.input :name, class: 'form-control', label: false %>
-    <%= f.input :institution, class: 'form-control', label: false %>
-    <div class="dates-row">
-      <%= f.input :start_date, class: 'form-control', label: false %>
-      <%= f.input :end_date, class: 'form-control', label: false %>
+    <div class="course-box">
+      <div class="course-container">
+        <div class="row">
+          <%= f.input :name, class: 'form-control', label: false, placeholder: t(".name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+          <%= f.input :institution, class: 'form-control', label: false, placeholder: t(".institution"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+        <div class="dates-row">
+          <div class="date-container">
+            <label><%= t('.start_date') %></label>
+            <%= f.input :start_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" }  %>
+          </div>
+          <div class="date-container">
+            <label><%= t('.end_date') %></label>
+            <%= f.input :end_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" }  %>
+          </div>
+        </div>
+        <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" }%>
+      </div>
+      <div class="course-buttons">
+        <%= link_to user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :delete, class: 'delete-course', remote: true do %>
+          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
+        <% end %>
+        <% if course.position > 1 %>
+          <%= link_to move_course_up_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-up-course', remote: true do %>
+            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+        <% if course.position < section.courses.size %>
+          <%= link_to move_course_down_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-down-course', remote: true do %>
+            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" }%>
-    <div class="form-group submit">
+    <div class="form-group submit hidden">
       <%= f.submit t('.update'), id: "submit-button", class: 'add-section-button' %>
     </div>
   <% end %>

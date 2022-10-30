@@ -22,12 +22,42 @@ Rails.application.routes.draw do
           patch 'move_section_up'
           patch 'move_section_down'
         end
-        resources :certificates
-        resources :courses
-        resources :educations
-        resources :employments
-        resources :languages
-        resources :references
+        resources :certificates do
+          member do
+            patch 'move_certificate_up'
+            patch 'move_certificate_down'
+          end
+        end
+        resources :courses do
+          member do
+            patch 'move_course_up'
+            patch 'move_course_down'
+          end
+        end
+        resources :educations do
+          member do
+            patch 'move_education_up'
+            patch 'move_education_down'
+          end
+        end
+        resources :employments do
+          member do
+            patch 'move_employment_up'
+            patch 'move_employment_down'
+          end
+        end
+        resources :languages do
+          member do
+            patch 'move_language_up'
+            patch 'move_language_down'
+          end
+        end
+        resources :references do
+          member do
+            patch 'move_reference_up'
+            patch 'move_reference_down'
+          end
+        end
       end
     end
   end

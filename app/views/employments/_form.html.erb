@@ -1,0 +1,47 @@
+<div class="employment-form" id="form-container">
+  <%= simple_form_for employment, url: user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="employment-box">
+      <div class="employment-container">
+        <div class="row">
+          <%= f.input :name, class: 'form-control', label: false, placeholder: t(".name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+          <%= f.input :city, class: 'form-control', label: false, placeholder: t(".city"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+        <div class="row">
+          <%= f.input :employer, class: 'form-control', label: false, placeholder: t(".employer"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+        <div class="row dates">
+          <div class="date-container">
+            <label><%= t('.start_date') %></label>
+            <%= f.input :start_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" } %>
+          </div>
+          <div class="date-container">
+            <label><%= t('.end_date') %></label>
+            <%= f.input :end_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, include_blank: true, input_html: { onchange: "submitSectionOnChange(this)" } %>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+      </div>
+      <div class="employment-buttons">
+        <%= link_to user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :delete, class: 'delete-employment', remote: true do %>
+          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
+        <% end %>
+        <% if employment.position > 1 %>
+          <%= link_to move_employment_up_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-up-employment', remote: true do %>
+            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+        <% if employment.position < section.employments.size %>
+          <%= link_to move_employment_down_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-down-employment', remote: true do %>
+            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group submit hidden">
+      <%= f.submit t('.update'), id: "submit-button", class: 'add-section-button' %>
+    </div>
+  <% end %>
+</div>

@@ -1,8 +1,8 @@
-<% section.courses.each do |course|%>
+<% section.courses.order(:position).each do |course|%>
   <%= render partial: 'courses/form', locals: { section: section, course: course } %>
 <% end %>
-<div class="buttons-container <%= section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""%>">
-  <%= link_to user_cv_section_courses_path(user_id: current_user.id, cv_id: @cv.id, section_id: section.id), method: :post, class: 'add-course', remote: true do %>
-    <%= inline_svg_tag 'plus-icon.svg', class:"icon white round-button section" %>
+<div class="button-container">
+  <%= link_to user_cv_section_courses_path(user_id: current_user.id, cv_id: @cv.id, section_id: section.id), method: :post, class: "add-course #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}", remote: true do %>
+    <%= inline_svg_tag 'plus-icon.svg', class:"icon white round-button section #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}" %>
   <% end %>
 </div>

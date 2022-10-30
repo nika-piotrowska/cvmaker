@@ -1,0 +1,38 @@
+<div class="reference-form" id="form-container">
+  <%= simple_form_for reference, url: user_cv_section_reference_path(user_id: current_user.id, cv_id: @cv.id, section_id: reference.section_id, id: reference.id), method: :patch, remote: true, html: { class: 'customized record-form' } do |f| %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="reference-box">
+      <div class="reference-container">
+        <div class="row">
+          <%= f.input :company, class: 'form-control', label: false, placeholder: t(".company"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+          <%= f.input :contact_person, class: 'form-control', label: false, placeholder: t(".contact_person"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+        <div class="row">
+          <%= f.input :phone_number, class: 'form-control', label: false, placeholder: t(".phone_number"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+          <%= f.input :email, class: 'form-control', label: false, placeholder: t(".email"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+        <div class="row">
+          <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        </div>
+      </div>
+      <div class="reference-buttons">
+        <%= link_to user_cv_section_reference_path(user_id: current_user.id, cv_id: @cv.id, section_id: reference.section_id, id: reference.id), method: :delete, class: 'delete-reference', remote: true do %>
+          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
+        <% end %>
+        <% if reference.position > 1 %>
+          <%= link_to move_reference_up_user_cv_section_reference_path(user_id: current_user.id, cv_id: @cv.id, section_id: reference.section_id, id: reference.id), method: :patch, class: 'move-up-reference', remote: true do %>
+            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+        <% if reference.position < section.references.size %>
+          <%= link_to move_reference_down_user_cv_section_reference_path(user_id: current_user.id, cv_id: @cv.id, section_id: reference.section_id, id: reference.id), method: :patch, class: 'move-down-reference', remote: true do %>
+            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form-group submit hidden">
+      <%= f.submit t('.update'), id: "submit-button", class: 'add-section-button' %>
+    </div>
+  <% end %>
+</div>

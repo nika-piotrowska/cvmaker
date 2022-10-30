@@ -10,12 +10,28 @@ class Cv < ApplicationRecord
   }
   SEXES = sexes.to_h { |k, _v| [k.to_sym, k] }.freeze
 
+  enum style: {
+    style1: 0,
+    style2: 1,
+    style3: 2,
+    style4: 3
+  }
+  STYLES = styles.to_h { |k, _v| [k.to_sym, k] }.freeze
+
   def self.get_sexes
     SEXES
   end
 
   def self.get_human_sexes
     SEXES.to_h { |k, _v| [Cv.human_enum_name(:sexes, k), k] }
+  end
+
+  def self.get_styles
+    STYLES
+  end
+
+  def self.get_human_styles
+    STYLES.to_h { |k, _v| [Cv.human_enum_name(:styles, k), k] }
   end
 
   def get_available_human_names
