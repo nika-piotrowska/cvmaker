@@ -89,6 +89,12 @@ en:
     employments_form:
       employments_section_name: Employments
       add_section: Update
+  courses:
+    form:
+      name: Name
+      institution: Institution
+      description: Description
+      update: Update
 
   users:
     dashboard:
