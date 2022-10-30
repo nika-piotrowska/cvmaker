@@ -58,6 +58,7 @@ class ReferencesController < ApplicationController
 
   def references_params
     return unless params.key?(:reference)
+
     params.require(:reference).permit(
       :company,
       :contact_person,

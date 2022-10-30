@@ -85,6 +85,7 @@ class SectionsController < ApplicationController
 
   def sections_params(required_symbol)
     return unless params.key?(required_symbol)
+
     params.require(required_symbol).permit(
       :name,
       :vertical_position,

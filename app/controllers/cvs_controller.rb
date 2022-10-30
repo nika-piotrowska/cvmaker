@@ -57,6 +57,7 @@ class CvsController < ApplicationController
 
   def cv_params
     return unless params.key?(:cv)
+
     params.require(:cv).permit(
       :name,
       :first_name,
@@ -78,6 +79,7 @@ class CvsController < ApplicationController
 
   def sections_params
     return unless params.key?(:section)
+
     params.require(:section).permit(
       :name,
       :certificates_section,

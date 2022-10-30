@@ -58,6 +58,7 @@ class EducationsController < ApplicationController
 
   def educations_params
     return unless params.key?(:education)
+
     params.require(:education).permit(
       :level,
       :city,

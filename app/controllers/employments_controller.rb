@@ -58,6 +58,7 @@ class EmploymentsController < ApplicationController
 
   def employments_params
     return unless params.key?(:employment)
+
     params.require(:employment).permit(
       :name,
       :city,
