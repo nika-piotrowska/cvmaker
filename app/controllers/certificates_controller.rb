@@ -57,6 +57,7 @@ class CertificatesController < ApplicationController
   private
 
   def certificates_params
+    return unless params.key?(:certificate)
     params.require(:certificate).permit(
       :name,
       :date,

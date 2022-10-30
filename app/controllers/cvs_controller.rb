@@ -12,8 +12,7 @@ class CvsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @cv.update(cv_params)
@@ -57,28 +56,28 @@ class CvsController < ApplicationController
   private
 
   def cv_params
-    if params.key?(:cv)
-      params.require(:cv).permit(
-        :name,
-        :first_name,
-        :last_name,
-        :email,
-        :phone_number,
-        :address,
-        :drivers_licence,
-        :linkedin,
-        :facebook,
-        :twitter,
-        :github,
-        :website,
-        :birth_date,
-        :sex,
-        :main_photo
-      )
-    end
+    return unless params.key?(:cv)
+    params.require(:cv).permit(
+      :name,
+      :first_name,
+      :last_name,
+      :email,
+      :phone_number,
+      :address,
+      :drivers_licence,
+      :linkedin,
+      :facebook,
+      :twitter,
+      :github,
+      :website,
+      :birth_date,
+      :sex,
+      :main_photo
+    )
   end
 
   def sections_params
+    return unless params.key?(:section)
     params.require(:section).permit(
       :name,
       :certificates_section,

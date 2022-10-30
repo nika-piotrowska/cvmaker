@@ -57,6 +57,7 @@ class CoursesController < ApplicationController
   private
 
   def courses_params
+    return unless params.key?(:course)
     params.require(:course).permit(
       :name,
       :institution,

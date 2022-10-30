@@ -57,6 +57,7 @@ class LanguagesController < ApplicationController
   private
 
   def languages_params
+    return unless params.key?(:language)
     params.require(:language).permit(
       :language,
       :language_level
