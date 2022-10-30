@@ -71,8 +71,8 @@ class SectionsController < ApplicationController
   private
 
   def assure_position_consistancy
-    main_body_sections = @cv&.sections.where(horizontal_position: Section.horizontal_positions[:main_body])
-    side_body_sections = @cv&.sections.where(horizontal_position: Section.horizontal_positions[:side_body])
+    main_body_sections = @cv&.sections&.where(horizontal_position: Section.horizontal_positions[:main_body])
+    side_body_sections = @cv&.sections&.where(horizontal_position: Section.horizontal_positions[:side_body])
     main_body_sections.order(:vertical_position).each.with_index(1) do |section, index|
       section.vertical_position = index
       section.save
