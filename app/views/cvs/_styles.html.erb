@@ -1,9 +1,17 @@
-paganini patelni
-<%=params%>
 <div class="cv-styles-container">
-  
-  <div id="buttons-container">
-    <%= link_to display_sections_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'edit-personal-information', remote: true do %>
+  <% Cv.get_styles.keys.each_slice(3) do |left_style, center_style, right_style | %>
+    <div class="style-row">
+      <%= render partial: 'cvs/cv_style_tile', locals: { style: left_style, position: 'left' } %>
+      <% if center_style.present? %>
+        <%= render partial: 'cvs/cv_style_tile', locals: { style: center_style, position: 'center' } %>
+      <% end %>
+      <% if right_style.present? %>
+        <%= render partial: 'cvs/cv_style_tile', locals: { style: right_style, position: 'right' } %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="button-container">
+    <%= link_to display_sections_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'back-to-sections', remote: true do %>
       <%= inline_svg_tag 'back-icon.svg', class:"icon white round-button" %>
     <% end %>
     <%= link_to download_pdf_user_cv_path(format: :pdf, user_id: current_user.id, id: @cv.id), method: :post, class: 'download-cv' do %>

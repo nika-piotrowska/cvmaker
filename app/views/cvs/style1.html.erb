@@ -1,26 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= "meow" %></title>
+  <title><%= @cv.name %></title>
+  <style>
+    <%= render_scss("pdfs.scss") %>
+  </style>
+  <%= render 'layouts/variables' %>
   <%= wicked_pdf_stylesheet_link_tag 'application' %>
+  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag "http://www.google.com/jsapi" %>
 </head>
 <body>
-<div class="pdf__file">
-  <div style="width: 100px; height: 2000px; background-color: black; color: gray;">
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  <div class="pdf__file">
+    <div class="side-body">
+      <div class="personal-information-container">
+        <div class="photo">
+            <%= image_tag @cv.main_photo, class: 'cv-photo' %>
+          </div>
+        <div class="name">
+          <%= "#{@cv.first_name} #{@cv.last_name}" %>
+        </div>
+        <div class="data-container">
+          <div class="email">
+            <label><%= t('.email') %></label>
+            <%= @cv.email %>
+          </div>
+          <div class="phone-number">
+            <label><%= t('.phone_number') %></label>
+            <%= @cv.phone_number %>
+          </div>
+          <div class="address">
+            <label><%= t('.address') %></label>
+            <%= @cv.address %>
+          </div>
+          <div class="birth-date">
+            <label><%= t('.birth_date') %></label>
+            <%= @cv.birth_date %>
+          </div>
+          <div class="sex">
+            <label><%= t('.sex') %></label>
+            <%= @cv.sex %>
+          </div>
+          <div class="drivers-licence">
+            <label><%= t('.drivers_licence') %></label>
+            <%= @cv.drivers_licence %>
+          </div>
+          <div class="websites">
+            <div class="website">
+              <label><%= t('.linkedin') %></label>
+              <%= @cv.linkedin %>
+            </div>
+            <div class="website">
+              <label><%= t('.facebook') %></label>
+              <%= @cv.facebook %>
+            </div>
+            <div class="website">
+              <label><%= t('.twitter') %></label>
+              <%= @cv.twitter %>
+            </div>
+            <div class="website">
+              <label><%= t('.instagram') %></label>
+              <%= @cv.instagram %>
+            </div>
+            <div class="website">
+              <label><%= t('.github') %></label>
+              <%= @cv.github %>
+            </div>
+            <div class="website">
+              <label><%= t('.website') %></label>
+              <%= @cv.website %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-body">
+  s
+    </div>
   </div>
-</div>
 </body>
 </html>
+
+<div class="">
+    </div>
+    <div class="">
+    </div>
+    <div class="">
+    </div>
+    <div class="">
+    </div>

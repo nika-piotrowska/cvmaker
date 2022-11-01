@@ -1,6 +1,10 @@
 class CvsController < ApplicationController
   load_and_authorize_resource
 
+  def style1 
+    @cv = Cv.find(params[:id])
+  end
+
   def index; end
 
   def create
@@ -42,15 +46,22 @@ class CvsController < ApplicationController
   end
 
   def download_pdf
-    @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: 'cvs/style1.html.erb', encoding: 'UTF-8'
-    @static_pdf = @static_pdf.html_safe.gsub("\n", ' ')
-    @static_pdf = render_to_string pdf: 'pdf', inline: @static_pdf, encoding: 'UTF-8'
+    # byebug
+    # @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: "cvs/#{@cv.style}.html.erb", encoding: 'UTF-8'
+    # @static_pdf = @static_pdf.html_safe.gsub("\n", ' ')
+    @static_pdf = render_to_string pdf: 'pdf', file: "cvs/#{@cv.style}.html.erb", encoding: 'UTF-8', page_size: 'A4', disable_smart_shrinking: true, margin: { top: 0, bottom: 0, left: 0, right: 0 }, dpi: 300
     respond_to do |format|
       format.html
       format.pdf do
-        send_data(@static_pdf, filename: "carbon-footprint-#{Time.current.strftime('%d%m%Y%H%M')}.pdf", type: 'application/pdf')
+        send_data(@static_pdf, filename: "#{@cv.name}.pdf", type: 'application/pdf')
       end
     end
+  end
+
+  def set_style
+    # byebug
+    @cv.update(cv_params)
+    display_styles
   end
 
   private
@@ -73,7 +84,8 @@ class CvsController < ApplicationController
       :website,
       :birth_date,
       :sex,
-      :main_photo
+      :main_photo,
+      :style
     )
   end
 

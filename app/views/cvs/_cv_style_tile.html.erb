@@ -1,0 +1,4 @@
+<%= link_to set_style_user_cv_path(user_id: @cv.user.id, id: @cv.id, cv: {style: style}), method: :patch, class: "style #{position} #{@cv.style == style.to_s ? "main" : "" }", remote: true do %>
+  <%= inline_svg_tag "cv-icon.svg", class:"icon white tile" %>
+  <%= style %>
+<% end %>
