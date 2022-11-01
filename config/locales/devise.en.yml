@@ -50,6 +50,11 @@ en:
         new_password: New password (minimum 6 characters)
         confirm_password: Confirm password
         create_new_account: Sign up for an account
+      edit:
+        email: Email
+        new_password: New password (minimum 6 characters)
+        password_confirmation: Confirm your password
+        current_password: Current password (to confirm your changes)
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."

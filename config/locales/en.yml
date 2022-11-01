@@ -31,6 +31,9 @@
 
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      copyright: © Copyright 2022, Weronika Piotrowska
   cvs:
     create:
       notice: "Could not create CV. Something went wrong."
