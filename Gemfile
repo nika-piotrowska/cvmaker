@@ -55,7 +55,7 @@ gem 'simple_form'
 gem 'inline_svg'
 
 # Use wicked_pdf to generate PDF from HTML
-gem 'wicked_pdf'
+gem 'grover'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         patch 'display_sections'
         post 'download_pdf'
         patch 'set_style'
+        get 'style1'
       end
       resources :sections do
         member do
