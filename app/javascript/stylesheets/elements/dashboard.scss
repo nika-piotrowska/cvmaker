@@ -16,7 +16,7 @@ div.page-container {
       height: fit-content;
 
       .cv {
-        width: 32%;
+        width: calc(32% - 30px);
         padding: 0.6%;
         text-align: center;
         display: flex;
@@ -30,14 +30,17 @@ div.page-container {
 
         &.center {
           background-color: var(--medium-color);
+          padding: 10px;
         }
 
         &.left {
           background-color: var(--lighter-color);
+          padding: 10px;
         }
 
         &.right {
           background-color: var(--lighter-color);
+          padding: 10px;
         }
       }
     }

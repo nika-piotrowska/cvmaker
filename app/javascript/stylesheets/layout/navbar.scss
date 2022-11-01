@@ -1,15 +1,16 @@
-p.navbar-text {
-  padding: 15px;
-  padding-top: 25px;
-  text-align: end;
-  background-color: var(--darkest-green-color);
-  margin-top: -10px;
-  margin-left: -8px;
-  margin-right: -8px;
-  height: 25px;
-  box-shadow: 0 3px 8px lightgrey;
-  background-position: top;
-  display: block;
+div.navbar-text {
+  padding: 20px;
+    padding-top: 20px;
+    background-color: var(--darkest-green-color);
+    margin-top: -10px;
+    margin-left: -8px;
+    margin-right: -8px;
+    height: 25px;
+    box-shadow: 0 3px 8px lightgrey;
+    background-position: top;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
   .navbar-link {
     background-color: var(--dark-green-color);
@@ -22,6 +23,11 @@ p.navbar-text {
 
     &:hover {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-buttons {
+      width: max-content;
+      display: flex;
     }
   }
 }

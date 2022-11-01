@@ -1,0 +1,140 @@
+body {
+  margin: 0px;
+  padding: 0;
+  font: 12pt "Tahoma";
+  margin: 0;
+}
+
+.pdf__file {
+  display: -webkit-box; /* wkhtmltopdf uses this one */
+  -webkit-box-pack: center; /* wkhtmltopdf uses this one */
+  flex-direction: row;
+  background-color: #a9d35b;
+  min-height: 297mm;
+  height: max-content;
+
+  .side-body {
+    // position: absolute;
+    // top: -5px;
+    width: 40%;
+    background-color: rgb(230, 230, 230);
+    color: rgb(10, 10, 10);
+    margin: 10px;
+
+    .personal-information-container {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      -webkit-box-pack: center; /* wkhtmltopdf uses this one */
+      // width: 20%;
+      flex-direction: column;
+      margin: 10px;
+      // align-items: center !important;
+
+      .photo {
+        display: -webkit-box; /* wkhtmltopdf uses this one */
+        -webkit-box-pack: center; /* wkhtmltopdf uses this one */
+        margin: 5px;
+        height: fit-content;
+
+        .cv-photo {
+          height: 200px;
+        }
+      }
+      .name {
+        display: -webkit-box; /* wkhtmltopdf uses this one */
+        -webkit-box-pack: center !important; /* wkhtmltopdf uses this one */
+        font-size: 35px;
+        margin: 10px;
+        width: 100% !important;
+      }
+
+      .data-container {
+        
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+
+        .name {
+          margin: 10px;
+        }
+
+        .email {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .phone-number {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .address {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .birth-date {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .sex {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .drivers-licence {
+          margin: 10px;
+          
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .websites {
+          
+          flex-direction: column;
+          align-items: flex-start;
+
+          .website {
+            
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 10px;
+          }
+        }
+      }
+    }
+
+  }
+  .main-body {
+    width: 60%;
+    background-color: gray;
+    color: gray;
+  }
+
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+@media print {
+  html, body {
+      width: 210mm;
+      height: 297mm;        
+  }
+  .pdf__file {
+      margin: 0;
+  }
+}
