@@ -1,4 +1,4 @@
-WickedPdf.config ||= {}
-WickedPdf.config.merge!({
-  # your extra configurations here
-})
+# WickedPdf.config ||= {}
+# WickedPdf.config.merge!({
+#   # your extra configurations here
+# })

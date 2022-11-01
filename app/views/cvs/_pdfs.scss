@@ -1,3 +1,6 @@
+html {
+  -webkit-print-color-adjust: exact; // DO NOT MOVE FOR THE BACKGROUND COLOR TO RENDER
+}
 body {
   margin: 0px;
   padding: 0;
@@ -17,7 +20,7 @@ body {
     // position: absolute;
     // top: -5px;
     width: 40%;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(90, 30, 30);
     color: rgb(10, 10, 10);
     margin: 10px;
 

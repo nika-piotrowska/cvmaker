@@ -46,15 +46,10 @@ class CvsController < ApplicationController
   end
 
   def download_pdf
-    # byebug
-    # @static_pdf = render_to_body disable_javascript: false, javascript_delay: 3000, pdf: 'pdf', template: "cvs/#{@cv.style}.html.erb", encoding: 'UTF-8'
-    # @static_pdf = @static_pdf.html_safe.gsub("\n", ' ')
-    @static_pdf = render_to_string pdf: 'pdf', file: "cvs/#{@cv.style}.html.erb", encoding: 'UTF-8', page_size: 'A4', disable_smart_shrinking: true, margin: { top: 0, bottom: 0, left: 0, right: 0 }, dpi: 300
+    pdf_html_string = render_to_string template: "cvs/#{@cv.style}.html.erb", layout: false
     respond_to do |format|
-      format.html
-      format.pdf do
-        send_data(@static_pdf, filename: "#{@cv.name}.pdf", type: 'application/pdf')
-      end
+      format.html { render html: pdf_html_string }
+      format.pdf { render_pdf pdf_html_string, filename: "#{@cv.name}.pdf" }
     end
   end
 
@@ -65,6 +60,11 @@ class CvsController < ApplicationController
   end
 
   private
+
+  def render_pdf(pdf_html_string, filename:)
+    pdf = Grover.new(pdf_html_string, format: 'A4', printBackground: true).to_pdf
+    send_data pdf, filename: filename, type: "application/pdf"
+  end
 
   def cv_params
     return unless params.key?(:cv)

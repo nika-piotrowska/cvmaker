@@ -6,16 +6,13 @@
     <%= render_scss("pdfs.scss") %>
   </style>
   <%= render 'layouts/variables' %>
-  <%= wicked_pdf_stylesheet_link_tag 'application' %>
-  <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag "http://www.google.com/jsapi" %>
 </head>
 <body>
   <div class="pdf__file">
     <div class="side-body">
       <div class="personal-information-container">
         <div class="photo">
-            <%= image_tag @cv.main_photo, class: 'cv-photo' %>
+            <%= image_tag "data:image/png;base64,#{Base64.encode64(@cv.main_photo.download)}", class: 'cv-photo' %>
           </div>
         <div class="name">
           <%= "#{@cv.first_name} #{@cv.last_name}" %>
