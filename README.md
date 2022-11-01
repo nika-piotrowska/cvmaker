@@ -1,24 +1,54 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Prerequisites
 
-Things you may want to cover:
+- Ruby version: 2.7.2
+- Postgresql > 9.0
+- Yarn > 1.22.19
+- Node.js > 14.14.0
 
-* Ruby version
+## Configuration
 
-* System dependencies
+- Install the required gems:
 
-* Configuration
+```
+$ bundle install
+```
 
-* Database creation
+- Install yarn packages:
 
-* Database initialization
+```
+$ yarn install --check-files
+```
 
-* How to run the test suite
+- Set the `DB_DEV_USERNAME` and `DB_DEV_PASSWORD` env variables in `.env` to your
+PostgreSQL user credentials.
 
-* Services (job queues, cache servers, search engines, etc.)
+- Setup the database:
 
-* Deployment instructions
+```
+$ rake db:setup
+```
 
-* ...
+- Start the server:
+```
+$ rails s
+```
+
+## Environment variables
+
+* DB_DEV_USERNAME - PostgreSQL user's name for development and test environments.
+* DB_DEV_PASSWORD - PostgreSQL user's password for development and test environments.
+* DOMAIN - default domain in e-mails.
+* ACCESS_KEY_ID - AWS access key ID.
+* SECRET_ACCESS_KEY - AWS secret access key.
+* AWS_REGION - AWS region code, e.g. us-east-1.
+* AWS_BUCKET - AWS S3 bucket name.
+
+In order to set the environment variables for the development environment, you should
+create a file `.env` in the main project directory (it should be listed in `.gitignore`)
+and set them there like this:
+
+```
+ENV_VARIABLE_NAME=value
+```
