@@ -49,20 +49,22 @@
       margin: 10px;
       border-radius: 10px;
       box-shadow: 0px 3px 8px #005555;
+      overflow: hidden;
 
       .photo {
         width: 250px;
-        height: 300px;
         border-radius: 10px;
+        transform: translate3d(0px, calc(-300px + (-100% + 300px)/2), 0px);
       }
 
       .input {
-        transform: translate3d(0px, -299px, 0px);
+        height: 300px;
       }
 
       #cv_main_photo {
         display: inline-block;
-        height: 300px;
+        height: 285px;
+        width: 235px;
         overflow: hidden;
         opacity: 0;
         position: relative;
