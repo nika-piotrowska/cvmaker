@@ -1,4 +1,5 @@
 <div class="cv-styles-container">
+<h2><%= t('.choose_style') %></h2>
   <% Cv.get_styles.keys.each_slice(3) do |left_style, center_style, right_style | %>
     <div class="style-row">
       <%= render partial: 'cvs/cv_style_tile', locals: { style: left_style, position: 'left' } %>
@@ -11,11 +12,21 @@
     </div>
   <% end %>
   <div class="button-container">
+  <div class="dropdown show">
     <%= link_to display_sections_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'back-to-sections', remote: true do %>
-      <%= inline_svg_tag 'back-icon.svg', class:"icon white round-button" %>
+      <%= inline_svg_tag 'back-icon.svg', class:"icon white round-button large" %>
     <% end %>
-    <%= link_to download_pdf_user_cv_path(format: :pdf, user_id: current_user.id, id: @cv.id), method: :post, class: 'download-cv' do %>
-      <%= "download" %>
-    <% end %>
+    <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+      <%= t('.back') %>
+    </div>
+  </div>
+    <div class="dropdown show">
+      <%= link_to download_pdf_user_cv_path(format: :pdf, user_id: current_user.id, id: @cv.id), method: :post, class: 'download-cv' do %>
+        <%= inline_svg_tag 'download-icon.svg', class:"icon white round-button large" %>
+      <% end %>
+      <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="downloadCvDropdownMenu">
+        <%= t('.download_cv') %>
+      </div>
+    </div>
   </div>
 </div>
