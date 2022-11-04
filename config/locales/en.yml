@@ -56,12 +56,29 @@ en:
       twitter: Twitter
       website: Website
       next_step: Next step
+      next: Add sections to your CV
     sections:
       add_section: Add new section
+    styles:
+      choose_style: Choose Your CV style
+      download_cv: Downlad your CV as .pdf
+      back: Back to CV sections
+    style1:
+      description_section: Description
+      employments_section: Employments
+      educations_section: Educations
+      languages_section: Languages
+      interest_section: Intrests
+      skills_section: Skills
+      current: I currently attend here
+      current_work: I currently work here
   sections:
     new_section_form:
       sections: Sections
       add_section: Add section
+      add_new_section: Add section to your CV
+      next: Choose style for your CV
+      back: Back to personal information
     default_form:
       privacy_policy_sections_name: Privacy policy
       custom_section_name: Custom section
@@ -70,7 +87,7 @@ en:
       interest_section_name: Intrests
       privacy_policy_sections_description: Privacy policy
       custom_section_description: Description
-      description_section_description: Your description
+      description_section_description: Describe yourself
       skills_section_description: Describe your skills
       interest_section_description: Describe your intrests
       add_section: Update
@@ -78,7 +95,7 @@ en:
       languages_section_name: Languages
       add_section: Update
     certificates_form:
-      certificates_section_name: Certificates
+      certificates_section_name: Certifications
       add_section: Update
     courses_form:
       courses_section_name: Courses
@@ -94,10 +111,51 @@ en:
       add_section: Update
   courses:
     form:
-      name: Name
+      name: Course name
       institution: Institution
-      description: Description
+      description: Describe your course
       update: Update
+    courses_list:
+      add_course: Add another course
+  certificates:
+    form:
+      name: Certificate name
+      description: Describe your certificate
+      update: Update
+    certificates_list:
+      add_certificate: Add another certificate
+  educations:
+    form:
+      level: Degree
+      city: School location
+      university: School name
+      faculty: Faculty
+      specialisation: Specialisation
+    educations_list:
+      add_education: Add another school
+  employments:
+    form:
+      name: Job title
+      city: City
+      employer: Employer
+      description: Describe your work experience
+    employments_list:
+      add_employment: Add another employment
+  languages:
+    form:
+      language: Language
+    languages_list:
+      add_language: Add another language
+  references:
+    form:
+      company: Company
+      contact_person: Contact person
+      phone_number: Phone number
+      email: Email
+      description: Your references
+    references_list:
+      add_reference: Add another references
+
 
   users:
     dashboard:
@@ -126,4 +184,11 @@ en:
         horizontal_positions:
           main_body: Main body
           side_body: Side body
-
+      language:
+        language_levels:
+          a1: A1
+          a2: A2
+          b1: B1
+          b2: B2
+          c1: C1
+          c2: C2
