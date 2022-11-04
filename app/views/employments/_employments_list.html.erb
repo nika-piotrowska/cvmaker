@@ -2,7 +2,12 @@
   <%= render partial: 'employments/form', locals: { section: section, employment: employment } %>
 <% end %>
 <div class="button-container">
-  <%= link_to user_cv_section_employments_path(user_id: current_user.id, cv_id: @cv.id, section_id: section.id), method: :post, class: "add-employment #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}", remote: true do %>
-    <%= inline_svg_tag 'plus-icon.svg', class:"icon white round-button section #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}" %>
-  <% end %>
+  <div class="dropdown show">
+    <%= link_to user_cv_section_employments_path(user_id: current_user.id, cv_id: @cv.id, section_id: section.id), method: :post, class: "add-employment #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}", remote: true do %>
+      <%= inline_svg_tag 'plus-icon.svg', class:"icon white round-button section #{section.horizontal_position == Section.get_horizontal_positions[:side_body] ? "side" : ""}" %>
+    <% end %>
+    <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+      <%= t('.add_employment') %>
+    </div>
+  </div>
 </div>

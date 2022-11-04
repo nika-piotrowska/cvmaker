@@ -18,6 +18,57 @@
     }
   }
 
+  .error {
+    display: flex;
+    margin-top: 5px;
+    color: red;
+    font-size: 12px;
+  }
+
+  .form-group {
+    &.submit {
+      &.hidden {
+        display: none; 
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+
+    .next-button {
+      background-color: var(--dark-green-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      
+      &:hover {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .dropdown-menu {
+      display: none;
+      width: fit-content;
+      font-size: 12px;
+      line-height: 1rem;
+      color: var(--font-color);
+      text-align-last: center;
+      border: 2px groove;
+      border-color: var(--lighter-color);
+      border-radius: 10px;
+    }
+
+    .show:hover .dropdown-menu {
+      display: block;
+      transform: translate3d(-60px, -5px, 0px);
+    }
+  }
+
   #sections-form {
     margin: 10px;
 
@@ -56,6 +107,23 @@
       text-decoration: none;
       color: var(--fill-color);
       border: none;
+    }
+
+    .dropdown-menu {
+      display: none;
+      width: fit-content;
+      font-size: 12px;
+      line-height: 1rem;
+      color: var(--font-color);
+      text-align-last: center;
+      border: 2px groove;
+      border-color: var(--lighter-color);
+      border-radius: 10px;
+    }
+
+    .show:hover .dropdown-menu {
+      display: block;
+      transform: translate3d(-45px, -10px, 0px);
     }
   }
 
@@ -929,6 +997,23 @@
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
         }
       }
+
+      .dropdown-menu {
+        display: none;
+        width: fit-content;
+        font-size: 12px;
+        line-height: 1rem;
+        color: var(--font-color);
+        text-align-last: center;
+        border: 2px groove;
+        border-color: var(--lighter-color);
+        border-radius: 10px;
+      }
+  
+      .show:hover .dropdown-menu {
+        display: block;
+        transform: translate3d(-65px, 5px, 0px);
+      }
     }
   }
 
@@ -938,7 +1023,7 @@
     justify-content: center;
     padding: 5px;
 
-    .edit-personal-information {
+    .back-button {
       background-color: var(--dark-green-color);
       border-radius: 50%;
       display: flex;
@@ -949,6 +1034,37 @@
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       }
     }
+
+    .next-button {
+      background-color: var(--dark-green-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      
+      &:hover {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .dropdown-menu {
+      display: none;
+      width: fit-content;
+      font-size: 12px;
+      line-height: 1rem;
+      color: var(--font-color);
+      text-align-last: center;
+      border: 2px groove;
+      border-color: var(--lighter-color);
+      border-radius: 10px;
+    }
+
+    .show:hover .dropdown-menu {
+      display: block;
+      transform: translate3d(-60px, -5px, 0px);
+    }
   }
+
+
 }
 

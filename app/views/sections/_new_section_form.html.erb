@@ -6,15 +6,30 @@
       <%= f.input :name, as: :select, collection: @cv.get_available_human_names, class: 'form-control', required: false, include_blank: false, label: false %>
     </div>
     <div class="form-group submit">
-      <%= f.submit t('.add_section'), class: 'add-section-button' %>
+      <div class="dropdown show">
+        <%= f.submit t('.add_section'), class: 'add-section-button' %>
+        <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+          <%= t('.add_new_section') %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
 <div class="buttons-container">
-  <%= link_to display_personal_information_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'edit-personal-information', remote: true do %>
-    <%= inline_svg_tag 'back-icon.svg', class:"icon white round-button large" %>
-  <% end %>
-  <%= link_to display_styles_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'edit-personal-information', remote: true do %>
-    <%= inline_svg_tag 'next-icon.svg', class:"icon white round-button large" %>
-  <% end %>
+  <div class="dropdown show">
+    <%= link_to display_personal_information_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'back-button', remote: true do %>
+      <%= inline_svg_tag 'back-icon.svg', class:"icon white round-button large" %>
+    <% end %>
+    <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+      <%= t('.back') %>
+    </div>
+  </div>
+  <div class="dropdown show">
+    <%= link_to display_styles_user_cv_path(user_id: current_user.id, id: @cv.id), method: :patch, class: 'next-button', remote: true do %>
+      <%= inline_svg_tag 'next-icon.svg', class:"icon white round-button large" %>
+    <% end %>
+    <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="goToStylesDropdownMenu">
+      <%= t('.next') %>
+    </div>
+  </div>
 </div>
