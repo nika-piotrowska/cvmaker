@@ -1,0 +1,192 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+pl:
+  hello: "Hello world"
+  layouts:
+    application:
+      copyright: © Copyright 2022, Weronika Piotrowska
+  cvs:
+    create:
+      notice: "Nie można utworzyć CV. Coś poszło nie tak."
+    personal_information:
+      done: Kolejny krok
+    personal_information:
+      personal_information: Dane osobiste
+      name: Nazwa
+      first_name: Imię
+      last_name: Nazwisko
+      email: Email
+      phone_number: Numer telefonu
+      address: Adres
+      birth_date: Data urodzin
+      sex: Płeć
+      drivers_licence: Prawo jazdy
+      linkedin: LinkedIn
+      facebook: Facebook
+      github: GitHub
+      twitter: Twitter
+      website: Website
+      next_step: Kolejny krok
+      next: Dodaj sekcje do swojego CV
+    sections:
+      add_section: Dodaj nowa sekcję
+    styles:
+      choose_style: Wybierz styl CV
+      download_cv: Pobierz swoje CV jako .pdf
+      back: Wróć do sekcji CV
+    style1:
+      description_section: Opis
+      employments_section: Miejsca zatrudnienia
+      educations_section: Miejsca edukacji
+      skills_section: Umiejętności
+      current: Aktualnie tu uczęszczam
+      current_work: Aktualnie tu pracuję
+  sections:
+    new_section_form:
+      sections: Sekcje
+      add_section: Dodaj sekcję
+      add_new_section: Dodaj sekcję do swojego CV
+      next: Wybierz styl dla swojego CV
+      back: Wróć do danych osobistych
+    default_form:
+      privacy_policy_sections_name: Polityka prywatności
+      custom_section_name: Własna sekcja
+      description_section_name: Opis
+      skills_section_name: Umiejętności
+      interest_section_name: Zainteresowania
+      privacy_policy_sections_description: Polityka prywatności
+      custom_section_description: Opis
+      description_section_description: Opisz się
+      skills_section_description: Opisz swoje umiejętności
+      interest_section_description: Opisz swoje zainteresowania
+      add_section: Update
+    languages_form:
+      languages_section_name: Języki
+      add_section: Update
+    certificates_form:
+      certificates_section_name: Certyfikaty
+      add_section: Update
+    courses_form:
+      courses_section_name: Kursy
+      add_section: Update
+    educations_form:
+      educations_section_name: Miejsca edukacji
+      add_section: Update
+    references_form:
+      references_section_name: Referencje
+      add_section: Update
+    employments_form:
+      employments_section_name: Miejsca zatrudnienia
+      add_section: Update
+  courses:
+    form:
+      name: Nazwa kursu
+      institution: Instytucja
+      description: Opisz kurs
+      update: Update
+    courses_list:
+      add_course: Dodaj kolejny kurs
+  certificates:
+    form:
+      name: Nazwa certyfikatu
+      description: Opisz swój certyfikat
+      update: Update
+    certificates_list:
+      add_certificate: Dodaj kolejny certyfikate
+  educations:
+    form:
+      level: Tytuł
+      city: Lokalizacja szkoły
+      university: Nazwa szkoły
+      faculty: Wydział
+      specialisation: Specjalizacja
+    educations_list:
+      add_education: Dodaj kolejne miejce edukacji
+  employments:
+    form:
+      name: Zawód
+      city: Miasto
+      employer: Pracodawca
+      description: Opisz swoje doświadczenia zawodowe
+    employments_list:
+      add_employment: Dodaj kolejne miejsce zatrudnienie
+  languages:
+    form:
+      language: Język
+    languages_list:
+      add_language: Dodaj kolejny język
+  references:
+    form:
+      company: Firma
+      contact_person: Osoba kontaktowa
+      phone_number: Numer telefonu
+      email: Email
+      description: Twoje referencje
+    references_list:
+      add_reference: Dodaj kolejne referencje
+
+
+  users:
+    dashboard:
+      new_cv: Dodaj nowe CV
+  
+  activerecord:
+    attributes:
+      cv:
+        sexes:
+          unspecified: Inna
+          male: Męska
+          female: Żeńska
+      section:
+        names:
+          certificates_section: Certyfikaty
+          courses_section: Kursy
+          educations_section: Wykształcenie
+          employments_section: Doświadczenie zawodowe
+          languages_section: Języki
+          references_section: Referencje
+          skills_section: Umiejętności
+          interest_section: Zainteresowania
+          privacy_policy_sections: Polityka prywatności
+          description_section: Opis
+          custom_section: Własna sekcja
+        horizontal_positions:
+          main_body: Ciało główne
+          side_body: Ciało boczne
+      language:
+        language_levels:
+          a1: A1
+          a2: A2
+          b1: B1
+          b2: B2
+          c1: C1
+          c2: C2
