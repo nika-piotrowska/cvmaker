@@ -17,11 +17,11 @@
         <div class="row dates">
           <div class="date-container">
             <label><%= t('.start_date') %></label>
-            <%= f.input :start_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" } %>
+            <%= f.input :start_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" } %>
           </div>
           <div class="date-container">
             <label><%= t('.end_date') %></label>
-            <%= f.input :end_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, include_blank: true, input_html: { onchange: "submitSectionOnChange(this)" } %>
+            <%= f.input :end_date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:month, :year], class: 'form-control', label: false, include_blank: true, input_html: { onchange: "submitSectionOnChange(this)" } %>
           </div>
         </div>
       </div>

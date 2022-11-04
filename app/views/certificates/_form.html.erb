@@ -7,7 +7,7 @@
           <%= f.input :name, class: 'form-control', label: false, placeholder: t(".name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
           <div class="date-container">
             <label><%= t('.date') %></label>
-            <%= f.input :date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" }   %>
+            <%= f.input :date, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:month, :year], class: 'form-control', label: false, input_html: { onchange: "submitSectionOnChange(this)" }   %>
           </div>
         </div>
         <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" } %>
