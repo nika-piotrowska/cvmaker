@@ -59,13 +59,13 @@ class CoursesController < ApplicationController
   def courses_params
     return unless params.key?(:course)
 
-    params.require(:course).permit(
+    assure_end_date_format(params.require(:course).permit(
       :name,
       :institution,
       :start_date,
       :end_date,
       :description,
       :position
-    )
+    ), @course.end_date)
   end
 end
