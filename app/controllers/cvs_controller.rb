@@ -19,12 +19,9 @@ class CvsController < ApplicationController
   def edit; end
 
   def update
-    if @cv.update(cv_params)
-      @section = Section.new
-      display_sections
-    else
-      display_personal_information
-    end
+    @cv.update(cv_params)
+    @section = Section.new
+    display_personal_information
   end
 
   def display_personal_information
@@ -46,7 +43,8 @@ class CvsController < ApplicationController
   end
 
   def download_pdf
-    pdf_html_string = render_to_string template: "cvs/#{@cv.style}.html.erb", layout: false
+    pdf_html_string = render_to_body template: "cvs/#{@cv.style}.html.erb", layout: false
+    pdf_html_string = render_to_string inline: pdf_html_string, layout: false
     respond_to do |format|
       format.html { render html: pdf_html_string }
       format.pdf { render_pdf pdf_html_string, filename: "#{@cv.name}.pdf" }
