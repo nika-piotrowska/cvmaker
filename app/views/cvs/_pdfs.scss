@@ -4,128 +4,335 @@ html {
 body {
   margin: 0px;
   padding: 0;
-  font: 12pt "Tahoma";
   margin: 0;
 }
 
 .pdf__file {
-  display: -webkit-box; /* wkhtmltopdf uses this one */
-  -webkit-box-pack: center; /* wkhtmltopdf uses this one */
   flex-direction: row;
   background-color: #a9d35b;
   min-height: 297mm;
   height: max-content;
+  display: flex;
 
   .side-body {
-    // position: absolute;
-    // top: -5px;
     width: 40%;
-    background-color: rgb(90, 30, 30);
-    color: rgb(10, 10, 10);
-    margin: 10px;
+    background-color: #004444;
 
-    .personal-information-container {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-      flex: 1;
-      -webkit-box-pack: center; /* wkhtmltopdf uses this one */
-      // width: 20%;
+    .personal-informations-container {
+      padding: 20px;
+      color: #f8f8ff;
+      display: flex;
       flex-direction: column;
-      margin: 10px;
-      // align-items: center !important;
 
-      .photo {
-        display: -webkit-box; /* wkhtmltopdf uses this one */
-        -webkit-box-pack: center; /* wkhtmltopdf uses this one */
-        margin: 5px;
-        height: fit-content;
-
-        .cv-photo {
-          height: 200px;
-        }
-      }
-      .name {
-        display: -webkit-box; /* wkhtmltopdf uses this one */
-        -webkit-box-pack: center !important; /* wkhtmltopdf uses this one */
-        font-size: 35px;
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 10px;
-        width: 100% !important;
+
+        .photo {
+  
+          .cv-photo {
+            height: 200px;
+          }
+        }
+        
+        .name {
+          font-size: 27px;
+          margin-top: 15px;
+          font-weight: bold;
+        }
       }
 
       .data-container {
-        
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 20px;
 
-        .name {
-          margin: 10px;
+        label {
+          font-size: 13px;
+          font-weight: bold;
         }
 
         .email {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
 
         .phone-number {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
 
         .address {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
         
         .birth-date {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
 
         .sex {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
 
         .drivers-licence {
-          margin: 10px;
-          
+          margin: 5px;
           flex-direction: column;
           align-items: flex-start;
+          display: flex;
+          font-size: 15px;
         }
 
         .websites {
-          
           flex-direction: column;
           align-items: flex-start;
 
           .website {
-            
             flex-direction: column;
             align-items: flex-start;
-            margin: 10px;
+            margin: 5px;
+            display: flex;
+            font-size: 15px;
           }
         }
+
       }
     }
 
   }
   .main-body {
     width: 60%;
-    background-color: gray;
-    color: gray;
-  }
+    background-color: #fafafa;
 
+    .cv-content-container {
+      display: flex;
+      margin: 10px;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-left: 20px;
+      color: var(--font-color);
+      
+      .description-section {
+        display: flex;
+        flex-direction: column;
+        border-bottom: double;
+        border-color: var(--font-color);
+
+        .description-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .description-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;      
+        }
+      }
+
+      .employment-section {
+        margin-bottom: 10px;
+        border-bottom: double;
+        border-color: var(--font-color);
+        margin-top: 10px;
+
+        .employments-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .employment-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          .employment-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+            .job-title {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+              
+              .employer-container {
+                color: #004444;
+                font-weight: lighter;
+                display: flex;
+                font-size: 14px;
+
+                .employer {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .dates {
+              display: flex;
+              font-size: 13px;
+              align-items: center;
+              color: #004444;
+
+              .start-date {
+                padding: 5px;
+              }
+
+              .end-date {
+                padding: 5px;
+              }
+            }
+          }
+
+          .employment-description {
+            font-size: 12px;
+            border-bottom: 1px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+          }
+        }
+      }
+
+      .education-section {
+        margin-bottom: 10px;
+        border-bottom: double;
+        border-color: var(--font-color);
+
+        .educations-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .education-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          .school-container {
+            
+            .university {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            .city {
+              color: #004444;
+              font-weight: lighter;
+              font-size: 14px;
+            }
+          }
+
+          .dates {
+            display: flex;
+            font-size: 13px;
+            align-items: center;
+            color: #004444;
+
+            .start-date {
+              padding: 5px;
+            }
+
+            .end-date {
+              padding: 5px;
+            }
+          }
+        }
+
+        .education-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+        }
+      }
+
+      .skills-section {
+        display: flex;
+        flex-direction: column;
+        border-bottom: double;
+        border-color: var(--font-color);
+
+        .skills-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .skills-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;      
+        }
+      }
+
+      .certificate-section {
+        color: black;
+        margin-bottom: 10px;
+        border-bottom: groove;
+        border-color: ghostwhite;
+
+        .certificates-header {
+          color: black;
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        .certificate-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+
+          .name {
+
+          }
+
+          .date {
+
+          }
+        }
+      }
+
+      .privacy-policy-section {
+        .privacy-policy-content {
+          font-size: 10px;
+          border-bottom: 1px;
+          margin: 10px;
+        }
+      }
+    }
+  }
 }
 
 @page {
