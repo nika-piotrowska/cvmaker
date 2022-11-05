@@ -13,11 +13,11 @@
     }
 
     &.image {
-      height: 255px;
-      margin: 10px;
+      height: 270px;
       padding: 15px;
       border-radius: 10px;
       background-color: var(--dark-green-color);
+      transform: translate3d(0px, -300px, 0px);
     }
 
     &.round-button {
