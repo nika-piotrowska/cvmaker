@@ -20,18 +20,33 @@
         <%= f.input :description, as: :rich_text_area, class: 'form-control', label: false, placeholder: t(".description"), input_html: { onchange: "submitSectionOnChange(this)" }%>
       </div>
       <div class="course-buttons">
-        <%= link_to user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :delete, class: 'delete-course', remote: true do %>
-          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
-        <% end %>
-        <% if course.position > 1 %>
-          <%= link_to move_course_up_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-up-course', remote: true do %>
-            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+        <div class="dropdown show">
+          <%= link_to user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :delete, class: 'delete-course', remote: true do %>
+            <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
           <% end %>
+          <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.delete') %>
+          </div>
+        </div>
+        <% if course.position > 1 %>
+          <div class="dropdown show">
+            <%= link_to move_course_up_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-up-course', remote: true do %>
+              <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+            <% end %>
+            <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.move_up') %>
+          </div>
+        </div>
         <% end %>
         <% if course.position < section.courses.size %>
-          <%= link_to move_course_down_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-down-course', remote: true do %>
-            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
-          <% end %>
+          <div class="dropdown show">
+            <%= link_to move_course_down_user_cv_section_course_path(user_id: current_user.id, cv_id: @cv.id, section_id: course.section_id, id: course.id), method: :patch, class: 'move-down-course', remote: true do %>
+              <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+            <% end %>
+            <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.move_down') %>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>

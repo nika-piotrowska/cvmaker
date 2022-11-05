@@ -3,6 +3,7 @@ class Cv < ApplicationRecord
   has_many :sections, dependent: :destroy
   has_one_attached :main_photo
   validates_presence_of :name
+  validates :main_photo, content_type: [:png, :jpg, :jpeg]
 
   enum sex: {
     unspecified: 0,
