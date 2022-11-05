@@ -1,4 +1,5 @@
 # config/initializers/grover.rb
+# rubocop:disable Metrics/BlockLength
 Grover.configure do |config|
   config.options = {
     format: 'A4',
@@ -30,3 +31,4 @@ Grover.configure do |config|
     wait_until: 'domcontentloaded'
   }
 end
+# rubocop:enable Metrics/BlockLength

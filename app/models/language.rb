@@ -20,6 +20,6 @@ class Language < ApplicationRecord
   end
 
   def self.get_translations_languages_levels
-    get_human_language_levels.to_h { |k, _v| [_v, k] }
+    get_human_language_levels.to_h { |k, v| [v, k] }
   end
 end
