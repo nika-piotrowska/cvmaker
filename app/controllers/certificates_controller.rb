@@ -60,10 +60,10 @@ class CertificatesController < ApplicationController
     return unless params.key?(:certificate)
 
     assure_end_date_format(params.require(:certificate).permit(
-      :name,
-      :date,
-      :description,
-      :position
+                             :name,
+                             :date,
+                             :description,
+                             :position
     ), @certificate.end_date)
   end
 end

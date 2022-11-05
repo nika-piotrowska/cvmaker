@@ -60,14 +60,14 @@ class EducationsController < ApplicationController
     return unless params.key?(:education)
 
     assure_end_date_format(params.require(:education).permit(
-      :level,
-      :city,
-      :university,
-      :faculty,
-      :specialisation,
-      :position,
-      :start_date,
-      :end_date
+                             :level,
+                             :city,
+                             :university,
+                             :faculty,
+                             :specialisation,
+                             :position,
+                             :start_date,
+                             :end_date
     ), @education.end_date)
   end
 end

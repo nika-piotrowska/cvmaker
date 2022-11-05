@@ -60,13 +60,13 @@ class EmploymentsController < ApplicationController
     return unless params.key?(:employment)
 
     assure_end_date_format(params.require(:employment).permit(
-      :name,
-      :city,
-      :employer,
-      :start_date,
-      :end_date,
-      :description,
-      :position
+                             :name,
+                             :city,
+                             :employer,
+                             :start_date,
+                             :end_date,
+                             :description,
+                             :position
     ), @employment.end_date)
   end
 end

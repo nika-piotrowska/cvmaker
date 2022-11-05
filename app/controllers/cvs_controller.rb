@@ -1,7 +1,7 @@
 class CvsController < ApplicationController
   load_and_authorize_resource
 
-  def style1 
+  def style1
     @cv = Cv.find(params[:id])
   end
 
@@ -61,7 +61,7 @@ class CvsController < ApplicationController
 
   def render_pdf(pdf_html_string, filename:)
     pdf = Grover.new(pdf_html_string, format: 'A4', printBackground: true).to_pdf
-    send_data pdf, filename: filename, type: "application/pdf"
+    send_data pdf, filename: filename, type: 'application/pdf'
   end
 
   def cv_params

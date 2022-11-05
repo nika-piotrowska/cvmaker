@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
     month = permited_params[:"end_date(2i)"]
     year = permited_params[:"end_date(1i)"]
     if current_end_date.nil?
-      permited_params[:"end_date(2i)"] = "1" if month.empty? && year.present?
+      permited_params[:"end_date(2i)"] = '1' if month.empty? && year.present?
       permited_params[:"end_date(1i)"] = (Date.today.year - 50).to_s if year.empty? && month.present?
     elsif year.empty? || month.empty?
-      permited_params[:"end_date(2i)"] = ""
-      permited_params[:"end_date(1i)"] = ""
+      permited_params[:"end_date(2i)"] = ''
+      permited_params[:"end_date(1i)"] = ''
     end
     permited_params
   end
