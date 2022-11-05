@@ -47,7 +47,7 @@ Style/CollectionMethods:
 Style/GuardClause:
   Description: Check for conditionals that can be replaced with guard clauses
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals
-  Enabled: true
+  Enabled: false
   MinBodyLength: 5
 
 Style/IfUnlessModifier:
