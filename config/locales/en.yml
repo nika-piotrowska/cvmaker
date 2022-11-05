@@ -124,12 +124,19 @@ en:
       employments_section_name: Employments
       custom_name: Change section name (optional)
       add_section: Update
+    section_buttons:
+      move_section_up: Move section up
+      move_section_down: Move section down
+      delete_section: Delete section
   courses:
     form:
       name: Course name
       institution: Institution
       description: Describe your course
       update: Update
+      delete: Delete course
+      move_up: Move course up
+      move_down: Move course down
     courses_list:
       add_course: Add another course
   certificates:
@@ -137,6 +144,9 @@ en:
       name: Certificate name
       description: Describe your certificate
       update: Update
+      delete: Delete certificate
+      move_up: Move certificate up
+      move_down: Move certificate down
     certificates_list:
       add_certificate: Add another certificate
   educations:
@@ -146,6 +156,9 @@ en:
       university: School name
       faculty: Faculty
       specialisation: Specialisation
+      delete: Delete school
+      move_up: Move school up
+      move_down: Move school down
     educations_list:
       add_education: Add another school
   employments:
@@ -154,11 +167,17 @@ en:
       city: City
       employer: Employer
       description: Describe your work experience
+      delete: Delete employment
+      move_up: Move employment up
+      move_down: Move empolyment down
     employments_list:
       add_employment: Add another employment
   languages:
     form:
       language: Language
+      delete: Delete language
+      move_up: Move language up
+      move_down: Move language down
     languages_list:
       add_language: Add another language
   references:
@@ -168,6 +187,9 @@ en:
       phone_number: Phone number
       email: Email
       description: Your references
+      delete: Delete reference
+      move_up: Move reference up
+      move_down: Move reference down
     references_list:
       add_reference: Add another references
 

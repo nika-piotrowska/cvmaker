@@ -128,12 +128,19 @@ pl:
       employments_section_name: Doświadczenie zawodowe
       custom_name: Zmień nazwę sekcji (opcjonalne)
       add_section: Zaktualizuj
+    section_buttons:
+      move_section_up: Przesuń sekcję wyżej
+      move_section_down: Przesuń sekcję niżej
+      delete_section: Usuń sekcję
   courses:
     form:
       name: Nazwa kursu
       institution: Instytucja
       description: Opisz kurs
       Zaktualizuj: Zaktualizuj
+      delete: Usuń kurs
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
     courses_list:
       add_course: Dodaj kolejny kurs
   certificates:
@@ -141,6 +148,9 @@ pl:
       name: Nazwa certyfikatu
       description: Opisz swój certyfikat
       Zaktualizuj: Zaktualizuj
+      delete: Usuń certyfikat
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
     certificates_list:
       add_certificate: Dodaj kolejny certyfikat
   educations:
@@ -150,6 +160,9 @@ pl:
       university: Nazwa szkoły
       faculty: Kierunek
       specialisation: Specjalizacja
+      delete: Usuń szkołę
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
     educations_list:
       add_education: Dodaj kolejne miejce edukacji
   employments:
@@ -158,10 +171,16 @@ pl:
       city: Miasto
       employer: Pracodawca
       description: Opisz swoje doświadczenia zawodowe
+      delete: Usuń miejsce zatrudnienia
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
     employments_list:
       add_employment: Dodaj kolejne miejsce zatrudnienie
   languages:
     form:
+      delete: Usuń język
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
       language: Język
     languages_list:
       add_language: Dodaj kolejny język
@@ -172,6 +191,9 @@ pl:
       phone_number: Numer telefonu
       email: Email
       description: Twoje referencje
+      delete: Usuń referencje
+      move_up: Przesuń pozycję w górę
+      move_down: Przesuń pozycję w dół
     references_list:
       add_reference: Dodaj kolejne referencje
 
