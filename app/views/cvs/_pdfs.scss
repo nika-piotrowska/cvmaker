@@ -18,7 +18,7 @@ body {
     width: 40%;
     background-color: #004444;
 
-    .personal-informations-container {
+    .side-body-content-container {
       padding: 20px;
       color: #f8f8ff;
       display: flex;
@@ -31,9 +31,17 @@ body {
         margin: 10px;
 
         .photo {
+          height: 250px;
+          margin: 10px;
+          border-radius: 10px;
+          overflow: hidden;
+          width: fit-content;
   
           .cv-photo {
-            height: 200px;
+            width: 180px;
+            border-radius: 10px;
+            height: auto;
+            transform: translate3d(0px, calc((-100% + 300px)/2), 0px);
           }
         }
         
@@ -45,6 +53,7 @@ body {
       }
 
       .data-container {
+        margin-bottom: 20px;
 
         label {
           font-size: 13px;
@@ -113,6 +122,101 @@ body {
         }
 
       }
+
+      .side-body-content {
+        
+        .divider {
+          border-color: #f8f8ff;
+          border-bottom: 1px solid;
+          margin-left: 20px;
+          margin-right: 25px;
+        }
+        
+        .languages-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+
+
+          .languages-header {
+            font-weight: bold;
+          }
+
+          .languages-container {
+            font-size: 12px;
+            margin-top: 5px;
+
+            .language-row {
+              display: flex;
+              flex-direction: row;
+              margin-top: 5px;
+              align-items: center;
+
+              .language {
+                margin-right: 10px;
+              }
+
+              .language-skill {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        .intrests-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+
+          .intrests-header {
+            font-weight: bold;
+          }
+
+          .intrests-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+
+        .custom-section-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+
+          .custom-section-header {
+            font-weight: bold;
+          }
+
+          .custom-section-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+      }
     }
 
   }
@@ -120,19 +224,22 @@ body {
     width: 60%;
     background-color: #fafafa;
 
-    .cv-content-container {
+    .main-body-content-container {
       display: flex;
       margin: 10px;
       flex-direction: column;
       justify-content: flex-start;
       margin-left: 20px;
       color: var(--font-color);
+
+      .divider {
+        border-bottom: double;
+        border-color: var(--font-color);
+      }
       
       .description-section {
         display: flex;
         flex-direction: column;
-        border-bottom: double;
-        border-color: var(--font-color);
 
         .description-header {
           color: black;
@@ -145,15 +252,17 @@ body {
         .description-content {
           font-size: 12px;
           border-bottom: 1px;
-          margin-bottom: 10px;      
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
         }
       }
 
       .employment-section {
-        margin-bottom: 10px;
-        border-bottom: double;
-        border-color: var(--font-color);
-        margin-top: 10px;
+        // margin-bottom: 10px;
+        // margin-top: 10px;
 
         .employments-header {
           color: black;
@@ -167,6 +276,8 @@ body {
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
 
           .employment-header {
             display: flex;
@@ -184,6 +295,8 @@ body {
                 font-weight: lighter;
                 display: flex;
                 font-size: 14px;
+                text-align: justify;
+                text-justify: inter-word;
 
                 .employer {
                   margin-right: 10px;
@@ -212,14 +325,13 @@ body {
             border-bottom: 1px;
             margin-bottom: 10px;
             padding-left: 5px;
+            margin-top: 5px;
           }
         }
       }
 
       .education-section {
-        margin-bottom: 10px;
-        border-bottom: double;
-        border-color: var(--font-color);
+        // margin-bottom: 10px;
 
         .educations-header {
           color: black;
@@ -273,14 +385,14 @@ body {
           font-size: 13px;
           border-bottom: 1px;
           margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
 
       .skills-section {
         display: flex;
         flex-direction: column;
-        border-bottom: double;
-        border-color: var(--font-color);
 
         .skills-header {
           color: black;
@@ -293,13 +405,17 @@ body {
         .skills-content {
           font-size: 12px;
           border-bottom: 1px;
-          margin-bottom: 10px;      
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
         }
       }
 
       .certificate-section {
         color: black;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
         border-bottom: groove;
         border-color: ghostwhite;
 
@@ -313,6 +429,10 @@ body {
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
 
           .name {
 
@@ -326,6 +446,8 @@ body {
 
       .privacy-policy-section {
         .privacy-policy-content {
+          text-align: justify;
+          text-justify: inter-word;
           font-size: 10px;
           border-bottom: 1px;
           margin: 10px;
