@@ -1,5 +1,14 @@
 # README
 
+## CVMAKER
+
+Ruby on Rails app for creating a CV/resume. The application has a simple interface that guides you through all the steps of creating a CV/resume and allows you to freely arrange individual sections and deeply customise them. The creation process is completed by downloading the finished document in PDF format.
+
+The 0.1-a version allows for usage of only one style.
+
+Author: Weronika Piotrowska
+Copyright: Copyright (c) 2022 Weronika Piotrowska
+
 ## Prerequisites
 
 - Ruby version: 2.7.2
