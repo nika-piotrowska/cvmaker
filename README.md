@@ -48,6 +48,9 @@ $ rails s
 
 * DB_DEV_USERNAME - PostgreSQL user's name for development and test environments.
 * DB_DEV_PASSWORD - PostgreSQL user's password for development and test environments.
+
+Required only for production:
+
 * DOMAIN - default domain in e-mails.
 * ACCESS_KEY_ID - AWS access key ID.
 * SECRET_ACCESS_KEY - AWS secret access key.
