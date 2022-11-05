@@ -19,4 +19,7 @@ class Language < ApplicationRecord
     LANGUAGE_LEVELS.to_h { |k, _v| [Language.human_enum_name(:language_levels, k), k] }
   end
 
+  def self.get_translations_languages_levels
+    get_human_language_levels.to_h { |k, _v| [_v, k] }
+  end
 end
