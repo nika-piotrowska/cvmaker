@@ -1,0 +1,80 @@
+name: Ruby
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: cvmaker_rails_github_test
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Set up Ruby v2.7
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.2
+
+      - name: Set up NodeJS v14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Start Redis v5.0.7
+        uses: supercharge/redis-github-action@1.2.0
+        with:
+          redis-version: 5.0.7
+
+      - name: Install required packages
+        run: |
+          sudo apt-get install libpq-dev
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Restore bundler cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-new-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-new-gems-
+
+      - name: Restore node cache
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install gems
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
+
+      - name: Install node packages
+        run: |
+          yarn --install
+
+      - name: Run rubocop
+        run: |
+          bundle exec rubocop
+
+      - name: Run ESLint on changed files
+        run: |
+          yarn run eslint -c .eslintrc.json $(git diff --name-only --diff-filter=ACMRTUXB origin/main | grep  -E "(.js$|.ts$|.tsx$)")
