@@ -25,18 +25,33 @@
         </div>
       </div>
       <div class="employment-buttons">
-        <%= link_to user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :delete, class: 'delete-employment', remote: true do %>
-          <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
-        <% end %>
-        <% if employment.position > 1 %>
-          <%= link_to move_employment_up_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-up-employment', remote: true do %>
-            <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+        <div class="dropdown show">
+          <%= link_to user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :delete, class: 'delete-employment', remote: true do %>
+            <%= inline_svg_tag "close-icon.svg", class:"icon green buttons delete" %>
           <% end %>
+          <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.delete') %>
+          </div>
+        </div>
+        <% if employment.position > 1 %>
+          <div class="dropdown show">
+            <%= link_to move_employment_up_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-up-employment', remote: true do %>
+              <%= inline_svg_tag "up-arrow.svg", class:"icon green buttons" %>
+            <% end %>
+            <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.move_up') %>
+          </div>
+        </div>
         <% end %>
         <% if employment.position < section.employments.size %>
-          <%= link_to move_employment_down_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-down-employment', remote: true do %>
-            <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
-          <% end %>
+          <div class="dropdown show">
+            <%= link_to move_employment_down_user_cv_section_employment_path(user_id: current_user.id, cv_id: @cv.id, section_id: employment.section_id, id: employment.id), method: :patch, class: 'move-down-employment', remote: true do %>
+              <%= inline_svg_tag "down-arrow.svg", class:"icon green buttons" %>
+            <% end %>
+            <div style="padding: 15px;" class="dropdown-menu" aria-labelledby="backToSectionsDropdownMenu">
+            <%= t('.move_down') %>
+          </div>
+        </div>
         <% end %>
       </div>
     </div>
