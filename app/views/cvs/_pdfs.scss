@@ -215,6 +215,346 @@ body {
             margin-top: 5px;
           }
         }
+
+        .certificate-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+  
+          .certificates-header {
+            font-weight: bold;
+          }
+  
+          .certificates-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+            width: 100%;
+
+            .certificate-row {
+
+              .certificate-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .name {
+                  font-weight: bold;
+                }
+              }
+
+              .certificate-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .course-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .courses-header {
+            font-weight: bold;
+          }
+
+          .courses-container {
+
+            .course-row {
+
+              .course-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .course-name {
+
+                  .name {
+                    font-weight: bold;
+                    font-size: 14px;
+                  }
+                }
+              }
+
+              .course-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .education-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .educations-header {
+            font-weight: bold;
+          }
+
+          .education-container {
+            width: 100%;
+
+            .education-row {
+
+              .education-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .school-container {
+
+                  .university {
+                    font-weight: bold;
+                    font-size: 14px;
+                  }
+                }
+
+                .dates {
+                  display: flex;
+
+                  .start-date {
+                    margin-right: 5px;
+                  }
+
+                  .end-date {
+                    margin-left: 5px;
+                  }
+                }
+              }
+
+              .education-container {
+                font-size: 12px;
+                margin-top: 5px;
+
+                .faculty {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .specialisation {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .employment-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .employments-header {
+            font-weight: bold;
+          }
+
+          .employment-container {
+
+            .employment-row {
+
+              .employment-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .job-title {
+                  font-weight: bold;
+
+                  .employer-container {
+                    font-weight: lighter;
+                    display: flex;
+
+                    .employer {
+                      margin-right: 5px;
+                    }
+                  }
+                }
+
+                .dates {
+                  display: flex;
+
+                  .start-date {
+                    margin-right: 5px;
+                  }
+
+                  .start-date {
+                    margin-left: 5px;
+                  }
+                }
+              }
+
+              .employment-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .skills-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .skills-header {
+            font-weight: bold;
+          }
+
+          .skills-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+
+        .references-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .references-header {
+            font-weight: bold;
+          }
+
+          .references-container {
+
+            .reference-row {
+
+              .company {
+                font-weight: bold; 
+              }
+
+              .contact-information {
+                font-size: 14px;
+
+                .contact-person {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .phone-number {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .email {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+              }
+
+              .reference-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .privacy-policy-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .privacy-policy-content {
+            font-size: 10px;
+          }
+        }
+
+        .description-section {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          margin-left: 5px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+
+          .description-header {
+            font-weight: bold;
+          }
+
+          .description-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
       }
     }
 
@@ -275,6 +615,9 @@ body {
           display: flex;
           flex-direction: column;
           margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
           margin-left: 10px;
           margin-right: 10px;
 
@@ -386,6 +729,24 @@ body {
           margin-top: 5px;
           margin-left: 10px;
           margin-right: 10px;
+
+          .faculty {
+            color: #004444;
+
+            label {
+              font-weight: lighter;
+              color: var(--font-color);
+            }
+          }
+
+          .specialisation {
+            color: #004444;
+
+            label {
+              font-weight: lighter;
+              color: var(--font-color);
+            }
+          }
         }
       }
 
@@ -412,37 +773,6 @@ body {
         }
       }
 
-      .certificate-section {
-        color: black;
-        // margin-bottom: 10px;
-        border-bottom: groove;
-        border-color: ghostwhite;
-
-        .certificates-header {
-          color: black;
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-
-        .certificate-container {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 10px;
-          margin-left: 10px;
-          margin-right: 10px;
-          text-align: justify;
-          text-justify: inter-word;
-
-          .name {
-
-          }
-
-          .date {
-
-          }
-        }
-      }
-
       .privacy-policy-section {
         .privacy-policy-content {
           text-align: justify;
@@ -450,6 +780,268 @@ body {
           font-size: 10px;
           border-bottom: 1px;
           margin: 10px;
+        }
+      }
+
+      .certificate-section {
+        // margin-bottom: 10px;
+
+        .certificates-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .certificates-container {
+            
+          .certificate-row {
+            
+            .certificate-header {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              
+              .name {
+                color: black;
+                font-size: 15px;
+                font-weight: bold;
+              }
+
+              .date {
+                display: flex;
+                font-size: 13px;
+                align-items: center;
+                color: #004444;
+              }
+            }
+            
+            .certificate-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .course-section {
+        // margin-bottom: 10px;
+
+        .courses-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .courses-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+            
+          .course-row {
+            
+            .course-header {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              
+              .course-name {
+                color: black;
+                font-size: 15px;
+                font-weight: bold;
+
+                .institution {
+                  color: #004444;
+                  font-weight: lighter;
+                  display: flex;
+                  font-size: 14px;
+                  text-align: justify;
+                }
+              }
+
+              .date {
+                display: flex;
+                font-size: 13px;
+                align-items: center;
+                color: #004444;
+              }
+            }
+            
+            .course-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .custom-section-section {
+        display: flex;
+        flex-direction: column;
+
+        .custom-section-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .custom-section-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+
+      .languages-section {
+
+        .languages-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .languages-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .language-row {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+
+            .language {
+              margin-right: 10px;
+            }
+
+            .language-level {
+              color: #004444;
+              font-weight: bold;
+              display: flex;
+              text-align: justify;
+            }
+          }
+        }
+      }
+
+      .references-section {
+        
+        .references-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .references-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .reference-row {
+
+            .company {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            .contact-information {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 5px;
+
+              .contact-person {
+                color: #004444;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+
+              .phone-number {
+                color: #004444;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+
+              .email {
+                color: #004444;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+            }
+
+            .reference-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+      .intrests-section {
+        display: flex;
+        flex-direction: column;
+
+        .intrests-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .intrests-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
         }
       }
     }

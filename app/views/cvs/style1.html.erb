@@ -91,6 +91,200 @@
           <% sections.order(:vertical_position).each do |section| %>
             <div class="divider"></div>
             <% case section.name %>
+            <% when Section.get_names[:description_section] %>
+              <div class="description-section">
+                <div class="description-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="description-content">
+                  <%= section.content %>
+                </div>
+              </div>
+            <% when Section.get_names[:certificates_section] %>
+              <div class="certificate-section">
+                <div class="certificates-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="certificates-container">
+                  <% section.certificates.order(:position).each do |certificate| %>
+                    <div class="certificate-row">
+                      <div class="certificate-header">
+                        <div class="name">
+                          <%= certificate.name %>
+                        </div>
+                        <div class="date">
+                          <%= certificate.date.strftime("%m.%Y") %>
+                        </div>
+                      </div>
+                      <div class="certificate-description">
+                        <%= certificate.description %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% when Section.get_names[:courses_section] %>
+              <div class="course-section">
+                <div class="courses-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="courses-container">
+                  <% section.courses.order(:position).each do |course| %>
+                    <div class="course-row">
+                      <div class="course-header">
+                        <div class="course-name">
+                          <div class="name">
+                            <%= course.name %>
+                          </div>
+                          <div class="institution">
+                            <%= course.institution %>
+                          </div>
+                        </div>
+                        <div class="date">
+                          <%= course.start_date.strftime("%m.%Y") %>
+                        </div>
+                      </div>
+                      <div class="course-description">
+                        <%= course.description %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+             <% when Section.get_names[:educations_section] %>
+              <div class="education-section">
+                <div class="educations-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="education-container">
+                  <% section.educations.order(:position).each do |education| %>
+                    <div class="education-row">
+                      <div class="education-header">
+                        <div class="school-container">
+                          <div class="university">
+                            <%= education.university %>
+                          </div>
+                          <div class="city">
+                            <%= education.city %>
+                          </div>
+                        </div>
+                        <div class="dates">
+                          <div class="start-date">
+                            <%= education.start_date.strftime("%m.%Y") %>
+                          </div>
+                          -
+                          <div class="end-date">
+                            <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="education-container">
+                        <div class="faculty">
+                          <label><%= I18n.t(".cvs.style1.faculty") %></label>
+                          <%= education.faculty %>
+                        </div>
+                        <div class="specialisation">
+                          <label><%= I18n.t(".cvs.style1..specialisation") %></label>
+                          <%= education.specialisation %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div> 
+            <% when Section.get_names[:employments_section] %>
+              <div class="employment-section">
+                <div class="employments-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="employment-container">
+                  <% section.employments.order(:position).each do |employment| %>
+                    <div class="employment-row">
+                      <div class="employment-header">
+                        <div class="job-title">
+                          <%= employment.name %>
+                          <div class="employer-container">
+                            <div class="employer">
+                              <%= employment.employer %>
+                            </div>
+                            <div class="city">
+                              <%= employment.city %>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="dates">
+                          <div class="start-date">
+                            <%= employment.start_date.strftime("%m.%Y") %>
+                          </div>
+                          -
+                          <div class="end-date">
+                            <%= employment.end_date.present? ? employment.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current_work") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="employment-description">
+                        <%= employment.description %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% when Section.get_names[:educations_section] %>
+              <div class="education-section">
+                <div class="educations-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="education-container">
+                  <% section.educations.order(:position).each do |education| %>
+                    <div class="education-row">
+                      <div class="education-header">
+                        <div class="school-container">
+                          <div class="university">
+                            <%= education.university %>
+                          </div>
+                          <div class="city">
+                            <%= education.city %>
+                          </div>
+                        </div>
+                        <div class="dates">
+                          <div class="start-date">
+                            <%= education.start_date.strftime("%m.%Y") %>
+                          </div>
+                          -
+                          <div class="end-date">
+                            <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current") %>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="education-container">
+                        <div class="faculty">
+                          <label><%= I18n.t(".cvs.style1.faculty") %></label>
+                          <%= education.faculty %>
+                        </div>
+                        <div class="specialisation">
+                          <label><%= I18n.t(".cvs.style1..specialisation") %></label>
+                          <%= education.specialisation %>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% when Section.get_names[:skills_section] %>
+              <div class="skills-section">
+                <div class="skills-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="skills-content">
+                  <%= section.content %>
+                </div>
+              </div>
+            <% when Section.get_names[:privacy_policy_sections] %>
+              <div class="privacy-policy-section">
+                <div class="privacy-policy-content">
+                  <%= section.content %>
+                </div>
+              </div>
             <% when Section.get_names[:languages_section] %>
               <div class="languages-section">
                 <div class="languages-header">
@@ -116,6 +310,38 @@
                 </div>
                 <div class="intrests-content">
                   <%= section.content %>
+                </div>
+              </div>
+            <% when Section.get_names[:references_section] %>
+              <div class="references-section">
+                <div class="references-header">
+                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+                </div>
+                <div class="references-container">
+                  <% section.references.order(:position).each do |reference| %>
+                    <div class="reference-row">
+                      <div class="company">
+                        <%= reference.company %>
+                      </div>
+                      <div class="contact-information">
+                        <div class="contact-person">
+                          <label><%= I18n.t(".cvs.style1.contact_person") %></label>
+                          <%= reference.contact_person %>
+                        </div>
+                        <div class="phone-number">
+                          <label><%= I18n.t(".cvs.style1.phone_number") %></label>
+                          <%= reference.phone_number %>
+                        </div>
+                        <div class="email">
+                          <label><%= I18n.t(".cvs.style1.email") %></label>
+                          <%= reference.email %>
+                        </div>
+                      </div>
+                      <div class="reference-description">
+                        <%= reference.description %>
+                      </div>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             <% when Section.get_names[:custom_section] %>
@@ -154,119 +380,129 @@
               <div class="certificates-header">
                 <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
               </div>
-              <% section.certificates.order(:position).each do |certificate| %>
-                <div class="certificate-container">
-                  <div class="certificate-header">
-                    <div class="name">
-                      <%= certificate.name %>
+              <div class="certificates-container">
+                <% section.certificates.order(:position).each do |certificate| %>
+                  <div class="certificate-row">
+                    <div class="certificate-header">
+                      <div class="name">
+                        <%= certificate.name %>
+                      </div>
+                      <div class="date">
+                        <%= certificate.date.strftime("%m.%Y") %>
+                      </div>
                     </div>
-                    <div class="date">
-                      <%= certificate.date.strftime("%m.%Y") %>
+                    <div class="certificate-description">
+                      <%= certificate.description %>
                     </div>
                   </div>
-                  <div class="certificates-description">
-                    <%= certificate.description %>
-                  </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% when Section.get_names[:courses_section] %>
             <div class="course-section">
               <div class="courses-header">
                 <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
               </div>
-              <% section.courses.order(:position).each do |course| %>
-                <div class="course-container">
-                  <div class="course-header">
-                    <div class="name">
-                      <%= course.name %>
+              <div class="courses-container">
+                <% section.courses.order(:position).each do |course| %>
+                  <div class="course-row">
+                    <div class="course-header">
+                      <div class="course-name">
+                        <div class="name">
+                          <%= course.name %>
+                        </div>
+                        <div class="institution">
+                          <%= course.institution %>
+                        </div>
+                      </div>
+                      <div class="date">
+                        <%= course.start_date.strftime("%m.%Y") %>
+                      </div>
                     </div>
-                    <div class="institution">
-                      <%= course.institution %>
-                    </div>
-                    <div class="date">
-                      <%= course.start_date.strftime("%m.%Y") %>
+                    <div class="course-description">
+                      <%= course.description %>
                     </div>
                   </div>
-                  <div class="certificates-description">
-                    <%= course.description %>
-                  </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% when Section.get_names[:educations_section] %>
             <div class="education-section">
               <div class="educations-header">
                 <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
               </div>
-              <% section.educations.order(:position).each do |education| %>
-                <div class="education-container">
-                  <div class="education-header">
-                    <div class="school-container">
-                      <div class="university">
-                        <%= education.university %>
+              <div class="education-container">
+                <% section.educations.order(:position).each do |education| %>
+                  <div class="education-row">
+                    <div class="education-header">
+                      <div class="school-container">
+                        <div class="university">
+                          <%= education.university %>
+                        </div>
+                        <div class="city">
+                          <%= education.city %>
+                        </div>
                       </div>
-                      <div class="city">
-                        <%= education.city %>
+                      <div class="dates">
+                        <div class="start-date">
+                          <%= education.start_date.strftime("%m.%Y") %>
+                        </div>
+                        -
+                        <div class="end-date">
+                          <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current") %>
+                        </div>
                       </div>
                     </div>
-                    <div class="dates">
-                      <div class="start-date">
-                        <%= education.start_date.strftime("%m.%Y") %>
+                    <div class="education-container">
+                      <div class="faculty">
+                        <label><%= I18n.t(".cvs.style1.faculty") %></label>
+                        <%= education.faculty %>
                       </div>
-                      -
-                      <div class="end-date">
-                        <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current") %>
+                      <div class="specialisation">
+                        <label><%= I18n.t(".cvs.style1..specialisation") %></label>
+                        <%= education.specialisation %>
                       </div>
                     </div>
                   </div>
-                  <div class="education-container">
-                    <div class="faculty">
-                      <label><%= I18n.t(".cvs.style1.faculty") %></label>
-                      <%= education.faculty %>
-                    </div>
-                    <div class="specialisation">
-                      <label><%= I18n.t(".cvs.style1..specialisation") %></label>
-                      <%= education.specialisation %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% when Section.get_names[:employments_section] %>
             <div class="employment-section">
               <div class="employments-header">
                 <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
               </div>
-              <% section.employments.order(:position).each do |employment| %>
-                <div class="employment-container">
-                  <div class="employment-header">
-                    <div class="job-title">
-                      <%= employment.name %>
-                      <div class="employer-container">
-                        <div class="employer">
-                          <%= employment.employer %>
-                        </div>
-                        <div class="city">
-                          <%= employment.city %>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="dates">
-                      <div class="start-date">
-                        <%= employment.start_date.strftime("%m.%Y") %>
+              <div class="employment-container">
+                <% section.employments.order(:position).each do |employment| %>
+                  <div class="employment-row">
+                    <div class="employment-header">
+                      <div class="job-title">
+                        <%= employment.name %>
+                        <div class="employer-container">
+                          <div class="employer">
+                            <%= employment.employer %>
+                          </div>
+                          <div class="city">
+                            <%= employment.city %>
+                          </div>
                       </div>
-                      -
-                      <div class="end-date">
-                        <%= employment.end_date.present? ? employment.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current_work") %>
                       </div>
+                      <div class="dates">
+                        <div class="start-date">
+                          <%= employment.start_date.strftime("%m.%Y") %>
+                        </div>
+                        -
+                        <div class="end-date">
+                          <%= employment.end_date.present? ? employment.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current_work") %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="employment-description">
+                      <%= employment.description %>
                     </div>
                   </div>
-                  <div class="employment-description">
-                    <%= employment.description %>
-                  </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% when Section.get_names[:skills_section] %>
             <div class="skills-section">
@@ -275,6 +511,65 @@
               </div>
               <div class="skills-content">
                 <%= section.content %>
+              </div>
+            </div>
+          <% when Section.get_names[:languages_section] %>
+            <div class="languages-section">
+              <div class="languages-header">
+                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+              </div>
+              <div class="languages-container">
+              <% section.languages.order(:position).each do |language| %>
+                  <div class="language-row">
+                    <div class="language">
+                      <%= language.language %>
+                    </div>
+                    <div class="language-level">
+                      <%= Language.get_translations_languages_levels[language.language_level.to_sym] %>
+                    </div>
+                  </div>
+              <% end %>
+              </div>
+            </div>
+          <% when Section.get_names[:interest_section] %>
+            <div class="intrests-section">
+              <div class="intrests-header">
+                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+              </div>
+              <div class="intrests-content">
+                <%= section.content %>
+              </div>
+            </div>
+          <% when Section.get_names[:references_section] %>
+            <div class="references-section">
+              <div class="references-header">
+                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
+              </div>
+              <div class="references-container">
+                <% section.references.order(:position).each do |reference| %>
+                  <div class="reference-row">
+                    <div class="company">
+                      <%= reference.company %>
+                    </div>
+                    <div class="contact-information">
+                      <div class="contact-person">
+                        <label><%= I18n.t(".cvs.style1.contact_person") %></label>
+                        <%= reference.contact_person %>
+                      </div>
+                      <div class="phone-number">
+                        <label><%= I18n.t(".cvs.style1.phone_number") %></label>
+                        <%= reference.phone_number %>
+                      </div>
+                      <div class="email">
+                        <label><%= I18n.t(".cvs.style1.email") %></label>
+                        <%= reference.email %>
+                      </div>
+                    </div>
+                    <div class="reference-description">
+                      <%= reference.description %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
           <% when Section.get_names[:privacy_policy_sections] %>
