@@ -34,6 +34,10 @@ en:
   layouts:
     application:
       copyright: © Copyright 2022, Weronika Piotrowska
+      dashboard: Dashboard
+      login: Log in
+      logout: Logout
+      edit_profile: Edit profile
   cvs:
     create:
       notice: "Could not create CV. Something went wrong."
@@ -85,6 +89,11 @@ en:
       description_section_name: Description
       skills_section_name: Skills
       interest_section_name: Intrests
+      description_section_custom_name: Change section name (optional)
+      privacy_policy_sections_custom_name: Change section name (optional)
+      skills_section_custom_name: Change section name (optional)
+      interest_section_custom_name: Change section name (optional)
+      custom_section_custom_name: Add name for new section
       privacy_policy_sections_description: Privacy policy
       custom_section_description: Description
       description_section_description: Describe yourself
@@ -93,21 +102,27 @@ en:
       add_section: Update
     languages_form:
       languages_section_name: Languages
+      custom_name: Change section name (optional)
       add_section: Update
     certificates_form:
       certificates_section_name: Certifications
+      custom_name: Change section name (optional)
       add_section: Update
     courses_form:
       courses_section_name: Courses
+      custom_name: Change section name (optional)
       add_section: Update
     educations_form:
       educations_section_name: Education
+      custom_name: Change section name (optional)
       add_section: Update
     references_form:
       references_section_name: References
+      custom_name: Change section name (optional)
       add_section: Update
     employments_form:
       employments_section_name: Employments
+      custom_name: Change section name (optional)
       add_section: Update
   courses:
     form:

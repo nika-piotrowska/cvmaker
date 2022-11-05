@@ -34,20 +34,25 @@ pl:
   layouts:
     application:
       copyright: © Copyright 2022, Weronika Piotrowska
+      dashboard: Strona główna
+      login: Zaloguj się
+      logout: Wyloguj
+      edit_profile: Edytuj profil
+      sign_up: Zarejestruj się
   cvs:
     create:
       notice: "Nie można utworzyć CV. Coś poszło nie tak."
     personal_information:
       done: Kolejny krok
     personal_information:
-      personal_information: Dane osobiste
+      personal_information: Dane osobowe
       name: Nazwa
       first_name: Imię
       last_name: Nazwisko
       email: Email
       phone_number: Numer telefonu
       address: Adres
-      birth_date: Data urodzin
+      birth_date: Data urodzenia
       sex: Płeć
       drivers_licence: Prawo jazdy
       linkedin: LinkedIn
@@ -65,11 +70,16 @@ pl:
       back: Wróć do sekcji CV
     style1:
       description_section: Opis
-      employments_section: Miejsca zatrudnienia
-      educations_section: Miejsca edukacji
+      employments_section: Doświadczenie zawodowe
+      educations_section: Wykształcenie
       skills_section: Umiejętności
+      languages_section: Języki obce
+      interest_section: Zainteresowania
       current: Aktualnie tu uczęszczam
       current_work: Aktualnie tu pracuję
+      faculty: "Kierunek:"
+      specialisation: "Specjalizacja:"
+
   sections:
     new_section_form:
       sections: Sekcje
@@ -80,54 +90,65 @@ pl:
     default_form:
       privacy_policy_sections_name: Polityka prywatności
       custom_section_name: Własna sekcja
-      description_section_name: Opis
+      description_section_name: Profil zawodowy
       skills_section_name: Umiejętności
       interest_section_name: Zainteresowania
+      description_section_custom_name: Zmień nazwę sekcji (opcjonalne)
+      privacy_policy_sections_custom_name: Zmień nazwę sekcji (opcjonalne)
+      skills_section_custom_name: Zmień nazwę sekcji (opcjonalne)
+      interest_section_custom_name: Zmień nazwę sekcji (opcjonalne)
+      custom_section_custom_name: Nadaj nazwę nowej sekcji
       privacy_policy_sections_description: Polityka prywatności
       custom_section_description: Opis
       description_section_description: Opisz się
       skills_section_description: Opisz swoje umiejętności
       interest_section_description: Opisz swoje zainteresowania
-      add_section: Update
+      add_section: Zaktualizuj
     languages_form:
       languages_section_name: Języki
-      add_section: Update
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
     certificates_form:
       certificates_section_name: Certyfikaty
-      add_section: Update
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
     courses_form:
       courses_section_name: Kursy
-      add_section: Update
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
     educations_form:
-      educations_section_name: Miejsca edukacji
-      add_section: Update
+      educations_section_name: Wykształcenie
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
     references_form:
       references_section_name: Referencje
-      add_section: Update
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
     employments_form:
-      employments_section_name: Miejsca zatrudnienia
-      add_section: Update
+      employments_section_name: Doświadczenie zawodowe
+      custom_name: Zmień nazwę sekcji (opcjonalne)
+      add_section: Zaktualizuj
   courses:
     form:
       name: Nazwa kursu
       institution: Instytucja
       description: Opisz kurs
-      update: Update
+      Zaktualizuj: Zaktualizuj
     courses_list:
       add_course: Dodaj kolejny kurs
   certificates:
     form:
       name: Nazwa certyfikatu
       description: Opisz swój certyfikat
-      update: Update
+      Zaktualizuj: Zaktualizuj
     certificates_list:
-      add_certificate: Dodaj kolejny certyfikate
+      add_certificate: Dodaj kolejny certyfikat
   educations:
     form:
       level: Tytuł
       city: Lokalizacja szkoły
       university: Nazwa szkoły
-      faculty: Wydział
+      faculty: Kierunek
       specialisation: Specjalizacja
     educations_list:
       add_education: Dodaj kolejne miejce edukacji
@@ -154,6 +175,8 @@ pl:
     references_list:
       add_reference: Dodaj kolejne referencje
 
+  date:
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
 
   users:
     dashboard:
@@ -163,9 +186,9 @@ pl:
     attributes:
       cv:
         sexes:
-          unspecified: Inna
-          male: Męska
-          female: Żeńska
+          unspecified: Nie podawaj
+          male: Mężczyzna
+          female: Kobieta
       section:
         names:
           certificates_section: Certyfikaty
@@ -180,8 +203,8 @@ pl:
           description_section: Opis
           custom_section: Własna sekcja
         horizontal_positions:
-          main_body: Ciało główne
-          side_body: Ciało boczne
+          main_body: Sekcja główna
+          side_body: Sekcja boczna
       language:
         language_levels:
           a1: A1

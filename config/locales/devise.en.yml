@@ -55,6 +55,9 @@ en:
         new_password: New password (minimum 6 characters)
         password_confirmation: Confirm your password
         current_password: Current password (to confirm your changes)
+        cancel_account: Cancel account
+        update: Update
+        edit_user: Edit your account
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
@@ -63,6 +66,7 @@ en:
         email: Email
         password: Password
         log_in: Log in to your account
+        login: Log in
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
