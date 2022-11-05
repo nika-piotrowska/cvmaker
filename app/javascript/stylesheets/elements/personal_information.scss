@@ -81,31 +81,43 @@
       display: flex;
       margin: 10px;
       align-items: center;
-      padding-top: 10px;
+      padding-bottom: 10px;
 
       label {
-        margin: 7px;
+        margin-bottom: 5px;
         font-size: 12px;
       }
     }
 
-    #cv_first_name {
-      width: 235px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      margin-right: 7px;
+    .first-name {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_first_name {
+        width: 305px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        margin-right: 15px;
+      }
     }
 
-    #cv_last_name {
-      width: 238px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+    .last-name {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_last_name {
+        width: 305px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
   }
 
@@ -113,45 +125,60 @@
     display: flex;
     margin: 10px;
     align-items: center;
-    padding-top: 10px;
+    padding-bottom: 10px;
 
     label {
-      margin: 7px;
+      margin-bottom: 5px;
       font-size: 12px;
     }
 
-    #cv_email {
-      width: 242px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+    .email {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_email {
+        width: 305px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        margin-right: 15px;
+      }
     }
 
-    #cv_phone_number {
-      width: 243px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+    .phone-number {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_phone_number {
+        width: 305px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
   }
 
   .address-container {
-    display: flex;
     margin: 10px;
-    align-items: center;
-    padding-top: 10px;
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding-bottom: 10px;
 
     label {
-      margin: 7px;
+      margin-bottom: 5px;
       font-size: 12px;
     }
 
     #cv_address {
-      width: 35.9rem;
+      width: 39.7rem;
       height: 30px;
       border: none;
       padding: 5px;
@@ -164,62 +191,81 @@
     display: flex;
     margin: 10px;
     align-items: center;
-    padding-top: 10px;
+    justify-content: space-between;
+    padding-bottom: 10px;
 
     label {
-      margin: 7px;
+      margin-bottom: 5px;
       font-size: 12px;
     }
 
-    #cv_birth_date_3i {
-      width: 45px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      background-color: var(--fill-color);
+    .birth-date {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_birth_date_3i {
+        width: 45px;
+        height: 40px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        background-color: var(--fill-color);
+      }
+  
+      #cv_birth_date_2i {
+        width: 100px;
+        height: 40px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        background-color: var(--fill-color);
+      }
+  
+      #cv_birth_date_1i {
+        width: 60px;
+        height: 40px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        background-color: var(--fill-color);
+        margin-right: 5px;
+      }
     }
 
-    #cv_birth_date_2i {
-      width: 90px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      background-color: var(--fill-color);
+    .sex {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
+
+      #cv_sex {
+        width: 120px;
+        height: 40px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        background-color: var(--fill-color);
+        margin: 5px;
+      }
     }
 
-    #cv_birth_date_1i {
-      width: 60px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      background-color: var(--fill-color);
-      margin-right: 5px;
-    }
+    .drivers-licence {
+      display: flex;
+      flex-direction: column;
+      text-align: start;
 
-    #cv_sex {
-      width: 100px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      background-color: var(--fill-color);
-      margin: 5px;
-    }
-
-    #cv_drivers_licence {
-      width: 130px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+      #cv_drivers_licence {
+        width: 200px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
   }
 
@@ -227,30 +273,58 @@
     display: flex;
     margin: 10px;
     align-items: center;
-    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    justify-content: space-between;
 
     label {
-      margin: 7px;
+      margin-bottom: 5px;
       font-size: 12px;
     }
 
-    #cv_linkedin {
-      width: 245px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      margin-right: 7px;
+    .linkedin {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      #cv_linkedin {
+        width: 285px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
 
-    #cv_facebook {
-      width: 245px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+    .facebook {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      #cv_facebook {
+        width: 285px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
+    }
+
+    .twitter {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      #cv_twitter {
+        width: 285px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
   }
 
@@ -258,40 +332,44 @@
     display: flex;
     margin: 10px;
     align-items: center;
-    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+    margin-top: 0px;
 
     label {
-      margin: 7px;
+      margin-bottom: 5px;
       font-size: 12px;
     }
 
-    #cv_twitter {
-      width: 238px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      margin-right: 7px;
+    .github {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      #cv_github {
+        width: 285px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        margin-right: 15px;
+      }
     }
 
-    #cv_github {
-      width: 238px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
-      margin-right: 7px;
-    }
-
-    #cv_website {
-      width: 238px;
-      height: 30px;
-      border: none;
-      padding: 5px;
-      outline: none;
-      border-radius: 5px;
+    .website {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      
+      #cv_website {
+        width: 285px;
+        height: 30px;
+        border: none;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+      }
     }
   }
 
