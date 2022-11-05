@@ -1,5 +1,14 @@
 # README
 
+## CVMAKER
+
+Ruby on Rails app for creating a CV/resume. The application has a simple interface that guides you through all the steps of creating a CV/resume and allows you to freely arrange individual sections and deeply customise them. The creation process is completed by downloading the finished document in PDF format.
+
+The 0.1-a version allows for usage of only one style.
+
+Author: Weronika Piotrowska
+Copyright: Copyright (c) 2022 Weronika Piotrowska
+
 ## Prerequisites
 
 - Ruby version: 2.7.2
@@ -39,6 +48,9 @@ $ rails s
 
 * DB_DEV_USERNAME - PostgreSQL user's name for development and test environments.
 * DB_DEV_PASSWORD - PostgreSQL user's password for development and test environments.
+
+Required only for production:
+
 * DOMAIN - default domain in e-mails.
 * ACCESS_KEY_ID - AWS access key ID.
 * SECRET_ACCESS_KEY - AWS secret access key.
