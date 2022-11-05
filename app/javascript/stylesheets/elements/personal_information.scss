@@ -55,7 +55,7 @@
         transform: translate3d(0px, calc(-300px + (-100% + 300px)/2), 0px);
         padding-top: calc((-100% + 300px)/2);
         padding-bottom: calc((-100% + 300px)/2);
-        background-color: aliceblue;
+        background-color: var(--dark-green-color);
         z-index: 1;
         position: relative;
       }
