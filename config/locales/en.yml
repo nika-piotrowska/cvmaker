@@ -74,8 +74,17 @@ en:
       languages_section: Languages
       interest_section: Intrests
       skills_section: Skills
+      certificates_section: Certificates
+      courses_section: Courses
       current: I currently attend here
       current_work: I currently work here
+      custom_section: Custom section
+      faculty: "Faculty:"
+      specialisation: "Specialisation:"
+      references_section: References
+      contact_person: "Contact person:"
+      phone_number: "Phone number:"
+      email: "Email:"
   sections:
     new_section_form:
       sections: Sections

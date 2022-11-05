@@ -75,10 +75,17 @@ pl:
       skills_section: Umiejętności
       languages_section: Języki obce
       interest_section: Zainteresowania
+      certificates_section: Certyfikaty
+      courses_section: Kursy
       current: Aktualnie tu uczęszczam
       current_work: Aktualnie tu pracuję
       faculty: "Kierunek:"
       specialisation: "Specjalizacja:"
+      custom_section: Własna sekcja
+      references_section: Referencje
+      contact_person: "Osoba kontaktowa:"
+      phone_number: "Numer telefonu:"
+      email: "Email:"
 
   sections:
     new_section_form:
