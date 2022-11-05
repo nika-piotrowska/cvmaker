@@ -4,7 +4,7 @@
     <label class="title"><%= t(".#{section.name}_name") %></label>
     <div class="header">
       <div class="custom-name-container">
-        <%= f.input :custom_name, class: 'form-control', label: false, placeholder: t(".#{section.name}_name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
+        <%= f.input :custom_name, class: 'form-control', label: false, placeholder: t(".#{section.name}_custom_name"), input_html: { onchange: "submitSectionOnChange(this)" } %>
       </div>
       <div class="position-dropdown">
         <%= f.input :horizontal_position, as: :select, collection: Section.get_human_horizontal_positions, class: 'form-control', required: false, include_blank: false, label: false, input_html: { onchange: "submitSectionOnChange(this)" } %>
