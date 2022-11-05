@@ -154,7 +154,7 @@ pl:
       add_education: Dodaj kolejne miejce edukacji
   employments:
     form:
-      name: Zawód
+      name: Stanowisko
       city: Miasto
       employer: Pracodawca
       description: Opisz swoje doświadczenia zawodowe
