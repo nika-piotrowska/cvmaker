@@ -51,10 +51,10 @@ class CertificatesController < ApplicationController
     return unless params.key?(:certificate)
 
     params.require(:certificate).permit(
-                             :name,
-                             :date,
-                             :description,
-                             :position
+      :name,
+      :date,
+      :description,
+      :position
     )
   end
 end

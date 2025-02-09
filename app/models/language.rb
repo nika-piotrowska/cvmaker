@@ -24,17 +24,17 @@ class Language < ApplicationRecord
   end
 
   def move_up
-    up_language = self.section.languages.find_by(position: self.position - 1 )
+    up_language = section.languages.find_by(position: position - 1)
     if up_language.present?
-      self.update(position: self.position - 1)
+      update(position: position - 1)
       up_language.update(position: up_language.position + 1)
     end
   end
 
   def move_down
-    down_language = self.section.languages.find_by(position: self.position + 1 )
+    down_language = section.languages.find_by(position: position + 1)
     if down_language.present?
-      self.update(position: self.position + 1)
+      update(position: position + 1)
       down_language.update(position: down_language.position - 1)
     end
   end
