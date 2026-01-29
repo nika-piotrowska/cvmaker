@@ -2,12 +2,41 @@ pl:
   hello: "Hello world"
   layouts:
     application:
-      copyright: © Copyright 2022, Weronika Piotrowska
+      copyright: "© Copyright 2022, Weronika Piotrowska"
       dashboard: Strona główna
       login: Zaloguj się
       logout: Wyloguj
       edit_profile: Edytuj profil
       sign_up: Zarejestruj się
+  cvs:
+    create:
+      notice: "Nie można utworzyć CV. Coś poszło nie tak."
+    personal_information:
+      done: Kolejny krok
+    personal_information:
+      personal_information: Dane osobowe
+      name: Nazwa
+      first_name: Imię
+      last_name: Nazwisko
+      email: Email
+      phone_number: Numer telefonu
+      address: Adres
+      birth_date: Data urodzenia
+      sex: Płeć
+      drivers_licence: Prawo jazdy
+      linkedin: LinkedIn
+      facebook: Facebook
+      github: GitHub
+      twitter: Twitter
+      website: Website
+      next_step: Kolejny krok
+      next: Dodaj sekcje do swojego CV
+    sections:
+      add_section: Dodaj nowa sekcję
+    styles:
+      choose_style: Wybierz styl CV
+      download_cv: Pobierz swoje CV jako .pdf
+      back: Wróć do sekcji CV
   pdfs:
     personal_information:
       phone_number: "Numer telefonu:"
@@ -39,67 +68,6 @@ pl:
     contact_person: "Osoba kontaktowa:"
     phone_number: "Numer telefonu:"
     email: "Email:"
-  cvs:
-    create:
-      notice: "Nie można utworzyć CV. Coś poszło nie tak."
-    personal_information:
-      done: Kolejny krok
-    personal_information:
-      personal_information: Dane osobowe
-      name: Nazwa
-      first_name: Imię
-      last_name: Nazwisko
-      email: Email
-      phone_number: Numer telefonu
-      address: Adres
-      birth_date: Data urodzenia
-      sex: Płeć
-      drivers_licence: Prawo jazdy
-      linkedin: LinkedIn
-      facebook: Facebook
-      github: GitHub
-      twitter: Twitter
-      website: Website
-      next_step: Kolejny krok
-      next: Dodaj sekcje do swojego CV
-    sections:
-      add_section: Dodaj nowa sekcję
-    styles:
-      choose_style: Wybierz styl CV
-      download_cv: Pobierz swoje CV jako .pdf
-      back: Wróć do sekcji CV
-    style1:
-      personal_information:
-        phone_number: "Numer telefonu:"
-        email: "Email:"
-        address: "Adres:"
-        birth_date: "Data urodzenia:"
-        sex: "Płeć:"
-        drivers_licence: "Prawo jazdy:"
-        linkedin: "LinkedIn:"
-        facebook: "Facebook:"
-        twitter: "Twitter:"
-        instagram: "Instagram:"
-        github: "Github:"
-        website: "Strona internetowa:"
-      description_section: Opis
-      employments_section: Doświadczenie zawodowe
-      educations_section: Wykształcenie
-      skills_section: Umiejętności
-      languages_section: Języki obce
-      interest_section: Zainteresowania
-      certificates_section: Certyfikaty
-      courses_section: Kursy
-      current: Aktualnie tu uczęszczam
-      current_work: Aktualnie tu pracuję
-      faculty: "Kierunek:"
-      specialisation: "Specjalizacja:"
-      custom_section: Własna sekcja
-      references_section: Referencje
-      contact_person: "Osoba kontaktowa:"
-      phone_number: "Numer telefonu:"
-      email: "Email:"
-
   sections:
     new_section_form:
       sections: Sekcje

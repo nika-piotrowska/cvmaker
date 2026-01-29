@@ -2,42 +2,10 @@ en:
   hello: "Hello world"
   layouts:
     application:
-      copyright: © Copyright 2022, Weronika Piotrowska
+      copyright: "© Copyright 2022, Weronika Piotrowska"
       dashboard: Dashboard
       login: Log in
       logout: Logout
-      edit_profile: Edit profile
-  pdfs:
-    personal_information:
-      phone_number: "Phone number:"
-      email: "Email:"
-      address: "Address:"
-      birth_date: "Birth date:"
-      sex: "Sex:"
-      drivers_licence: "Drivers licence:"
-      linkedin: "LinkedIn:"
-      facebook: "Facebook:"
-      twitter: "Twitter:"
-      instagram: "Instagram:"
-      github: "Github:"
-      website: "Website:"
-    description_section: Description
-    employments_section: Employments
-    educations_section: Educations
-    languages_section: Languages
-    interest_section: Interests
-    skills_section: Skills
-    certificates_section: Certificates
-    courses_section: Courses
-    current: I currently attend here
-    current_work: I currently work here
-    custom_section: Custom section
-    faculty: "Faculty:"
-    specialisation: "Specialisation:"
-    references_section: References
-    contact_person: "Contact person:"
-    phone_number: "Phone number:
-    email: "Email:"
   cvs:
     create:
       notice: Could not create CV. Something went wrong.
@@ -66,6 +34,37 @@ en:
       choose_style: Choose Your CV style
       download_cv: Downlad your CV as .pdf
       back: Back to CV sections
+    pdfs:
+      personal_information:
+        phone_number: "Phone number:"
+        email: "Email:"
+        address: "Address:"
+        birth_date: "Birth date:"
+        sex: "Sex:"
+        drivers_licence: "Drivers licence:"
+        linkedin: "LinkedIn:"
+        facebook: "Facebook:"
+        twitter: "Twitter:"
+        instagram: "Instagram:"
+        github: "Github:"
+        website: "Website:"
+      description_section: Description
+      employments_section: Employments
+      educations_section: Educations
+      languages_section: Languages
+      interest_section: Interests
+      skills_section: Skills
+      certificates_section: Certificates
+      courses_section: Courses
+      current: I currently attend here
+      current_work: I currently work here
+      custom_section: Custom section
+      faculty: "Faculty:"
+      specialisation: "Specialisation:"
+      references_section: References
+      contact_person: "Contact person:"
+      phone_number: "Phone number:"
+      email: "Email:"
   sections:
     new_section_form:
       sections: Sections
