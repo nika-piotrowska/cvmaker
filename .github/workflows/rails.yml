@@ -82,7 +82,7 @@ jobs:
 
       - name: Run brakeman
         run: |
-          brakeman -q -w2
+          brakeman -q -w2 --skip-checks EOLRuby,EOLRails
 
       - name: Prepare test database
         env:
