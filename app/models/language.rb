@@ -22,4 +22,20 @@ class Language < ApplicationRecord
   def self.get_translations_languages_levels
     get_human_language_levels.to_h { |k, v| [v, k] }
   end
+
+  def move_up
+    up_language = section.languages.find_by(position: position - 1)
+    if up_language.present?
+      update(position: position - 1)
+      up_language.update(position: up_language.position + 1)
+    end
+  end
+
+  def move_down
+    down_language = section.languages.find_by(position: position + 1)
+    if down_language.present?
+      update(position: position + 1)
+      down_language.update(position: down_language.position - 1)
+    end
+  end
 end

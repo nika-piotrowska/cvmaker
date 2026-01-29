@@ -52,7 +52,6 @@ class CvsController < ApplicationController
   end
 
   def set_style
-    # byebug
     @cv.update(cv_params)
     display_styles
   end
