@@ -1,7 +1,18 @@
-/* app/assets/stylesheets/pdfs/style2.scss */
 @import "pdfs/base";
 
-/* ===== Style 2: clean, profesjonalny, jednokolumnowy ===== */
+@page :first {
+  margin: 0;
+}
+
+@page {
+  margin: 30px 0 0 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
 .cv2 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
@@ -9,20 +20,27 @@
   font-size: 12px;
   line-height: 1.45;
   background: #fff;
+  padding: 30px;
 }
 
 .cv2__header {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-
-  padding: 18mm 18mm 10mm 18mm;
-  border-bottom: 2px solid #111;
+  align-items: flex-start;
+  position: relative;
+  margin: -30px -30px 0 -30px;
+  padding: 30px;
+  background-color: #2f80c8;
+  color: #fff;
+  border-bottom: 2px solid #2f80c8;
+  page-break-after: avoid;
+  break-after: avoid;
 }
 
-.cv2__header-left {
+.cv2__header-main {
   flex: 1 1 auto;
-  min-width: 0; /* zapobiega rozjeżdżaniu w flex */
+  min-width: 0;
 }
 
 .cv2__name {
@@ -30,6 +48,7 @@
   font-weight: 800;
   letter-spacing: 0.2px;
   margin-bottom: 6px;
+  color: #fff;
 }
 
 .cv2__meta {
@@ -61,30 +80,69 @@
 }
 
 .cv2__photo {
-  width: 92px;
-  min-width: 92px;
+  width: 101px;
+  min-width: 101px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .cv2__photo-img {
-  width: 92px;
-  height: 92px;
-  border-radius: 10px;
+  width: 101px;
+  height: 139px;
+  border-radius: 6px;
   object-fit: cover;
-  border: 1px solid #111;
+  border: none;
 }
 
-/* Content area */
+.cv2__header-description {
+  margin-top: 6px;
+  color: #fff;
+}
+
+.cv2__header-description-body {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.cv2__header-description-body p {
+  margin: 0 0 6px 0;
+}
+
+.cv2__header-description-body p:last-child {
+  margin-bottom: 0;
+}
+
+.cv2__header-contact {
+  flex: 0 1 36%;
+  min-width: 190px;
+  color: #fff;
+  text-align: right;
+}
+
+.cv2__header-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.cv2__header-contact-list span {
+  word-break: break-word;
+}
+
 .cv2__content {
-  padding: 10mm 18mm 18mm 18mm;
+  margin: 0;
+  padding: 30px 0 30px 0;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  page-break-before: avoid;
+  break-before: avoid;
 }
 
-/* Section styling */
 .cv2__section {
   padding: 10px 0;
   border-bottom: 1px solid #e5e5e5;
-  page-break-inside: avoid; /* pomaga przy PDF */
+  page-break-inside: avoid;
 }
 
 .cv2__section:last-child {
@@ -97,12 +155,10 @@
   text-transform: uppercase;
   letter-spacing: 0.9px;
   margin-bottom: 8px;
-
   padding-left: 10px;
   border-left: 4px solid #111;
 }
 
-/* Rich text / content blocks */
 .cv2__richtext {
   color: #222;
 }
@@ -125,7 +181,6 @@
   margin: 2px 0;
 }
 
-/* Lists (employment/education/courses/etc.) */
 .cv2__list {
   display: flex;
   flex-direction: column;
@@ -176,7 +231,6 @@
   margin-bottom: 0;
 }
 
-/* Chips (languages) */
 .cv2__chips {
   display: flex;
   flex-wrap: wrap;
@@ -194,25 +248,21 @@
   font-size: 12px;
 }
 
-/* Privacy */
 .cv2__privacy {
   font-size: 10px;
   color: #333;
   line-height: 1.4;
 }
 
-/* Small helpers */
 .cv2 strong {
   font-weight: 800;
 }
 
-/* Przy bardzo długich linkach/mailach w meta */
 .cv2__meta-item,
 .cv2__links span {
   overflow-wrap: anywhere;
 }
 
-/* Print helpers */
 @media print {
   .cv2__section {
     break-inside: avoid;

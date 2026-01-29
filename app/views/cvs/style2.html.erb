@@ -9,40 +9,56 @@
   <%= render 'layouts/variables' %>
 </head>
 <body>
+  <% sections = @cv.sections.order(:vertical_position) %>
+  <% description_section = sections.find { |section| section.name == Section.get_names[:description_section] } %>
   <div class="cv2">
     <header class="cv2__header">
-      <div class="cv2__header-left">
+      <% if @cv.main_photo.attached? %>
+        <div class="cv2__photo">
+          <%= image_tag "data:image/png;base64,#{Base64.encode64(@cv.main_photo.download)}", class: 'cv2__photo-img' %>
+        </div>
+      <% end %>
+
+      <div class="cv2__header-main">
         <div class="cv2__name">
           <%= "#{@cv.first_name} #{@cv.last_name}" %>
         </div>
 
-        <div class="cv2__meta">
+        <% if description_section&.content.present? %>
+          <div class="cv2__header-description">
+            <div class="cv2__header-description-body">
+              <%= description_section.content %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="cv2__header-contact">
+        <div class="cv2__header-contact-list">
           <% if @cv.email.present? %>
-            <span class="cv2__meta-item"><strong><%= t('.email') %>:</strong> <%= @cv.email %></span>
+            <span><strong><%= t('.email') %>:</strong> <%= @cv.email %></span>
           <% end %>
 
           <% if @cv.phone_number.present? %>
-            <span class="cv2__meta-item"><strong><%= t('.phone_number') %>:</strong> <%= @cv.phone_number %></span>
+            <span><strong><%= t('.phone_number') %>:</strong> <%= @cv.phone_number %></span>
           <% end %>
 
           <% if @cv.address.present? %>
-            <span class="cv2__meta-item"><strong><%= t('.address') %>:</strong> <%= @cv.address %></span>
+            <span><strong><%= t('.address') %>:</strong> <%= @cv.address %></span>
           <% end %>
 
           <% if @cv.birth_date.present? %>
-            <span class="cv2__meta-item"><strong><%= t('.birth_date') %>:</strong> <%= @cv.birth_date.strftime("%d.%m.%Y") %></span>
+            <span><strong><%= t('.birth_date') %>:</strong> <%= @cv.birth_date.strftime("%d.%m.%Y") %></span>
           <% end %>
 
           <% if @cv.sex != Cv.get_sexes[:unspecified] %>
-            <span class="cv2__meta-item"><strong><%= t('.sex') %>:</strong> <%= @cv.sex %></span>
+            <span><strong><%= t('.sex') %>:</strong> <%= @cv.sex %></span>
           <% end %>
 
           <% if @cv.drivers_licence.present? %>
-            <span class="cv2__meta-item"><strong><%= t('.drivers_licence') %>:</strong> <%= @cv.drivers_licence %></span>
+            <span><strong><%= t('.drivers_licence') %>:</strong> <%= @cv.drivers_licence %></span>
           <% end %>
-        </div>
 
-        <div class="cv2__links">
           <% if @cv.linkedin.present? %><span>LinkedIn: <%= @cv.linkedin %></span><% end %>
           <% if @cv.github.present? %><span>GitHub: <%= @cv.github %></span><% end %>
           <% if @cv.website.present? %><span><%= t('.website') %>: <%= @cv.website %></span><% end %>
@@ -51,20 +67,20 @@
           <% if @cv.twitter.present? %><span>Twitter: <%= @cv.twitter %></span><% end %>
         </div>
       </div>
-
-      <% if @cv.main_photo.attached? %>
-        <div class="cv2__photo">
-          <%= image_tag "data:image/png;base64,#{Base64.encode64(@cv.main_photo.download)}", class: 'cv2__photo-img' %>
-        </div>
-      <% end %>
     </header>
 
     <main class="cv2__content">
-      <% sections = @cv.sections.order(:horizontal_position, :vertical_position) %>
-
+      <% content_sections = [
+        Section.get_names[:description_section],
+        Section.get_names[:skills_section],
+        Section.get_names[:interest_section],
+        Section.get_names[:custom_section],
+        Section.get_names[:privacy_policy_sections]
+      ] %>
       <% sections.each do |section| %>
         <%# Pomijaj puste sekcje (opcjonalnie) %>
-        <% next if section.respond_to?(:content) && section.content.blank? && section.name != Section.get_names[:privacy_policy_sections] %>
+        <% next if content_sections.include?(section.name) && section.content.blank? && section.name != Section.get_names[:privacy_policy_sections] %>
+        <% next if section == description_section %>
 
         <section class="cv2__section">
           <% unless section.name == Section.get_names[:privacy_policy_sections] %>
@@ -91,7 +107,7 @@
                     </div>
                   </div>
                   <div class="cv2__item-sub">
-                    <%= [employment.employer, employment.city].compact_blank.join(" • ") %>
+                    <%= [employment.employer, employment.city].compact.join(" • ") %>
                   </div>
                   <% if employment.description.present? %>
                     <div class="cv2__item-body"><%= employment.description %></div>
@@ -111,7 +127,7 @@
                     </div>
                   </div>
                   <div class="cv2__item-sub">
-                    <%= [education.city, education.faculty, education.specialisation].compact_blank.join(" • ") %>
+                    <%= [education.city, education.faculty, education.specialisation].compact.join(" • ") %>
                   </div>
                 </div>
               <% end %>
@@ -165,7 +181,7 @@
                     <div class="cv2__item-title"><%= reference.company %></div>
                   </div>
                   <div class="cv2__item-sub">
-                    <%= [reference.contact_person, reference.phone_number, reference.email].compact_blank.join(" • ") %>
+                    <%= [reference.contact_person, reference.phone_number, reference.email].compact.join(" • ") %>
                   </div>
                   <% if reference.description.present? %>
                     <div class="cv2__item-body"><%= reference.description %></div>
