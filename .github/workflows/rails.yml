@@ -1,9 +1,10 @@
-name: Ruby
+name: Rails
 
 on:
-  pull_request:
+  push:
     branches:
       - master
+  pull_request:
 
 jobs:
   build:
@@ -67,6 +68,10 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
+      - name: Install CI security/test gems
+        run: |
+          gem install brakeman rspec-rails
+
       - name: Install node packages
         run: |
           yarn --install
@@ -74,6 +79,22 @@ jobs:
       - name: Run rubocop
         run: |
           bundle exec rubocop
+
+      - name: Run brakeman
+        run: |
+          brakeman -q -w2
+
+      - name: Prepare test database
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle exec rails db:prepare
+
+      - name: Run RSpec
+        env:
+          RAILS_ENV: test
+        run: |
+          rspec
 
       - name: Run ESLint on changed files
         run: |
