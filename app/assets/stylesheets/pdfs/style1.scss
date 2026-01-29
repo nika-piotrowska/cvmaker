@@ -1,11 +1,4 @@
-html {
-  -webkit-print-color-adjust: exact; // DO NOT MOVE FOR THE BACKGROUND COLOR TO RENDER
-}
-body {
-  margin: 0px;
-  padding: 0;
-  margin: 0;
-}
+@import "pdfs/base";
 
 .pdf__file {
   flex-direction: row;
@@ -559,6 +552,7 @@ body {
     }
 
   }
+
   .main-body {
     width: 60%;
     background-color: #fafafa;
@@ -1045,19 +1039,5 @@ body {
         }
       }
     }
-  }
-}
-
-@page {
-  size: A4;
-  margin: 0;
-}
-@media print {
-  html, body {
-      width: 210mm;
-      height: 297mm;        
-  }
-  .pdf__file {
-      margin: 0;
   }
 }

@@ -69,6 +69,19 @@ pl:
       download_cv: Pobierz swoje CV jako .pdf
       back: Wróć do sekcji CV
     style1:
+      personal_information:
+        phone_number: "Numer telefonu:"
+        email: "Email:"
+        address: "Adres:"
+        birth_date: "Data urodzenia:"
+        sex: "Płeć:"
+        drivers_licence: "Prawo jazdy:"
+        linkedin: "LinkedIn:"
+        facebook: "Facebook:"
+        twitter: "Twitter:"
+        instagram: "Instagram:"
+        github: "Github:"
+        website: "Strona internetowa:"
       description_section: Opis
       employments_section: Doświadczenie zawodowe
       educations_section: Wykształcenie
