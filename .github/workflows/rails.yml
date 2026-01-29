@@ -70,7 +70,7 @@ jobs:
 
       - name: Install CI security/test gems
         run: |
-          gem install brakeman rspec-rails
+          gem install brakeman -v 5.4.1
 
       - name: Install node packages
         run: |
