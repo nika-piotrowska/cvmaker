@@ -1,7 +1,4 @@
-# app/helpers/application_helper.rb
 module ApplicationHelper
-  require 'sass'
-
   def render_scss(logical_path)
     logical_path = logical_path.to_s
     logical_path = logical_path.sub(%r{\A/}, '')
@@ -17,7 +14,7 @@ module ApplicationHelper
     raise ActionView::MissingTemplate, "Missing SCSS file: #{logical_path} in app/assets/stylesheets" unless scss_file
 
     scss_text = File.read(scss_file)
-    engine = Sass::Engine.new(
+    engine = SassC::Engine.new(
       scss_text,
       syntax: :scss,
       cache: false,

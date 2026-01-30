@@ -199,6 +199,11 @@ pl:
           unspecified: Nie podawaj
           male: Mężczyzna
           female: Kobieta
+        styles:
+          style1: Styl 1
+          style2: Styl 2
+          style3: Styl 3
+          style4: Styl 4
       section:
         names:
           certificates_section: Certyfikaty
