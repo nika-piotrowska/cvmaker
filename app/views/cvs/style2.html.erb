@@ -78,12 +78,11 @@
         Section.get_names[:privacy_policy_sections]
       ] %>
       <% sections.each do |section| %>
-        <%# Pomijaj puste sekcje (opcjonalnie) %>
         <% next if content_sections.include?(section.name) && section.content.blank? && section.name != Section.get_names[:privacy_policy_sections] %>
         <% next if section == description_section %>
 
         <section class="cv2__section">
-          <% unless section.name == Section.get_names[:privacy_policy_sections] %>
+          <% unless section.name == Section.get_names[:privacy_policy_sections] || Section.get_names[:employments_section] %>
             <div class="cv2__section-title">
               <%= section.custom_name.presence || I18n.t(".cvs.style2.#{section.name}") %>
             </div>

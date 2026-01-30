@@ -1,0 +1,1105 @@
+@import "pdfs/base";
+
+@page {
+  margin: 0;
+}
+
+.pdf__file {
+  flex-direction: row;
+  min-height: 297mm;
+  height: max-content;
+  display: flex;
+  padding: 10px;
+
+  .side-body {
+    width: 30%;
+    background-color: #8fb9df;
+    margin: -10px 0 -10px -10px;
+    padding: 10px 0 10px 10px;
+
+    .side-body-content-container {
+      padding: 0 16px 16px;
+      color: #f8f8ff;
+      display: flex;
+      flex-direction: column;
+
+      .header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+
+        .photo {
+          height: auto;
+          margin: 0 auto 10px;
+          border-radius: 10px;
+          overflow: hidden;
+          width: fit-content;
+
+          .cv-photo {
+            width: 108px;
+            border-radius: 10px;
+            height: auto;
+            transform: none;
+          }
+        }
+
+        .name {
+          font-size: 27px;
+          margin-top: 15px;
+          font-weight: bold;
+        }
+      }
+
+      .data-container {
+        margin-bottom: 12px;
+
+        label {
+          font-size: 13px;
+          font-weight: bold;
+        }
+
+        .email {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .phone-number {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .address {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .birth-date {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .sex {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .drivers-licence {
+          margin: 5px;
+          flex-direction: column;
+          align-items: flex-start;
+          display: flex;
+          font-size: 15px;
+        }
+
+        .websites {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .website {
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 5px;
+            display: flex;
+            font-size: 15px;
+          }
+        }
+
+      }
+
+      .side-body-content {
+
+        .divider {
+          border-color: #f8f8ff;
+          border-bottom: 1px solid;
+          margin-left: 12px;
+          margin-right: 16px;
+        }
+
+        .languages-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+          text-justify: inter-word;
+
+
+          .languages-header {
+            font-weight: bold;
+          }
+
+          .languages-container {
+            font-size: 12px;
+            margin-top: 5px;
+
+            .language-row {
+              display: flex;
+              flex-direction: row;
+              margin-top: 5px;
+              align-items: center;
+
+              .language {
+                margin-right: 6px;
+              }
+
+              .language-skill {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        .intrests-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+          text-justify: inter-word;
+
+          .intrests-header {
+            font-weight: bold;
+          }
+
+          .intrests-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+
+        .custom-section-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+          text-justify: inter-word;
+
+          .custom-section-header {
+            font-weight: bold;
+          }
+
+          .custom-section-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+
+        .certificate-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+          text-justify: inter-word;
+
+          .certificates-header {
+            font-weight: bold;
+          }
+
+          .certificates-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+            margin-left: 6px;
+            margin-right: 6px;
+            text-align: justify;
+            text-justify: inter-word;
+            width: 100%;
+
+            .certificate-row {
+
+              .certificate-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .name {
+                  font-weight: bold;
+                }
+              }
+
+              .certificate-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .course-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .courses-header {
+            font-weight: bold;
+          }
+
+          .courses-container {
+
+            .course-row {
+
+              .course-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .course-name {
+
+                  .name {
+                    font-weight: bold;
+                    font-size: 14px;
+                  }
+                }
+              }
+
+              .course-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .education-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 8px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .educations-header {
+            font-weight: bold;
+          }
+
+          .education-container {
+            width: 100%;
+
+            .education-row {
+
+              .education-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .school-container {
+
+                  .university {
+                    font-weight: bold;
+                    font-size: 14px;
+                  }
+                }
+
+                .dates {
+                  display: flex;
+
+                  .start-date {
+                    margin-right: 5px;
+                  }
+
+                  .end-date {
+                    margin-left: 6px;
+                  }
+                }
+              }
+
+              .education-container {
+                font-size: 12px;
+                margin-top: 5px;
+
+                .faculty {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .specialisation {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .employment-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .employments-header {
+            font-weight: bold;
+          }
+
+          .employment-container {
+
+            .employment-row {
+
+              .employment-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .job-title {
+                  font-weight: bold;
+
+                  .employer-container {
+                    font-weight: lighter;
+                    display: flex;
+
+                    .employer {
+                      margin-right: 5px;
+                    }
+                  }
+                }
+
+                .dates {
+                  display: flex;
+
+                  .start-date {
+                    margin-right: 5px;
+                  }
+
+                  .start-date {
+                    margin-left: 6px;
+                  }
+                }
+              }
+
+              .employment-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .skills-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .skills-header {
+            font-weight: bold;
+          }
+
+          .skills-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+
+        .references-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .references-header {
+            font-weight: bold;
+          }
+
+          .references-container {
+
+            .reference-row {
+
+              .company {
+                font-weight: bold;
+              }
+
+              .contact-information {
+                font-size: 14px;
+
+                .contact-person {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .phone-number {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+
+                .email {
+                  font-weight: bold;
+
+                  label {
+                    font-weight: lighter;
+                  }
+                }
+              }
+
+              .reference-description {
+                font-size: 12px;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+
+        .privacy-policy-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .privacy-policy-content {
+            font-size: 10px;
+          }
+        }
+
+        .description-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
+          flex-direction: column;
+          align-items: center;
+          display: flex;
+          font-size: 15px;
+          margin-left: 6px;
+          margin-right: 6px;
+          text-align: justify;
+
+          .description-header {
+            font-weight: bold;
+          }
+
+          .description-content {
+            font-size: 12px;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .main-body {
+    width: 70%;
+    background-color: #fafafa;
+    margin: -10px 0 -10px 0;
+    padding: 10px 0 10px 0;
+
+    .main-body-content-container {
+      display: flex;
+      margin: 10px;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-left: 20px;
+      color: var(--font-color);
+      break-inside: avoid;
+      page-break-inside: avoid;
+
+      .divider {
+        border-bottom: double;
+        border-color: var(--font-color);
+      }
+
+      .name {
+        font-size: 27px;
+        font-weight: bold;
+      }
+
+      .description-section {
+        display: flex;
+        flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .description-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .description-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+
+      .employment-section {
+        // margin-bottom: 10px;
+        // margin-top: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .employments-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .employment-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .employment-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+            .job-title {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+
+              .employer-container {
+                color: #4d98dd;
+                font-weight: lighter;
+                display: flex;
+                font-size: 14px;
+                text-align: justify;
+                text-justify: inter-word;
+
+                .employer {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .dates {
+              display: flex;
+              font-size: 13px;
+              align-items: center;
+              color: #4d98dd;
+
+              .start-date {
+                padding: 5px;
+              }
+
+              .end-date {
+                padding: 5px;
+              }
+            }
+          }
+
+          .employment-description {
+            font-size: 12px;
+            border-bottom: 1px;
+            margin-bottom: 10px;
+            padding-left: 5px;
+            margin-top: 5px;
+          }
+        }
+      }
+
+      .education-section {
+        // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .educations-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 5px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .education-header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          .school-container {
+
+            .university {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            .city {
+              color: #4d98dd;
+              font-weight: lighter;
+              font-size: 14px;
+            }
+          }
+
+          .dates {
+            display: flex;
+            font-size: 13px;
+            align-items: center;
+            color: #4d98dd;
+
+            .start-date {
+              padding: 5px;
+            }
+
+            .end-date {
+              padding: 5px;
+            }
+          }
+        }
+
+        .education-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .faculty {
+            color: #4d98dd;
+
+            label {
+              font-weight: lighter;
+              color: var(--font-color);
+            }
+          }
+
+          .specialisation {
+            color: #4d98dd;
+
+            label {
+              font-weight: lighter;
+              color: var(--font-color);
+            }
+          }
+        }
+      }
+
+      .skills-section {
+        display: flex;
+        flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .skills-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .skills-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+
+      .privacy-policy-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        .privacy-policy-content {
+          text-align: justify;
+          text-justify: inter-word;
+          font-size: 10px;
+          border-bottom: 1px;
+          margin: 10px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+      }
+
+      .certificate-section {
+        // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .certificates-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .certificates-container {
+
+          .certificate-row {
+
+            .certificate-header {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+
+              .name {
+                color: black;
+                font-size: 15px;
+                font-weight: bold;
+              }
+
+              .date {
+                display: flex;
+                font-size: 13px;
+                align-items: center;
+                color: #4d98dd;
+              }
+            }
+
+            .certificate-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .course-section {
+        // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .courses-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .courses-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .course-row {
+
+            .course-header {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+
+              .course-name {
+                color: black;
+                font-size: 15px;
+                font-weight: bold;
+
+                .institution {
+                  color: #4d98dd;
+                  font-weight: lighter;
+                  display: flex;
+                  font-size: 14px;
+                  text-align: justify;
+                }
+              }
+
+              .date {
+                display: flex;
+                font-size: 13px;
+                align-items: center;
+                color: #8FB9DF;
+              }
+            }
+
+            .course-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      .custom-section-section {
+        display: flex;
+        flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .custom-section-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .custom-section-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+
+      .languages-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .languages-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .languages-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .language-row {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+
+            .language {
+              margin-right: 10px;
+            }
+
+            .language-level {
+              color: #8FB9DF;
+              font-weight: bold;
+              display: flex;
+              text-align: justify;
+            }
+          }
+        }
+      }
+
+      .references-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .references-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .references-container {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          font-size: 13px;
+          border-bottom: 1px;
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 10px;
+
+          .reference-row {
+
+            .company {
+              color: black;
+              font-size: 15px;
+              font-weight: bold;
+            }
+
+            .contact-information {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 5px;
+
+              .contact-person {
+                color: #8FB9DF;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+
+              .phone-number {
+                color: #8FB9DF;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+
+              .email {
+                color: #8FB9DF;
+
+                label {
+                  color: var(--font-color);
+                }
+              }
+            }
+
+            .reference-description {
+              font-size: 12px;
+              border-bottom: 1px;
+              margin-bottom: 10px;
+              padding-left: 5px;
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+
+      .intrests-section {
+        display: flex;
+        flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
+
+        .intrests-header {
+          color: black;
+          font-size: 16px;
+          margin-bottom: 10px;
+          font-weight: bold;
+          margin-top: 10px;
+        }
+
+        .intrests-content {
+          font-size: 12px;
+          border-bottom: 1px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          text-align: justify;
+          text-justify: inter-word;
+        }
+      }
+    }
+  }
+}
