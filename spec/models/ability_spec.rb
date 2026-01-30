@@ -1,21 +1,21 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Ability, type: :model do
   subject(:ability) { described_class.new(user) }
 
-  context "when guest user" do
+  context 'when guest user' do
     let(:user) { nil }
 
-    it "allows managing only a new user record" do
+    it 'allows managing only a new user record' do
       expect(ability.can?(:manage, User.new)).to be(true)
       expect(ability.can?(:create, Cv)).to be(false)
     end
   end
 
-  context "when logged in user" do
+  context 'when logged in user' do
     let(:user) { create(:user) }
 
-    it "allows creating cv-related records" do
+    it 'allows creating cv-related records' do
       expect(ability.can?(:create, Cv)).to be(true)
       expect(ability.can?(:create, Section)).to be(true)
       expect(ability.can?(:create, Certificate)).to be(true)
@@ -26,7 +26,7 @@ RSpec.describe Ability, type: :model do
       expect(ability.can?(:create, Reference)).to be(true)
     end
 
-    it "allows managing owned records" do
+    it 'allows managing owned records' do
       cv = create(:cv, user: user)
       section = create(:section, cv: cv)
       certificate = create(:certificate, section: section)

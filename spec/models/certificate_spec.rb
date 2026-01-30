@@ -1,49 +1,50 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe Ability, type: :model do
-  subject(:ability) { described_class.new(user) }
-
-  context "when guest user" do
-    let(:user) { nil }
-
-    it "allows managing only a new user record" do
-      expect(ability.can?(:manage, User.new)).to be(true)
-      expect(ability.can?(:create, Cv)).to be(false)
+RSpec.describe Certificate, type: :model do
+  describe 'associations' do
+    it 'belongs to section' do
+      association = described_class.reflect_on_association(:section)
+      expect(association.macro).to eq(:belongs_to)
     end
   end
 
-  context "when logged in user" do
-    let(:user) { create(:user) }
+  describe '#move_up' do
+    it 'swaps position with the certificate above' do
+      section = create(:section)
+      top = create(:certificate, section: section, position: 1)
+      lower = create(:certificate, section: section, position: 2)
 
-    it "allows creating cv-related records" do
-      expect(ability.can?(:create, Cv)).to be(true)
-      expect(ability.can?(:create, Section)).to be(true)
-      expect(ability.can?(:create, Certificate)).to be(true)
-      expect(ability.can?(:create, Course)).to be(true)
-      expect(ability.can?(:create, Education)).to be(true)
-      expect(ability.can?(:create, Employment)).to be(true)
-      expect(ability.can?(:create, Language)).to be(true)
-      expect(ability.can?(:create, Reference)).to be(true)
+      lower.move_up
+
+      expect(lower.reload.position).to eq(1)
+      expect(top.reload.position).to eq(2)
     end
 
-    it "allows managing owned records" do
-      cv = create(:cv, user: user)
-      section = create(:section, cv: cv)
-      certificate = create(:certificate, section: section)
-      course = create(:course, section: section)
-      education = create(:education, section: section)
-      employment = create(:employment, section: section)
-      language = create(:language, section: section)
-      reference = create(:reference, section: section)
+    it 'does nothing when already at the top' do
+      section = create(:section)
+      certificate = create(:certificate, section: section, position: 1)
 
-      expect(ability.can?(:manage, cv)).to be(true)
-      expect(ability.can?(:manage, section)).to be(true)
-      expect(ability.can?(:manage, certificate)).to be(true)
-      expect(ability.can?(:manage, course)).to be(true)
-      expect(ability.can?(:manage, education)).to be(true)
-      expect(ability.can?(:manage, employment)).to be(true)
-      expect(ability.can?(:manage, language)).to be(true)
-      expect(ability.can?(:manage, reference)).to be(true)
+      expect { certificate.move_up }.not_to change(certificate, :position)
+    end
+  end
+
+  describe '#move_down' do
+    it 'swaps position with the certificate below' do
+      section = create(:section)
+      top = create(:certificate, section: section, position: 1)
+      lower = create(:certificate, section: section, position: 2)
+
+      top.move_down
+
+      expect(top.reload.position).to eq(2)
+      expect(lower.reload.position).to eq(1)
+    end
+
+    it 'does nothing when already at the bottom' do
+      section = create(:section)
+      certificate = create(:certificate, section: section, position: 1)
+
+      expect { certificate.move_down }.not_to change(certificate, :position)
     end
   end
 end
