@@ -3,27 +3,20 @@ module ApplicationHelper
   require 'sass'
 
   def render_scss(logical_path)
-    # pozwól podawać "pdfs/style1" albo "pdfs/style1.scss"
     logical_path = logical_path.to_s
-    logical_path = logical_path.sub(%r{\A/}, "")
-    logical_path = logical_path.sub(/\.scss\z/, "")
-    logical_path = logical_path.sub(/\.css\z/, "")
+    logical_path = logical_path.sub(%r{\A/}, '')
+    logical_path = logical_path.sub(/\.scss\z/, '')
+    logical_path = logical_path.sub(/\.css\z/, '')
 
-    # SCSS trzymasz tu:
-    stylesheets_root = Rails.root.join("app/assets/stylesheets")
-
-    # wspieramy zarówno plik "style1.scss" jak i partial "_style1.scss"
+    stylesheets_root = Rails.root.join('app/assets/stylesheets')
     candidates = [
       stylesheets_root.join("#{logical_path}.scss"),
       stylesheets_root.join("#{File.dirname(logical_path)}/_#{File.basename(logical_path)}.scss")
     ]
-
-    scss_file = candidates.find { |p| File.exist?(p) }
+    scss_file = candidates.detect { |p| File.exist?(p) }
     raise ActionView::MissingTemplate, "Missing SCSS file: #{logical_path} in app/assets/stylesheets" unless scss_file
 
     scss_text = File.read(scss_file)
-
-    # load_paths pozwala na @import "pdfs/base";
     engine = Sass::Engine.new(
       scss_text,
       syntax: :scss,
@@ -33,7 +26,6 @@ module ApplicationHelper
       load_paths: [
         stylesheets_root.to_s
       ],
-      # jeśli korzystasz z asset-url / image-url w SCSS, sprockets bywa przydatny
       sprockets: {
         context: controller.view_context,
         environment: controller.view_context.assets_environment
