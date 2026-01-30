@@ -4,310 +4,197 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><%= @cv.name %></title>
   <style>
-    <%= render_scss("pdfs.scss") %>
+    <%= render_scss("pdfs/style2.scss") %>
   </style>
   <%= render 'layouts/variables' %>
 </head>
 <body>
-  <div class="pdf__file">
-    <div class="side-body">
-      <div class="side-body-content-container">
-        <div class="header-container">
-          <div class="photo">
-              <%= image_tag "data:image/png;base64,#{Base64.encode64(@cv.main_photo.download)}", class: 'cv-photo' %>
-            </div>
-          <div class="name">
-            <%= "#{@cv.first_name} #{@cv.last_name}" %>
-          </div>
+  <% sections = @cv.sections.order(:vertical_position) %>
+  <% description_section = sections.find { |section| section.name == Section.get_names[:description_section] } %>
+  <div class="cv2">
+    <header class="cv2__header">
+      <% if @cv.main_photo.attached? %>
+        <div class="cv2__photo">
+          <%= image_tag "data:image/png;base64,#{Base64.encode64(@cv.main_photo.download)}", class: 'cv2__photo-img' %>
         </div>
-        <div class="data-container">
-          <div class="email">
-            <label><%= t('.email') %></label>
-            <%= @cv.email %>
-          </div>
-          <div class="phone-number">
-            <label><%= t('.phone_number') %></label>
-            <%= @cv.phone_number %>
-          </div>
-          <div class="address">
-            <label><%= t('.address') %></label>
-            <%= @cv.address %>
-          </div>
-          <div class="birth-date">
-            <label><%= t('.birth_date') %></label>
-            <%= @cv.birth_date.strftime("%d.%m.%Y") %>
-          </div>
-          <div class="sex">
-            <% if @cv.sex != Cv.get_sexes[:unspecified] %>
-              <label><%= t('.sex') %></label>
-              <%= @cv.sex %>
-            <% end %>
-          </div>
-          <div class="drivers-licence">
-            <label><%= t('.drivers_licence') %></label>
-            <%= @cv.drivers_licence %>
-          </div>
-          <div class="websites">
-            <% if @cv.linkedin.present? %>
-              <div class="website">
-                  <label><%= t('.linkedin') %></label>
-                  <%= @cv.linkedin %>
-              </div>
-            <% end %>
-            <% if @cv.facebook.present? %>
-              <div class="website">
-                  <label><%= t('.facebook') %></label>
-                  <%= @cv.facebook %>
-              </div>
-            <% end %>
-            <% if @cv.twitter.present? %>
-              <div class="website">
-                  <label><%= t('.twitter') %></label>
-                  <%= @cv.twitter %>
-              </div>
-            <% end %>
-            <% if @cv.instagram.present? %>
-              <div class="website">
-                  <label><%= t('.instagram') %></label>
-                  <%= @cv.instagram %>
-              </div>
-            <% end %>
-            <% if @cv.github.present? %>
-              <div class="website">
-                  <label><%= t('.github') %></label>
-                  <%= @cv.github %>
-              </div>
-            <% end %>
-            <% if @cv.website.present? %>
-              <div class="website">
-                  <label><%= t('.website') %></label>
-                  <%= @cv.website %>
-              </div>
-            <% end %>
-          </div>
+      <% end %>
+
+      <div class="cv2__header-main">
+        <div class="cv2__name">
+          <%= "#{@cv.first_name} #{@cv.last_name}" %>
         </div>
-        <div class="side-body-content">
-          <% sections = @cv.sections.where(horizontal_position: Section.get_horizontal_positions[:side_body]) %>
-          <% sections.order(:vertical_position).each do |section| %>
-            <div class="divider"></div>
-            <% case section.name %>
-            <% when Section.get_names[:languages_section] %>
-              <div class="languages-section">
-                <div class="languages-header">
-                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-                </div>
-                <div class="languages-container">
-                <% section.languages.order(:position).each do |language| %>
-                    <div class="language-row">
-                      <div class="language">
-                        <%= language.language %>
-                      </div>
-                      <div class="language-skill">
-                        <%= Language.get_translations_languages_levels[language.language_level.to_sym] %>
-                      </div>
-                    </div>
-                <% end %>
-                </div>
-              </div>
-            <% when Section.get_names[:interest_section] %>
-              <div class="intrests-section">
-                <div class="intrests-header">
-                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-                </div>
-                <div class="intrests-content">
-                  <%= section.content %>
-                </div>
-              </div>
-            <% when Section.get_names[:custom_section] %>
-              <div class="custom-section-section">
-                <div class="custom-section-header">
-                  <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-                </div>
-                <div class="custom-section-content">
-                  <%= section.content %>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="main-body">
-      <div class="main-body-content-container">
-        <% sections = @cv.sections.where(horizontal_position: Section.get_horizontal_positions[:main_body]) %>
-        <% sections.order(:vertical_position).each_with_index do |section, index| %>
-          <% unless index == 0 %>
-            <div class="divider"></div>
-          <% end %>
-          <% case section.name %>
-          <% when Section.get_names[:description_section] %>
-            <div class="description-section">
-              <div class="description-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <div class="description-content">
-                <%= section.content %>
-              </div>
+
+        <% if description_section&.content.present? %>
+          <div class="cv2__header-description">
+            <div class="cv2__header-description-body">
+              <%= description_section.content %>
             </div>
-          <% when Section.get_names[:certificates_section] %>
-            <div class="certificate-section">
-              <div class="certificates-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <% section.certificates.order(:position).each do |certificate| %>
-                <div class="certificate-container">
-                  <div class="certificate-header">
-                    <div class="name">
-                      <%= certificate.name %>
-                    </div>
-                    <div class="date">
-                      <%= certificate.date.strftime("%m.%Y") %>
-                    </div>
-                  </div>
-                  <div class="certificates-description">
-                    <%= certificate.description %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% when Section.get_names[:courses_section] %>
-            <div class="course-section">
-              <div class="courses-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <% section.courses.order(:position).each do |course| %>
-                <div class="course-container">
-                  <div class="course-header">
-                    <div class="name">
-                      <%= course.name %>
-                    </div>
-                    <div class="institution">
-                      <%= course.institution %>
-                    </div>
-                    <div class="date">
-                      <%= course.start_date.strftime("%m.%Y") %>
-                    </div>
-                  </div>
-                  <div class="certificates-description">
-                    <%= course.description %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% when Section.get_names[:educations_section] %>
-            <div class="education-section">
-              <div class="educations-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <% section.educations.order(:position).each do |education| %>
-                <div class="education-container">
-                  <div class="education-header">
-                    <div class="school-container">
-                      <div class="university">
-                        <%= education.university %>
-                      </div>
-                      <div class="city">
-                        <%= education.city %>
-                      </div>
-                    </div>
-                    <div class="dates">
-                      <div class="start-date">
-                        <%= education.start_date.strftime("%m.%Y") %>
-                      </div>
-                      -
-                      <div class="end-date">
-                        <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current") %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="education-container">
-                    <div class="faculty">
-                      <label><%= I18n.t(".cvs.style1.faculty") %></label>
-                      <%= education.faculty %>
-                    </div>
-                    <div class="specialisation">
-                      <label><%= I18n.t(".cvs.style1..specialisation") %></label>
-                      <%= education.specialisation %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% when Section.get_names[:employments_section] %>
-            <div class="employment-section">
-              <div class="employments-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <% section.employments.order(:position).each do |employment| %>
-                <div class="employment-container">
-                  <div class="employment-header">
-                    <div class="job-title">
-                      <%= employment.name %>
-                      <div class="employer-container">
-                        <div class="employer">
-                          <%= employment.employer %>
-                        </div>
-                        <div class="city">
-                          <%= employment.city %>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="dates">
-                      <div class="start-date">
-                        <%= employment.start_date.strftime("%m.%Y") %>
-                      </div>
-                      -
-                      <div class="end-date">
-                        <%= employment.end_date.present? ? employment.end_date.strftime("%m.%Y") : I18n.t(".cvs.style1.current_work") %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="employment-description">
-                    <%= employment.description %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% when Section.get_names[:skills_section] %>
-            <div class="skills-section">
-              <div class="skills-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <div class="skills-content">
-                <%= section.content %>
-              </div>
-            </div>
-          <% when Section.get_names[:privacy_policy_sections] %>
-            <div class="privacy-policy-section">
-              <div class="privacy-policy-content">
-                <%= section.content %>
-              </div>
-            </div>
-          <% when Section.get_names[:custom_section] %>
-            <div class="custom-section-section">
-              <div class="custom-section-header">
-                <%= section.custom_name.present? ? section.custom_name : I18n.t(".cvs.style1.#{section.name}") %>
-              </div>
-              <div class="custom-section-content">
-                <%= section.content %>
-              </div>
-            </div>
-          <% end %>
+          </div>
         <% end %>
       </div>
-    </div>
+
+      <div class="cv2__header-contact">
+        <div class="cv2__header-contact-list">
+          <% if @cv.email.present? %>
+            <span><strong><%= t('.email') %>:</strong> <%= @cv.email %></span>
+          <% end %>
+
+          <% if @cv.phone_number.present? %>
+            <span><strong><%= t('.phone_number') %>:</strong> <%= @cv.phone_number %></span>
+          <% end %>
+
+          <% if @cv.address.present? %>
+            <span><strong><%= t('.address') %>:</strong> <%= @cv.address %></span>
+          <% end %>
+
+          <% if @cv.birth_date.present? %>
+            <span><strong><%= t('.birth_date') %>:</strong> <%= @cv.birth_date.strftime("%d.%m.%Y") %></span>
+          <% end %>
+
+          <% if @cv.sex != Cv.get_sexes[:unspecified] %>
+            <span><strong><%= t('.sex') %>:</strong> <%= @cv.sex %></span>
+          <% end %>
+
+          <% if @cv.drivers_licence.present? %>
+            <span><strong><%= t('.drivers_licence') %>:</strong> <%= @cv.drivers_licence %></span>
+          <% end %>
+
+          <% if @cv.linkedin.present? %><span>LinkedIn: <%= @cv.linkedin %></span><% end %>
+          <% if @cv.github.present? %><span>GitHub: <%= @cv.github %></span><% end %>
+          <% if @cv.website.present? %><span><%= t('.website') %>: <%= @cv.website %></span><% end %>
+          <% if @cv.instagram.present? %><span>Instagram: <%= @cv.instagram %></span><% end %>
+          <% if @cv.facebook.present? %><span>Facebook: <%= @cv.facebook %></span><% end %>
+          <% if @cv.twitter.present? %><span>Twitter: <%= @cv.twitter %></span><% end %>
+        </div>
+      </div>
+    </header>
+
+    <main class="cv2__content">
+      <% content_sections = [
+        Section.get_names[:description_section],
+        Section.get_names[:skills_section],
+        Section.get_names[:interest_section],
+        Section.get_names[:custom_section],
+        Section.get_names[:privacy_policy_sections]
+      ] %>
+      <% sections.each do |section| %>
+        <% next if content_sections.include?(section.name) && section.content.blank? && section.name != Section.get_names[:privacy_policy_sections] %>
+        <% next if section == description_section %>
+
+        <section class="cv2__section">
+          <% unless section.name == Section.get_names[:privacy_policy_sections] || Section.get_names[:employments_section] %>
+            <div class="cv2__section-title">
+              <%= section.custom_name.presence || I18n.t(".cvs.style2.#{section.name}") %>
+            </div>
+          <% end %>
+
+          <% case section.name %>
+          <% when Section.get_names[:description_section],
+                  Section.get_names[:skills_section],
+                  Section.get_names[:interest_section],
+                  Section.get_names[:custom_section] %>
+            <div class="cv2__richtext"><%= section.content %></div>
+
+          <% when Section.get_names[:employments_section] %>
+            <div class="cv2__list">
+              <% section.employments.order(:position).each do |employment| %>
+                <div class="cv2__item">
+                  <div class="cv2__item-head">
+                    <div class="cv2__item-title"><%= employment.name %></div>
+                    <div class="cv2__item-dates">
+                      <%= employment.start_date.strftime("%m.%Y") %> – <%= employment.end_date.present? ? employment.end_date.strftime("%m.%Y") : I18n.t(".cvs.style2.current_work") %>
+                    </div>
+                  </div>
+                  <div class="cv2__item-sub">
+                    <%= [employment.employer, employment.city].compact.join(" • ") %>
+                  </div>
+                  <% if employment.description.present? %>
+                    <div class="cv2__item-body"><%= employment.description %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:educations_section] %>
+            <div class="cv2__list">
+              <% section.educations.order(:position).each do |education| %>
+                <div class="cv2__item">
+                  <div class="cv2__item-head">
+                    <div class="cv2__item-title"><%= education.university %></div>
+                    <div class="cv2__item-dates">
+                      <%= education.start_date.strftime("%m.%Y") %> – <%= education.end_date.present? ? education.end_date.strftime("%m.%Y") : I18n.t(".cvs.style2.current") %>
+                    </div>
+                  </div>
+                  <div class="cv2__item-sub">
+                    <%= [education.city, education.faculty, education.specialisation].compact.join(" • ") %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:courses_section] %>
+            <div class="cv2__list">
+              <% section.courses.order(:position).each do |course| %>
+                <div class="cv2__item">
+                  <div class="cv2__item-head">
+                    <div class="cv2__item-title"><%= course.name %></div>
+                    <div class="cv2__item-dates"><%= course.start_date.strftime("%m.%Y") %></div>
+                  </div>
+                  <div class="cv2__item-sub"><%= course.institution %></div>
+                  <% if course.description.present? %>
+                    <div class="cv2__item-body"><%= course.description %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:certificates_section] %>
+            <div class="cv2__list">
+              <% section.certificates.order(:position).each do |certificate| %>
+                <div class="cv2__item">
+                  <div class="cv2__item-head">
+                    <div class="cv2__item-title"><%= certificate.name %></div>
+                    <div class="cv2__item-dates"><%= certificate.date.strftime("%m.%Y") %></div>
+                  </div>
+                  <% if certificate.description.present? %>
+                    <div class="cv2__item-body"><%= certificate.description %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:languages_section] %>
+            <div class="cv2__chips">
+              <% section.languages.order(:position).each do |language| %>
+                <span class="cv2__chip">
+                  <%= language.language %> — <%= Language.get_translations_languages_levels[language.language_level.to_sym] %>
+                </span>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:references_section] %>
+            <div class="cv2__list">
+              <% section.references.order(:position).each do |reference| %>
+                <div class="cv2__item">
+                  <div class="cv2__item-head">
+                    <div class="cv2__item-title"><%= reference.company %></div>
+                  </div>
+                  <div class="cv2__item-sub">
+                    <%= [reference.contact_person, reference.phone_number, reference.email].compact.join(" • ") %>
+                  </div>
+                  <% if reference.description.present? %>
+                    <div class="cv2__item-body"><%= reference.description %></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+          <% when Section.get_names[:privacy_policy_sections] %>
+            <div class="cv2__privacy"><%= section.content %></div>
+          <% end %>
+        </section>
+      <% end %>
+    </main>
   </div>
 </body>
 </html>
-<script>
-  const paperHeight = 1122.520;
-  const windowHeight = 1202;
-  const body = document.querySelector('.main-body');
-  const html = document.documentElement;
-  const bodyHeight = Math.max(body.scrollHeight, body.offsetHeight, body.clientHeight);
-  const pages = Math.ceil(bodyHeight / windowHeight);
-  const newBodyHeight = Math.ceil(parseFloat(pages) * paperHeight);
-  document.querySelector('.side-body').style.setProperty('height', newBodyHeight+'px');
-  document.querySelector('.main-body').style.setProperty('height', newBodyHeight+'px');
-  document.querySelector('.pdf__file').style.setProperty('height', newBodyHeight+'px');
-</script>

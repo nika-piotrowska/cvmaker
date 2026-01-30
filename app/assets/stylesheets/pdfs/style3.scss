@@ -1,9 +1,6 @@
-html {
-  -webkit-print-color-adjust: exact; // DO NOT MOVE FOR THE BACKGROUND COLOR TO RENDER
-}
-body {
-  margin: 0px;
-  padding: 0;
+@import "pdfs/base";
+
+@page {
   margin: 0;
 }
 
@@ -12,13 +9,16 @@ body {
   min-height: 297mm;
   height: max-content;
   display: flex;
+  padding: 10px;
 
   .side-body {
-    width: 40%;
-    background-color: #004444;
+    width: 30%;
+    background-color: #8fb9df;
+    margin: -10px 0 -10px -10px;
+    padding: 10px 0 10px 10px;
 
     .side-body-content-container {
-      padding: 20px;
+      padding: 0 16px 16px;
       color: #f8f8ff;
       display: flex;
       flex-direction: column;
@@ -27,23 +27,23 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 10px;
+        margin: 0;
 
         .photo {
-          height: 250px;
-          margin: 10px;
+          height: auto;
+          margin: 0 auto 10px;
           border-radius: 10px;
           overflow: hidden;
           width: fit-content;
-  
+
           .cv-photo {
-            width: 180px;
+            width: 108px;
             border-radius: 10px;
             height: auto;
-            transform: translate3d(0px, calc((-100% + 300px)/2), 0px);
+            transform: none;
           }
         }
-        
+
         .name {
           font-size: 27px;
           margin-top: 15px;
@@ -52,7 +52,7 @@ body {
       }
 
       .data-container {
-        margin-bottom: 20px;
+        margin-bottom: 12px;
 
         label {
           font-size: 13px;
@@ -82,7 +82,7 @@ body {
           display: flex;
           font-size: 15px;
         }
-        
+
         .birth-date {
           margin: 5px;
           flex-direction: column;
@@ -123,24 +123,26 @@ body {
       }
 
       .side-body-content {
-        
+
         .divider {
           border-color: #f8f8ff;
           border-bottom: 1px solid;
-          margin-left: 20px;
-          margin-right: 25px;
+          margin-left: 12px;
+          margin-right: 16px;
         }
-        
+
         .languages-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
           text-justify: inter-word;
 
@@ -160,7 +162,7 @@ body {
               align-items: center;
 
               .language {
-                margin-right: 10px;
+                margin-right: 6px;
               }
 
               .language-skill {
@@ -171,15 +173,17 @@ body {
         }
 
         .intrests-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
           text-justify: inter-word;
 
@@ -194,15 +198,17 @@ body {
         }
 
         .custom-section-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
           text-justify: inter-word;
 
@@ -217,28 +223,30 @@ body {
         }
 
         .certificate-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
           text-justify: inter-word;
-  
+
           .certificates-header {
             font-weight: bold;
           }
-  
+
           .certificates-container {
             display: flex;
             flex-direction: column;
-            margin-bottom: 10px;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-bottom: 8px;
+            margin-left: 6px;
+            margin-right: 6px;
             text-align: justify;
             text-justify: inter-word;
             width: 100%;
@@ -264,15 +272,17 @@ body {
         }
 
         .course-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .courses-header {
@@ -306,15 +316,17 @@ body {
         }
 
         .education-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 8px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .educations-header {
@@ -347,7 +359,7 @@ body {
                   }
 
                   .end-date {
-                    margin-left: 5px;
+                    margin-left: 6px;
                   }
                 }
               }
@@ -377,15 +389,17 @@ body {
         }
 
         .employment-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .employments-header {
@@ -422,7 +436,7 @@ body {
                   }
 
                   .start-date {
-                    margin-left: 5px;
+                    margin-left: 6px;
                   }
                 }
               }
@@ -436,15 +450,17 @@ body {
         }
 
         .skills-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .skills-header {
@@ -458,15 +474,17 @@ body {
         }
 
         .references-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .references-header {
@@ -478,7 +496,7 @@ body {
             .reference-row {
 
               .company {
-                font-weight: bold; 
+                font-weight: bold;
               }
 
               .contact-information {
@@ -518,15 +536,17 @@ body {
         }
 
         .privacy-policy-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .privacy-policy-content {
@@ -535,15 +555,17 @@ body {
         }
 
         .description-section {
-          margin-top: 20px;
-          margin-bottom: 20px;
-          margin-left: 5px;
+          break-inside: avoid;
+          page-break-inside: avoid;
+          margin-top: 12px;
+          margin-bottom: 12px;
+          margin-left: 6px;
           flex-direction: column;
           align-items: center;
           display: flex;
           font-size: 15px;
-          margin-left: 10px;
-          margin-right: 10px;
+          margin-left: 6px;
+          margin-right: 6px;
           text-align: justify;
 
           .description-header {
@@ -559,9 +581,12 @@ body {
     }
 
   }
+
   .main-body {
-    width: 60%;
+    width: 70%;
     background-color: #fafafa;
+    margin: -10px 0 -10px 0;
+    padding: 10px 0 10px 0;
 
     .main-body-content-container {
       display: flex;
@@ -570,15 +595,24 @@ body {
       justify-content: flex-start;
       margin-left: 20px;
       color: var(--font-color);
+      break-inside: avoid;
+      page-break-inside: avoid;
 
       .divider {
         border-bottom: double;
         border-color: var(--font-color);
       }
-      
+
+      .name {
+        font-size: 27px;
+        font-weight: bold;
+      }
+
       .description-section {
         display: flex;
         flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .description-header {
           color: black;
@@ -602,6 +636,8 @@ body {
       .employment-section {
         // margin-bottom: 10px;
         // margin-top: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .employments-header {
           color: black;
@@ -631,9 +667,9 @@ body {
               color: black;
               font-size: 15px;
               font-weight: bold;
-              
+
               .employer-container {
-                color: #004444;
+                color: #4d98dd;
                 font-weight: lighter;
                 display: flex;
                 font-size: 14px;
@@ -650,7 +686,7 @@ body {
               display: flex;
               font-size: 13px;
               align-items: center;
-              color: #004444;
+              color: #4d98dd;
 
               .start-date {
                 padding: 5px;
@@ -674,11 +710,13 @@ body {
 
       .education-section {
         // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .educations-header {
           color: black;
           font-size: 16px;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           font-weight: bold;
           margin-top: 10px;
         }
@@ -690,7 +728,7 @@ body {
           align-items: center;
 
           .school-container {
-            
+
             .university {
               color: black;
               font-size: 15px;
@@ -698,7 +736,7 @@ body {
             }
 
             .city {
-              color: #004444;
+              color: #4d98dd;
               font-weight: lighter;
               font-size: 14px;
             }
@@ -708,7 +746,7 @@ body {
             display: flex;
             font-size: 13px;
             align-items: center;
-            color: #004444;
+            color: #4d98dd;
 
             .start-date {
               padding: 5px;
@@ -723,7 +761,7 @@ body {
         .education-container {
           display: flex;
           flex-direction: column;
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           font-size: 13px;
           border-bottom: 1px;
           margin-top: 5px;
@@ -731,7 +769,7 @@ body {
           margin-right: 10px;
 
           .faculty {
-            color: #004444;
+            color: #4d98dd;
 
             label {
               font-weight: lighter;
@@ -740,7 +778,7 @@ body {
           }
 
           .specialisation {
-            color: #004444;
+            color: #4d98dd;
 
             label {
               font-weight: lighter;
@@ -753,6 +791,8 @@ body {
       .skills-section {
         display: flex;
         flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .skills-header {
           color: black;
@@ -774,17 +814,23 @@ body {
       }
 
       .privacy-policy-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
         .privacy-policy-content {
           text-align: justify;
           text-justify: inter-word;
           font-size: 10px;
           border-bottom: 1px;
           margin: 10px;
+          break-inside: avoid;
+          page-break-inside: avoid;
         }
       }
 
       .certificate-section {
         // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .certificates-header {
           color: black;
@@ -795,15 +841,15 @@ body {
         }
 
         .certificates-container {
-            
+
           .certificate-row {
-            
+
             .certificate-header {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               align-items: center;
-              
+
               .name {
                 color: black;
                 font-size: 15px;
@@ -814,10 +860,10 @@ body {
                 display: flex;
                 font-size: 13px;
                 align-items: center;
-                color: #004444;
+                color: #4d98dd;
               }
             }
-            
+
             .certificate-description {
               font-size: 12px;
               border-bottom: 1px;
@@ -831,6 +877,8 @@ body {
 
       .course-section {
         // margin-bottom: 10px;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .courses-header {
           color: black;
@@ -849,22 +897,22 @@ body {
           margin-top: 5px;
           margin-left: 10px;
           margin-right: 10px;
-            
+
           .course-row {
-            
+
             .course-header {
               display: flex;
               flex-direction: row;
               justify-content: space-between;
               align-items: center;
-              
+
               .course-name {
                 color: black;
                 font-size: 15px;
                 font-weight: bold;
 
                 .institution {
-                  color: #004444;
+                  color: #4d98dd;
                   font-weight: lighter;
                   display: flex;
                   font-size: 14px;
@@ -876,10 +924,10 @@ body {
                 display: flex;
                 font-size: 13px;
                 align-items: center;
-                color: #004444;
+                color: #8FB9DF;
               }
             }
-            
+
             .course-description {
               font-size: 12px;
               border-bottom: 1px;
@@ -894,6 +942,8 @@ body {
       .custom-section-section {
         display: flex;
         flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .custom-section-header {
           color: black;
@@ -915,6 +965,8 @@ body {
       }
 
       .languages-section {
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .languages-header {
           color: black;
@@ -944,7 +996,7 @@ body {
             }
 
             .language-level {
-              color: #004444;
+              color: #8FB9DF;
               font-weight: bold;
               display: flex;
               text-align: justify;
@@ -954,7 +1006,9 @@ body {
       }
 
       .references-section {
-        
+        break-inside: avoid;
+        page-break-inside: avoid;
+
         .references-header {
           color: black;
           font-size: 16px;
@@ -987,7 +1041,7 @@ body {
               margin-bottom: 5px;
 
               .contact-person {
-                color: #004444;
+                color: #8FB9DF;
 
                 label {
                   color: var(--font-color);
@@ -995,7 +1049,7 @@ body {
               }
 
               .phone-number {
-                color: #004444;
+                color: #8FB9DF;
 
                 label {
                   color: var(--font-color);
@@ -1003,7 +1057,7 @@ body {
               }
 
               .email {
-                color: #004444;
+                color: #8FB9DF;
 
                 label {
                   color: var(--font-color);
@@ -1025,6 +1079,8 @@ body {
       .intrests-section {
         display: flex;
         flex-direction: column;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .intrests-header {
           color: black;
@@ -1045,19 +1101,5 @@ body {
         }
       }
     }
-  }
-}
-
-@page {
-  size: A4;
-  margin: 0;
-}
-@media print {
-  html, body {
-      width: 210mm;
-      height: 297mm;        
-  }
-  .pdf__file {
-      margin: 0;
   }
 }

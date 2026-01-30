@@ -1,48 +1,14 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   layouts:
     application:
-      copyright: © Copyright 2022, Weronika Piotrowska
+      copyright: "© Copyright 2022, Weronika Piotrowska"
       dashboard: Dashboard
       login: Log in
       logout: Logout
-      edit_profile: Edit profile
   cvs:
     create:
-      notice: "Could not create CV. Something went wrong."
-    personal_information:
-      done: Next step
+      notice: Could not create CV. Something went wrong.
     personal_information:
       personal_information: Personal information
       name: Name
@@ -61,18 +27,32 @@ en:
       website: Website
       next_step: Next step
       next: Add sections to your CV
+      done: Next step
     sections:
       add_section: Add new section
     styles:
       choose_style: Choose Your CV style
       download_cv: Downlad your CV as .pdf
       back: Back to CV sections
-    style1:
+    pdfs:
+      personal_information:
+        phone_number: "Phone number:"
+        email: "Email:"
+        address: "Address:"
+        birth_date: "Birth date:"
+        sex: "Sex:"
+        drivers_licence: "Drivers licence:"
+        linkedin: "LinkedIn:"
+        facebook: "Facebook:"
+        twitter: "Twitter:"
+        instagram: "Instagram:"
+        github: "Github:"
+        website: "Website:"
       description_section: Description
       employments_section: Employments
       educations_section: Educations
       languages_section: Languages
-      interest_section: Intrests
+      interest_section: Interests
       skills_section: Skills
       certificates_section: Certificates
       courses_section: Courses
@@ -97,7 +77,7 @@ en:
       custom_section_name: Custom section
       description_section_name: Description
       skills_section_name: Skills
-      interest_section_name: Intrests
+      interest_section_name: Interests
       description_section_custom_name: Change section name (optional)
       privacy_policy_sections_custom_name: Change section name (optional)
       skills_section_custom_name: Change section name (optional)
@@ -107,7 +87,7 @@ en:
       custom_section_description: Description
       description_section_description: Describe yourself
       skills_section_description: Describe your skills
-      interest_section_description: Describe your intrests
+      interest_section_description: Describe your interests
       add_section: Update
     languages_form:
       languages_section_name: Languages
@@ -201,12 +181,9 @@ en:
       move_down: Move reference down
     references_list:
       add_reference: Add another references
-
-
   users:
     dashboard:
       new_cv: Add new CV
-  
   activerecord:
     attributes:
       cv:
