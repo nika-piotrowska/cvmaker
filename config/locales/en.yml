@@ -191,6 +191,11 @@ en:
           unspecified: Unspecified
           male: Male
           female: Female
+        styles:
+          style1: Style 1
+          style2: Style 2
+          style3: Style 3
+          style4: Style 4
       section:
         names:
           certificates_section: Certificates

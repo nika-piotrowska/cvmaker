@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :cv do
+    association :user
     name { Faker::Creature::Dog.meme_phrase }
     first_name { Faker::Name.female_first_name }
     last_name { Faker::Name.last_name }
