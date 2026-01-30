@@ -8,15 +8,15 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
 
     context 'when the stylesheet exists' do
-      let(:engine) { instance_double(Sass::Engine, render: 'compiled-css') }
+      let(:engine) { instance_double(SassC::Engine, render: 'compiled-css') }
 
       before do
-        allow(Sass::Engine).to receive(:new).and_return(engine)
+        allow(SassC::Engine).to receive(:new).and_return(engine)
       end
 
       it 'renders the sass engine output' do
         stylesheet_path = Rails.root.join('app/assets/stylesheets/render_test.scss')
-        File.write(stylesheet_path, "body { color: red; }")
+        File.write(stylesheet_path, 'body { color: red; }')
 
         expect(helper.render_scss('render_test')).to eq('compiled-css')
         expect(engine).to have_received(:render)
