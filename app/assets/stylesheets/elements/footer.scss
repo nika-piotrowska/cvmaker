@@ -1,0 +1,19 @@
+footer {
+  background-color: var(--darkest-green-color);
+  display: block;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+
+  .author {
+    display: flex;
+    margin-right: 15px;
+    justify-content: flex-end;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}

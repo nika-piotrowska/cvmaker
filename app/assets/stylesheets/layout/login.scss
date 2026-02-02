@@ -1,0 +1,287 @@
+h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  color: var(--font-color);
+
+}
+div.log-in-container {
+  display: grid;
+  justify-items: center;
+  flex-direction: column;
+
+  .log-in-box {
+    background-color: var(--darkest-green-color);
+    width: fit-content;
+    justify-content: center;
+    display: grid;
+    box-shadow: 0 3px 8px lightgrey;
+    color: var(--fill-color);
+    padding: 10px;
+    border-radius: 10px;
+
+    .new_user {
+      margin: 15px;
+      
+      .field {
+        margin: 15px;
+  
+        #user_email {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+  
+        #user_password {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+
+        &.remember-me {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+
+        .login {
+          width: 150px;
+          height: 35px;
+          border: none;
+          border-radius: 50px;
+          background-color: var(--dark-green-color);
+          color: var(--fill-color);
+          font-size: 15px;
+          margin-top: 10px;
+          
+          &:hover {
+            box-shadow: 0 3px 3px rgba(75, 75, 75, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+div.sign-up-container {
+  display: grid;
+  justify-items: center;
+  flex-direction: column;
+
+  .sign-up-box {
+    background-color: var(--darkest-green-color);
+    width: fit-content;
+    justify-content: center;
+    display: grid;
+    box-shadow: 0 3px 8px lightgrey;
+    color: var(--fill-color);
+    padding: 10px;
+    border-radius: 10px;
+
+    .new_user {
+      margin: 15px;
+      
+      .field {
+        margin: 15px;
+  
+        #user_email {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+  
+        #user_password {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+
+        #user_password_confirmation {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+
+        .signup {
+          width: 150px;
+          height: 35px;
+          border: none;
+          border-radius: 50px;
+          background-color: var(--dark-green-color);
+          color: var(--fill-color);
+          font-size: 15px;
+          margin-top: 10px;
+          
+          &:hover {
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+div.edit-container {
+  display: grid;
+  justify-items: center;
+  flex-direction: column;
+
+  .edit-box {
+    background-color: var(--darkest-green-color);
+    width: fit-content;
+    justify-content: center;
+    display: grid;
+    box-shadow: 0 3px 8px lightgrey;
+    color: var(--fill-color);
+    padding: 10px;
+    border-radius: 10px;
+
+    .edit_user {
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .field {
+        margin: 15px;
+  
+        #user_email {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+  
+        #user_password {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+
+        #user_password_confirmation {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+
+        #user_current_password {
+          width: 300px;
+          height: 30px;
+          border: none;
+          padding: 5px;
+          outline: none;
+          border-radius: 5px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: center;
+
+        .update {
+          width: 150px;
+          height: 35px;
+          border: none;
+          border-radius: 50px;
+          background-color: var(--dark-green-color);
+          color: var(--fill-color);
+          font-size: 15px;
+          margin-top: 10px;
+          
+          &:hover {
+            box-shadow: 0 3px 3px rgba(75, 75, 75, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+  .cancel-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      padding: 10px;
+      margin-bottom: 5px;
+      margin-top: 15px;
+      color: var(--font-color)
+    }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: -15px;
+
+      .cancel-button {
+        margin: 10px;
+
+        .cancel-account-button {
+          width: 155px;
+          height: 40px;
+          border: none;
+          border-radius: 50px;
+          background-color: var(--dark-green-color);
+          color: var(--fill-color);
+          font-size: 15px;
+          margin-top: 0px;
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(75, 75, 75, 0.2);
+          }
+        }
+      }
+
+      .back-button {
+        margin: 10px;
+
+        .back-button-icon {
+          background-color: var(--dark-green-color);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          margin: 10px;
+          padding: 0px;
+          border: none;
+
+          &:hover {
+            box-shadow: 0 3px 3px rgba(75, 75, 75, 0.2);
+          }
+        }
+      }
+    }
+  }
+}

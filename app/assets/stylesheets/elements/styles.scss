@@ -1,0 +1,103 @@
+.cv-styles-container {
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+
+  .style-row {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: fit-content;
+
+    .style {
+      width: calc(32% - 30px);
+      padding: 0.6%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: -moz-fit-content;
+      height: fit-content;
+      box-shadow: 0 3px 8px lightgrey;
+      margin: 10px;
+      text-decoration: none;
+      color: var(--font-color);
+      border-radius: 10px;
+
+      &.center {
+        background-color: var(--medium-color);
+        padding: 10px;
+        
+        &.main {
+          box-shadow: 0 3px 8px #5e5e5e;
+        }
+      }
+
+      &.left {
+        background-color: var(--lighter-color);
+        padding: 10px;
+
+        &.main {
+          box-shadow: 0 3px 8px #5e5e5e;
+        }
+      }
+
+      &.right {
+        background-color: var(--lighter-color);
+        padding: 10px;
+
+        &.main {
+          box-shadow: 0 3px 8px #5e5e5e;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px;
+
+    .back-to-sections {
+      background-color: var(--dark-green-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      
+      &:hover {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .download-cv {
+      background-color: var(--dark-green-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      
+      &:hover {
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      }
+
+    }
+
+    .dropdown-menu {
+      display: none;
+      width: max-content;
+      font-size: 12px;
+      line-height: 1rem;
+      color: var(--font-color);
+      text-align-last: center;
+      border: 2px groove;
+      border-color: var(--lighter-color);
+      border-radius: 10px;
+    }
+
+    .show:hover .dropdown-menu {
+      display: block;
+      transform: translate3d(-60px, -5px, 0px);
+    }
+  }
+}

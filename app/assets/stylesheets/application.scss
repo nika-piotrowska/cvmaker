@@ -1,0 +1,28 @@
+// Entry point for your Sass build
+@use "layout/navbar" as *;
+@use "layout/login" as *;
+@use "layout/main" as *;
+
+@use "elements/users" as *;
+@use "elements/certificates" as *;
+@use "elements/courses" as *;
+@use "elements/cvs" as *;
+@use "elements/educations" as *;
+@use "elements/employments" as *;
+@use "elements/languages" as *;
+@use "elements/references" as *;
+@use "elements/sections" as *;
+@use "elements/dashboard" as *;
+@use "elements/icons" as *;
+@use "elements/personal_information" as *;
+
+@use "trix/dist/trix" as *;
+
+@use "elements/actiontext" as *;
+@use "elements/styles" as *;
+@use "elements/footer" as *;
+@use "elements/dropdown" as *;
+
+body {
+  background-color: #FAFAFA;
+}
